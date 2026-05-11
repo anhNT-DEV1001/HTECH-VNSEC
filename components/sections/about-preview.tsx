@@ -46,21 +46,24 @@ export function AboutPreview() {
         {/* Features Grid */}
         <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <feature.icon className="h-6 w-6" />
+            <div key={feature.title} className="group relative">
+              {/* Glow Effect */}
+              <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/40 via-primary/20 to-accent/30 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+              <div
+                className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/5"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <feature.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold text-card-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {feature.description}
+                </p>
+                {/* Hover Accent */}
+                <div className="absolute -bottom-1 -right-1 h-20 w-20 rounded-full bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-card-foreground">
-                {feature.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {feature.description}
-              </p>
-              {/* Hover Accent */}
-              <div className="absolute -bottom-1 -right-1 h-20 w-20 rounded-full bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
           ))}
         </div>

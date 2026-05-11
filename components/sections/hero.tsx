@@ -163,7 +163,7 @@ export function Hero() {
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-xs text-muted-foreground">Địa điểm</p>
-                  <p className="font-semibold text-foreground">SECC, TP.HCM</p>
+                  <p className="font-semibold text-foreground">HALL 3, Trung tâm triển lãm Việt Nam - VEC</p>
                 </div>
               </div>
             </div>

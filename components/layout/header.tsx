@@ -32,7 +32,7 @@ function HeaderMenuPanel({
           <li key={item.href}>
             <Link
               href={item.href}
-              className="group flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:bg-primary/6 focus:text-primary"
+              className="group flex items-center justify-between rounded-xl px-3 py-2.5 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:bg-primary/6 focus:text-primary"
             >
               <span>{item.title}</span>
               <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
@@ -55,7 +55,7 @@ function HoverMenu({
     <div className="group relative">
       <button
         type="button"
-        className="inline-flex h-10 items-center px-4 text-sm font-medium text-foreground transition-colors hover:text-primary focus:outline-none"
+        className="inline-flex h-10 items-center px-4 text-lg font-medium text-foreground transition-colors hover:text-primary focus:outline-none"
       >
         {label}
       </button>
@@ -78,7 +78,7 @@ export function Header() {
             <span className="text-xl font-bold text-primary-foreground">VN</span>
           </div>
           <div className="hidden flex-col sm:flex">
-            <span className="text-sm font-bold uppercase tracking-wider text-foreground">
+            <span className="text-lg font-bold uppercase tracking-wider text-foreground">
               VN Security
             </span>
             <span className="text-xs text-muted-foreground">2026</span>
@@ -91,7 +91,7 @@ export function Header() {
             <div>
               <Link
                 href="/"
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
               >
                 Trang chủ
               </Link>
@@ -101,19 +101,19 @@ export function Header() {
 
             <HoverMenu label="Sponsor & Triển lãm" items={sponsorItems} />
 
-            <div>
+            {/* <div>
               <Link
                 href="/media"
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
               >
                 Truyền thông
               </Link>
-            </div>
+            </div> */}
 
             <div>
               <Link
                 href="/contact"
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:text-primary focus:outline-none"
               >
                 Liên hệ
               </Link>
@@ -158,7 +158,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block py-2 pl-4 text-sm text-foreground hover:text-primary"
+                      className="block py-2 pl-4 text-lg text-foreground hover:text-primary"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.title}
@@ -174,7 +174,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block py-2 pl-4 text-sm text-foreground hover:text-primary"
+                      className="block py-2 pl-4 text-lg text-foreground hover:text-primary"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.title}
@@ -182,13 +182,13 @@ export function Header() {
                   ))}
                 </div>
 
-                <Link
+                {/* <Link
                   href="/media"
                   className="border-t border-primary/10 py-3 text-foreground hover:text-primary"
                   onClick={() => setIsOpen(false)}
                 >
                   Truyền thông
-                </Link>
+                </Link> */}
 
                 <Link
                   href="/contact"

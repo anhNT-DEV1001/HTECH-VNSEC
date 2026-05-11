@@ -18,7 +18,7 @@ export default function HomePage() {
         <ExhibitorCategories />
         <AgendaPreview />
         <Sponsors />
-        <NewsPreview />
+        {/* <NewsPreview /> */}
         <CTASection />
       </main>
       <Footer />
