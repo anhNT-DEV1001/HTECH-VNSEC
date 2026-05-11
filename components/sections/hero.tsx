@@ -1,10 +1,121 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ArrowRight } from "lucide-react"
 
+// Event dates: October 6-8, 2026
+const EVENT_START = new Date("2026-10-06T00:00:00+07:00")
+const EVENT_END = new Date("2026-10-08T23:59:59+07:00")
+
+function useCountUp(target: number, duration = 2000) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const startTime = performance.now()
+
+      const animate = (now: number) => {
+        const elapsed = now - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        // easeOutQuad
+        const eased = 1 - (1 - progress) * (1 - progress)
+        setCount(Math.floor(eased * target))
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          setCount(target)
+        }
+      }
+      requestAnimationFrame(animate)
+    }, 300)
+
+    return () => clearTimeout(timeout)
+  }, [target, duration])
+
+  return count
+}
+
+function formatNumber(n: number): string {
+  return n.toLocaleString("vi-VN")
+}
+
+function StatItem({ target, label }: { target: number; label: string }) {
+  const count = useCountUp(target)
+  return (
+    <div className="text-center">
+      <div className="text-5xl font-bold text-primary">{formatNumber(count)}+</div>
+      <div className="text-xl text-muted-foreground">{label}</div>
+    </div>
+  )
+}
+
+type CountdownStatus =
+  | { type: "countdown"; days: number }
+  | { type: "ongoing" }
+  | { type: "ended" }
+
+function getCountdownStatus(): CountdownStatus {
+  const now = new Date()
+
+  if (now > EVENT_END) {
+    return { type: "ended" }
+  }
+
+  if (now >= EVENT_START && now <= EVENT_END) {
+    return { type: "ongoing" }
+  }
+
+  const diffMs = EVENT_START.getTime() - now.getTime()
+  const days = Math.ceil(diffMs / (1000 * 60 * 60 * 24))
+  return { type: "countdown", days }
+}
+
 export function Hero() {
+  const [status, setStatus] = useState<CountdownStatus>(getCountdownStatus)
+
+  useEffect(() => {
+    setStatus(getCountdownStatus())
+
+    // Update every minute to keep it fresh
+    const interval = setInterval(() => {
+      setStatus(getCountdownStatus())
+    }, 60_000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  // Render the center countdown content
+  const renderCountdown = () => {
+    switch (status.type) {
+      case "countdown":
+        return (
+          <>
+            <div className="text-7xl font-bold text-primary">{status.days}</div>
+            <div className="text-xl font-medium tracking-widest text-foreground">
+              {status.days === 1 ? "DAY" : "DAYS"}
+            </div>
+          </>
+        )
+      case "ongoing":
+        return (
+          <>
+            <div className="text-lg font-bold leading-tight text-primary">Đang</div>
+            <div className="text-lg font-bold leading-tight text-primary">diễn ra</div>
+            <div className="mt-1 h-1 w-8 mx-auto animate-pulse rounded-full bg-primary/60" />
+          </>
+        )
+      case "ended":
+        return (
+          <>
+            <div className="text-lg font-bold leading-tight text-muted-foreground">Đã</div>
+            <div className="text-lg font-bold leading-tight text-muted-foreground">kết thúc</div>
+          </>
+        )
+    }
+  }
+
   return (
     <section className="bg-warm-surface-strong relative min-h-[90vh] overflow-hidden">
       {/* Background Pattern */}
@@ -45,7 +156,7 @@ export function Hero() {
                 <Calendar className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-xs text-muted-foreground">Thời gian</p>
-                  <p className="font-semibold text-foreground">15-18 Tháng 10, 2026</p>
+                  <p className="font-semibold text-foreground">06-08 Tháng 10, 2026</p>
                 </div>
               </div>
               <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
@@ -85,13 +196,12 @@ export function Hero() {
                 {/* Inner Ring */}
                 <div className="absolute inset-16 animate-spin rounded-full border border-dashed border-primary/30" style={{ animationDuration: "15s" }} />
 
-                {/* Center Element */}
+                {/* Center Element - Countdown */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 via-primary/8 to-white/40 shadow-[0_30px_80px_rgba(234,88,12,0.12)] backdrop-blur-sm">
                     <div className="bg-warm-card-strong absolute inset-2 rounded-full border border-white/70" />
                     <div className="relative z-10 text-center">
-                      <div className="text-6xl font-bold text-primary">26</div>
-                      <div className="text-sm font-medium tracking-widest text-foreground">DAYS</div>
+                      {renderCountdown()}
                     </div>
                   </div>
                 </div>
@@ -111,22 +221,10 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 right-0 border-t border-primary/10 bg-[rgba(255,250,245,0.8)] backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">Nhà triển lãm</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Quốc gia</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">30,000+</div>
-              <div className="text-sm text-muted-foreground">Khách tham quan</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">100+</div>
-              <div className="text-sm text-muted-foreground">Diễn giả</div>
-            </div>
+            <StatItem target={200} label="Tổ chức" />
+            <StatItem target={50} label="Quốc gia" />
+            <StatItem target={15000} label="Khách tham quan" />
+            <StatItem target={300} label="Gian hàng" />
           </div>
         </div>
       </div>
