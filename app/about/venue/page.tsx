@@ -1,13 +1,67 @@
+"use client"
+
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { MapPin, Car, Train, Plane, Hotel, Coffee, Utensils } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import {motion} from "framer-motion"
+import GoogleMapComponent from "@/components/map/google-map"
 
 const venueFeatures = [
-  { label: "Diện tích triển lãm", value: "20,000+ m²" },
-  { label: "Số gian hàng", value: "500+" },
-  { label: "Phòng hội thảo", value: "15 phòng" },
-  { label: "Sức chứa hội trường", value: "3,000 người" },
+  { label: "Diện tích triển lãm", value: "20,000+ ", unit: "m²", num: 20000 },
+  { label: "Số gian hàng", value: "500", unit: "", num: 500 },
+  { label: "Phòng hội thảo", value: "15", unit: "", num: 15 },
+  { label: "Sức chứa hội trường", value: "3,000", unit: "", num: 3000 },
 ]
+
+function FeatureCard({label, value, unit, num}: typeof venueFeatures[0]){
+  const ref = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(([entry]) => {
+      if(entry.isIntersecting){
+        setInView(true)
+        observer.disconnect()
+      }
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(()=>{
+    if(!inView) return
+    const duration = 2000
+    const start = performance.now()
+    const animate = (now: number) => {
+      const t = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1-t,3)
+      setCount(Math.floor(eased*num))
+      if(t<1) requestAnimationFrame(animate)
+    }
+  requestAnimationFrame(animate)
+  }, [inView, num])
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="rounded-xl border border-border bg-card p-6 text-center"
+    >
+      <div className="mb-1 text-3xl font-bold text-primary">
+        {count.toLocaleString()}{unit}
+      </div>
+      <div className="text-sm text-muted-foreground">{label}</div>
+    </motion.div>
+  )
+}
+
 
 const transportation = [
   {
@@ -72,32 +126,12 @@ export default function VenuePage() {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
               {/* Map Placeholder */}
-              <div className="mb-12 overflow-hidden rounded-2xl border border-border">
-                <div className="aspect-[2/1] bg-muted">
-                  <div className="flex h-full items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="mx-auto mb-4 h-12 w-12 text-primary" />
-                      <h3 className="mb-2 text-xl font-semibold text-foreground">
-                        Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC)
-                      </h3>
-                      <p className="text-muted-foreground">
-                        799 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <GoogleMapComponent height="400px"/>
 
               {/* Venue Features */}
               <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {venueFeatures.map((feature) => (
-                  <div
-                    key={feature.label}
-                    className="rounded-xl border border-border bg-card p-6 text-center"
-                  >
-                    <div className="mb-1 text-3xl font-bold text-primary">{feature.value}</div>
-                    <div className="text-sm text-muted-foreground">{feature.label}</div>
-                  </div>
+                {venueFeatures.map((f) => (
+                  <FeatureCard key={f.label} {...f}/>
                 ))}
               </div>
 
@@ -117,7 +151,7 @@ export default function VenuePage() {
               </div>
 
               {/* Transportation */}
-              <div className="mb-16">
+              {/* <div className="mb-16">
                 <h2 className="mb-6 text-2xl font-bold text-foreground">Di chuyển</h2>
                 <div className="grid gap-6 md:grid-cols-3">
                   {transportation.map((item) => (
@@ -133,10 +167,10 @@ export default function VenuePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Nearby Services */}
-              <div>
+              {/* <div>
                 <h2 className="mb-6 text-2xl font-bold text-foreground">Tiện ích lân cận</h2>
                 <div className="grid gap-6 md:grid-cols-3">
                   {nearbyServices.map((service) => (
@@ -160,7 +194,7 @@ export default function VenuePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
