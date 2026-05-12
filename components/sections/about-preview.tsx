@@ -35,8 +35,7 @@ export function AboutPreview() {
             Giới thiệu
           </span>
           <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Triển lãm An ninh Quốc tế{" "}
-            <span className="text-primary">Đầu tiên</span> tại Việt Nam
+            Triển lãm An ninh Quốc tế tại Việt Nam
           </h2>
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
             VN Security 2026 là sự kiện quy tụ các nhà sản xuất, phân phối và chuyên gia hàng đầu trong lĩnh vực công nghiệp an ninh, tạo nên diễn đàn giao thương quốc tế lớn nhất khu vực.
