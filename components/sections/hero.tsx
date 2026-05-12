@@ -30,13 +30,11 @@ export function Hero() {
             </div>
 
             <h1 className="animate-fade-in mb-6 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
-              VN <span className="text-primary">SECURITY</span>
-              <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl">2026</span>
+              VN-<span className="text-primary">SECURITY'2026</span>
             </h1>
 
             <p className="animate-fade-in mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "0.2s" }}>
-              Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - Nơi hội tụ công nghệ an ninh tiên tiến nhất thế giới.
+              Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam.
             </p>
 
             {/* Event Info */}

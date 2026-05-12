@@ -4,13 +4,6 @@ import { Button } from "@/components/ui/button"
 
 const ctaOptions = [
   {
-    icon: Users,
-    title: "Khách tham quan",
-    description: "Đăng ký miễn phí để tham quan triển lãm và tham dự các hội thảo chuyên đề.",
-    cta: "Đăng ký tham quan",
-    href: "/register?type=visitor",
-  },
-  {
     icon: Building2,
     title: "Nhà triển lãm",
     description: "Giới thiệu sản phẩm và giải pháp của bạn đến hàng nghìn khách hàng tiềm năng.",
@@ -23,6 +16,13 @@ const ctaOptions = [
     description: "Chia sẻ kiến thức và kinh nghiệm tại các phiên hội thảo chuyên đề.",
     cta: "Đăng ký diễn giả",
     href: "/register?type=speaker",
+  },
+  {
+    icon: Users,
+    title: "Khách tham quan",
+    description: "Đăng ký miễn phí để tham quan triển lãm và tham dự các hội thảo chuyên đề.",
+    cta: "Đăng ký tham quan",
+    href: "/register?type=visitor",
   },
 ]
 
