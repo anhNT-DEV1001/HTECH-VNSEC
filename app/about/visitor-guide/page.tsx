@@ -131,7 +131,7 @@ export default function VisitorGuidePage() {
               </div>
 
               {/* Facilities */}
-              <div className="mb-16">
+              {/* <div className="mb-16">
                 <div className="mb-6 flex items-center gap-3">
                   <Info className="h-6 w-6 text-primary" />
                   <h2 className="text-2xl font-bold text-foreground">Tiện ích</h2>
@@ -152,7 +152,7 @@ export default function VisitorGuidePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Rules */}
               <div className="mb-16">
@@ -173,7 +173,7 @@ export default function VisitorGuidePage() {
               </div>
 
               {/* Tips */}
-              <div className="mb-16">
+              {/* <div className="mb-16">
                 <h2 className="mb-6 text-2xl font-bold text-foreground">Mẹo tham quan hiệu quả</h2>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {tips.map((tip) => (
@@ -186,7 +186,7 @@ export default function VisitorGuidePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Emergency Contact */}
               <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
