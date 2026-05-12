@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'VN Security 2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh',
+  title: "VN-Security'2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
   description: 'Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN SECURITY 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia.',
   generator: 'v0.app',
   icons: {

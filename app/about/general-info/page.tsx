@@ -47,7 +47,7 @@ export default function AboutPage() {
               </span>
               <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl lg:text-6xl">
                 Thông tin chung về{" "}
-                <span className="text-primary">VN Security 2026</span>
+                <span className="text-primary">VN-Security'2026</span>
               </h1>
               <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
                 Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - 
@@ -63,11 +63,11 @@ export default function AboutPage() {
             <div className="mx-auto max-w-4xl">
               <div className="mb-12">
                 <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">
-                  Về VN Security 2026
+                  Về VN-Security'2026
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p className="leading-relaxed">
-                    VN Security 2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, 
+                    VN-Security'2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, 
                     đánh dấu bước phát triển quan trọng của ngành an ninh Việt Nam trên bản đồ quốc tế.
                   </p>
                   <p className="leading-relaxed">
@@ -76,7 +76,7 @@ export default function AboutPage() {
                   </p>
                   <p className="leading-relaxed">
                     Với diện tích trưng bày hơn 20,000m2 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), 
-                    VN Security 2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan.
+                    VN-Security'2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan.
                   </p>
                 </div>
               </div>
