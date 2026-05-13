@@ -1,11 +1,12 @@
 "use client"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Shield, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { ExhibitionCategory, exhibitionService } from "@/services/exhibition.service"
+import { LucideIconByName } from "@/components/ui/lucide-icon"
 
 export function ExhibitionCategories() {
   const [categories, setCategories] = useState<ExhibitionCategory[]>([]);
@@ -85,7 +86,7 @@ export function ExhibitionCategories() {
                 >
                   <div className="mb-4 flex items-start justify-between">
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                      {category.logo || <Shield className="h-7 w-7" />}
+                      <LucideIconByName name={category.logo} className="h-7 w-7" />
                     </div>
                     <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
                       +
