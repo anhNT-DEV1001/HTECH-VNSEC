@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios"
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios"
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || "",
@@ -13,8 +13,16 @@ axiosInstance.interceptors.request.use(
 )
 
 axiosInstance.interceptors.response.use(
-  (response: AxiosResponse) => response.data,
+  <T>(response: { data: T }) => response.data as T,
   (error: AxiosError) => Promise.reject(error)
 )
 
-export default axiosInstance
+const api = axiosInstance as AxiosInstance & {
+  get<T>(url: string, config?: AxiosRequestConfig): Promise<T>
+  post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T>
+  put<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T>
+  delete<T>(url: string, config?: AxiosRequestConfig): Promise<T>
+  patch<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T>
+}
+
+export default api

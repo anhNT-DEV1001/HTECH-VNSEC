@@ -8,17 +8,12 @@ export interface ExhibitionCategory {
   display_order: number;
 }
 
-interface ApiResponse {
-  status: string;
-  message: string;
-  data: ExhibitionCategory[];
-}
 
 export const exhibitionService = {
   getCategories: async (): Promise<ExhibitionCategory[]> => {
-    const res: ApiResponse = await axiosInstance.get(
+    const res = (await axiosInstance.get(
       "/exhibition/public/exhibitions"
-    );
+    )) as { status: string; message: string; data: ExhibitionCategory[] };
     return res.data.sort((a, b) => a.display_order - b.display_order);
   },
 };
