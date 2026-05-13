@@ -1,12 +1,13 @@
 "use client"
 
+import Image from "next/image"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { useEffect, useMemo, useState } from "react"
 import { Search, MapPin, Building2, Layers3, ShieldAlert } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import { resolveApiAssetUrl } from "@/lib/api-asset"
 import { cn } from "@/lib/utils"
-import { LucideIconByName } from "@/components/ui/lucide-icon"
 import { exhibitionService, type PublicExhibitor } from "@/services/exhibition.service"
 
 const tierColors = {
@@ -167,6 +168,7 @@ export default function ExhibitorsPage() {
                 <div className="grid gap-4 md:grid-cols-2">
                   {filteredExhibitors.map((exhibitor) => {
                     const tier = getTier(exhibitor.rank?.name_vn)
+                    const imageUrl = resolveApiAssetUrl(exhibitor.img)
 
                     return (
                       <div
@@ -177,8 +179,20 @@ export default function ExhibitorsPage() {
                         )}
                       >
                         <div className="flex items-start gap-4">
-                          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                            <LucideIconByName name={exhibitor.logo_url} className="h-7 w-7" />
+                          <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-muted">
+                            {imageUrl ? (
+                              <Image
+                                src={imageUrl}
+                                alt={exhibitor.name}
+                                width={64}
+                                height={64}
+                                className="h-full w-full object-contain p-2"
+                              />
+                            ) : (
+                              <div className="flex h-full w-full items-center justify-center bg-primary/10 text-primary">
+                                <Building2 className="h-7 w-7" />
+                              </div>
+                            )}
                           </div>
 
                           <div className="min-w-0 flex-1">

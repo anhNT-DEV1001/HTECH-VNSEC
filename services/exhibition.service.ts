@@ -16,7 +16,7 @@ interface PublicExhibitionRef {
 export interface PublicExhibitor {
   id: number;
   name: string;
-  logo_url?: string | null;
+  img?: string | null;
   sumary_vn: string;
   sumary_en?: string | null;
   content_vn?: string | null;

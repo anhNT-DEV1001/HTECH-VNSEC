@@ -54,6 +54,7 @@ export interface Booth {
 export interface Exhibitor {
   id: number
   name: string           // ← tên nhà tài trợ
+  img?: string | null
   sumary_vn: string
   sumary_en: string
   content_vn: string

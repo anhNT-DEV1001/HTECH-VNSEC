@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { resolveApiAssetUrl } from "@/lib/api-asset"
 import { cn } from "@/lib/utils"
 import { Exhibitor } from "@/types/sponsor"
 import { groupSponsorsByTier } from "@/lib/sponsor.helpers"
@@ -49,7 +50,7 @@ export async function Sponsors() {
 
 
 export function SponsorCard({ exhibitor, tier }: { exhibitor: Exhibitor; tier: string }) {
-  const logoUrl = exhibitor.exhibitions[0]?.logo
+  const imageUrl = resolveApiAssetUrl(exhibitor.img)
 
   // Size theo hạng
   const sizeClasses = {
@@ -70,9 +71,9 @@ export function SponsorCard({ exhibitor, tier }: { exhibitor: Exhibitor; tier: s
         sizeClasses[tier as keyof typeof sizeClasses] || "w-40 h-28"
       )}
     >
-      {logoUrl ? (
+      {imageUrl ? (
         <Image
-          src={logoUrl}
+          src={imageUrl}
           alt={exhibitor.name}
           width={180}
           height={100}

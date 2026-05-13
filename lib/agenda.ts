@@ -1,4 +1,5 @@
 import type { Agenda, AgendaItem, AgendaViewModel } from "@/types/agenda"
+import { resolveApiAssetUrl } from "@/lib/api-asset"
 
 const timeFormatter = new Intl.DateTimeFormat("vi-VN", {
   hour: "2-digit",
@@ -62,16 +63,6 @@ const resolveAgendaType = (title: string, shortName: string) => {
   const text = normalizeText(`${shortName} ${title}`)
   const match = typeKeywords.find(([keyword]) => text.includes(normalizeText(keyword)))
   return match?.[1] || "seminar"
-}
-
-const resolveApiAssetUrl = (path?: string) => {
-  if (!path) return undefined
-  if (/^https?:\/\//i.test(path)) return path
-
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || ""
-  const host = apiUrl.replace(/\/api\/v\d+\/?$/, "")
-
-  return `${host}${path.startsWith("/") ? path : `/${path}`}`
 }
 
 export const buildAgendaViewModel = (agendas: Agenda[]): AgendaViewModel => {
