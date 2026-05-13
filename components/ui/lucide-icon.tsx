@@ -35,7 +35,7 @@ export const resolveLucideIcon = (name?: string | null): LucideIcon => {
   return FALLBACK_ICON
 }
 
-interface LucideIconByNameProps extends Omit<LucideProps, "ref"> {
+type LucideIconByNameProps = Omit<LucideProps, "ref" | "name"> & {
   name?: string | null
 }
 
