@@ -23,6 +23,12 @@ const sponsors = {
   ],
 }
 
+const sponsorWebId = process.env.NEXT_PUBLIC_SPONSOR_WEB_ID
+  ? Number(process.env.NEXT_PUBLIC_SPONSOR_WEB_ID)
+  : undefined
+
+
+
 export function Sponsors() {
   return (
     <section className="bg-muted/30 py-20 lg:py-28">
