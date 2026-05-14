@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ArrowRight } from "lucide-react"
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { ExhibitionCategory, exhibitionService } from "@/services/exhibition.service"
 import { LucideIconByName } from "@/components/ui/lucide-icon"
+import { resolveApiAssetUrl } from "@/lib/api-asset"
 
 export function ExhibitionCategories() {
   const [categories, setCategories] = useState<ExhibitionCategory[]>([]);
@@ -79,27 +81,44 @@ export function ExhibitionCategories() {
         <section className="bg-background py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {categories.map((category) => (
-                <div
-                  key={category.id}
-                  className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
-                >
-                  <div className="mb-4 flex items-start justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                      <LucideIconByName name={category.logo} className="h-7 w-7" />
+              {categories.map((category) => {
+                const imageUrl = resolveApiAssetUrl(category.img)
+
+                return (
+                  <Link
+                    key={category.id}
+                    href={`/sponsor/categories/${category.id}`}
+                    className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
+                  >
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                      {imageUrl ? (
+                        <div className="flex h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-primary/10 bg-white">
+                          <Image
+                            src={imageUrl}
+                            alt={category.name_vn}
+                            width={64}
+                            height={64}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
+                          <LucideIconByName name={category.logo} className="h-7 w-7" />
+                        </div>
+                      )}
+                      <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+                        +
+                      </span>
                     </div>
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
-                      +
-                    </span>
-                  </div>
-                  <h3 className="mb-2 text-xl font-semibold text-card-foreground">
-                    {category.name_vn}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {category.sumary_vn}
-                  </p>
-                </div>
-              ))}
+                    <h3 className="mb-2 text-xl font-semibold text-card-foreground">
+                      {category.name_vn}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {category.sumary_vn}
+                    </p>
+                  </Link>
+                )
+              })}
             </div>
 
             {/* CTA */}

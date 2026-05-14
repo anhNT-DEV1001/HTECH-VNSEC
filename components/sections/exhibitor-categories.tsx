@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Expand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { exhibitionService, ExhibitionCategory } from "@/services/exhibition.service";
 import { LucideIconByName } from "@/components/ui/lucide-icon";
+import { resolveApiAssetUrl } from "@/lib/api-asset";
 
 export function ExhibitorCategories() {
   const [categories, setCategories] = useState<ExhibitionCategory[]>([]);
@@ -22,6 +24,9 @@ export function ExhibitorCategories() {
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
+
+  const getCategoryImageUrl = (category?: ExhibitionCategory | null) =>
+    resolveApiAssetUrl(category?.img);
 
   if (loading) {
     return (
@@ -42,10 +47,13 @@ export function ExhibitorCategories() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-44 animate-pulse rounded-xl bg-muted"
-              />
+              <div key={i} className="overflow-hidden rounded-[1.75rem] bg-white/80">
+                <div className="aspect-[4/3] animate-pulse bg-muted" />
+                <div className="space-y-2 px-1 py-3">
+                  <div className="h-5 w-3/4 animate-pulse rounded bg-muted" />
+                  <div className="h-4 w-1/2 animate-pulse rounded bg-muted" />
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -79,69 +87,118 @@ export function ExhibitorCategories() {
           </div>
 
           {/* Categories Grid */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                onClick={() => setSelectedCategory(category)}
-                className="bg-warm-card group relative cursor-pointer overflow-hidden rounded-xl border border-primary/10 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.04)] transition-all duration-300 hover:border-primary/40 hover:bg-white/80"
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                    <LucideIconByName name={category.logo} className="h-7 w-7" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((category) => {
+              const imageUrl = getCategoryImageUrl(category);
+
+              return (
+                <div
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category)}
+                  className="group flex h-full cursor-pointer flex-col"
+                >
+                  <div className="relative overflow-hidden rounded-[1.75rem] bg-white shadow-[0_22px_44px_rgba(15,23,42,0.08)] transition-transform duration-300 group-hover:-translate-y-1">
+                    {imageUrl ? (
+                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+                        <Image
+                          src={imageUrl}
+                          alt={category.name_vn}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                      </div>
+                    ) : (
+                      <div className="flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-primary/10 via-white to-primary/5 text-primary">
+                        <LucideIconByName name={category.logo} className="h-16 w-16" />
+                      </div>
+                    )}
+                    <div className="absolute right-4 bottom-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/92 text-primary shadow-lg backdrop-blur">
+                      <Expand className="h-4 w-4" />
+                    </div>
                   </div>
-                  <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
-                    +
-                  </span>
+                  <div className="flex min-h-[104px] flex-1 flex-col pt-4">
+                    <h3 className="text-xl font-bold tracking-tight text-foreground">
+                      {category.name_vn}
+                    </h3>
+                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                      {category.sumary_vn}
+                    </p>
+                    <div className="mt-auto pt-2 flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-primary/80 transition-colors group-hover:text-primary">
+                      Khám phá
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">
-                  {category.name_vn}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {category.sumary_vn}
-                </p>
-                <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Khám phá
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Category Detail Modal */}
       <Dialog open={!!selectedCategory} onOpenChange={(open) => !open && setSelectedCategory(null)}>
-        <DialogContent className="sm:max-w-lg p-0 gap-0 overflow-hidden rounded-2xl">
+        <DialogContent className="gap-0 overflow-hidden rounded-[2rem] border-0 p-0 sm:max-w-3xl" showCloseButton={false}>
           {selectedCategory && (
-            <div className="p-6 pb-0">
-              <div className="flex items-start justify-between">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                  <LucideIconByName name={selectedCategory.logo} className="h-7 w-7" />
+            <>
+              <div className="relative">
+                {getCategoryImageUrl(selectedCategory) ? (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted">
+                    <Image
+                      src={getCategoryImageUrl(selectedCategory)!}
+                      alt={selectedCategory.name_vn}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 960px"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  </div>
+                ) : (
+                  <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-primary/10 via-white to-primary/5 text-primary">
+                    <LucideIconByName name={selectedCategory.logo} className="h-20 w-20" />
+                  </div>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory(null)}
+                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-foreground shadow-lg backdrop-blur transition hover:bg-white"
+                  aria-label="Đóng"
+                >
+                  <span className="text-lg leading-none">×</span>
+                </button>
+              </div>
+
+              <div className="bg-white px-6 py-6 sm:px-8 sm:py-8">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <LucideIconByName name={selectedCategory.logo} className="h-5 w-5" />
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                    Lĩnh vực triển lãm
+                  </span>
+                </div>
+                <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  {selectedCategory.name_vn}
+                </h2>
+                <p className="mb-8 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+                  {selectedCategory.sumary_vn}
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button asChild className="bg-primary hover:bg-primary/90">
+                    <Link href={`/sponsor/categories/${selectedCategory.id}`}>
+                      Xem chi tiết
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/25 hover:border-primary hover:bg-primary hover:text-primary-foreground">
+                    <Link href="/sponsor/categories">
+                      Xem tất cả lĩnh vực
+                    </Link>
+                  </Button>
                 </div>
               </div>
-            </div>
-          )}
-          {selectedCategory && (
-            <div className="p-6 pt-4">
-              <h2 className="text-2xl font-bold text-foreground mb-3">
-                {selectedCategory.name_vn}
-              </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {selectedCategory.sumary_vn}
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="flex-1 bg-primary hover:bg-primary/90">
-                  <Link href="/sponsor/register">
-                    Đăng ký gian hàng
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button variant="outline" className="flex-1 border-primary/25 hover:border-primary hover:bg-primary hover:text-primary-foreground">
-                  Liên hệ tư vấn
-                </Button>
-              </div>
-            </div>
+            </>
           )}
         </DialogContent>
       </Dialog>

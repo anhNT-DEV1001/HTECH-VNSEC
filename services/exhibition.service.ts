@@ -2,8 +2,15 @@ import axiosInstance from "@/lib/axios";
 
 export interface ExhibitionCategory {
   id: number;
+  title_vn?: string | null;
+  title_en?: string | null;
   name_vn: string;
+  name_en?: string | null;
   sumary_vn: string;
+  sumary_en?: string | null;
+  content_vn?: string | null;
+  content_en?: string | null;
+  img?: string | null;
   logo?: string | null;
   display_order: number;
 }
@@ -57,6 +64,11 @@ export const exhibitionService = {
       "/exhibition/public/exhibitions"
     )) as { status: string; message: string; data: ExhibitionCategory[] };
     return res.data.sort((a, b) => a.display_order - b.display_order);
+  },
+
+  getCategoryById: async (id: number): Promise<ExhibitionCategory | null> => {
+    const categories = await exhibitionService.getCategories();
+    return categories.find((category) => category.id === id) || null;
   },
 
   getExhibitors: async (): Promise<PublicExhibitor[]> => {
