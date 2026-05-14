@@ -149,10 +149,30 @@
   }
   h1,
   h2 {
-    font-size: 1.875rem !important;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1,
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2 {
+    /* Title Size */
+    font-size: clamp(2.375rem, 4.2vw, 3.75rem) !important;
+    line-height: 1.32 !important;
     font-weight: 800 !important;
     letter-spacing: 0 !important;
-    line-height: 1.5 !important;
+  }
+
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1 + p,
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2 + p {
+    font-size: 1.125rem !important;
+    line-height: 1.85 !important;
   }
 
   h3 {
@@ -177,17 +197,11 @@
     font-style: italic;
   }
 
-  @media (min-width: 640px) {
-    h1,
-    h2 {
+  @media (max-width: 639px) {
+    span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1,
+    span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2 {
       font-size: 2.25rem !important;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    h1,
-    h2 {
-      font-size: 3rem !important;
+      line-height: 1.28 !important;
     }
   }
 }

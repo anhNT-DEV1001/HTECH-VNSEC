@@ -76,7 +76,7 @@ export default function ContactPage() {
               <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
                 Liên hệ với Chúng tôi
               </h1>
-              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+              <p className="text-pretty text-lg leading-relaxed text-secondary-foreground/78">
                 Đội ngũ VN Security 2026 luôn sẵn sàng hỗ trợ bạn
               </p>
             </div>
@@ -90,8 +90,8 @@ export default function ContactPage() {
               <div className="grid gap-12 lg:grid-cols-5">
                 {/* Contact Info */}
                 <div className="lg:col-span-2">
-                  <h2 className="mb-6 text-xl font-bold text-foreground">Thông tin liên hệ</h2>
-                  <div className="space-y-6">
+                  <h2 className="mb-15 text-2xl font-bold text-foreground sm:text-3xl">Thông tin liên hệ</h2>
+                  <div className="space-y-8">
                     {contactInfo.map((item) => (
                       <div key={item.title} className="flex gap-4">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -137,7 +137,9 @@ export default function ContactPage() {
                 {/* Contact Form */}
                 <div className="lg:col-span-3">
                   <div className="rounded-2xl border border-border bg-card p-8">
-                    <h2 className="mb-6 text-xl font-bold text-card-foreground">Gửi tin nhắn</h2>
+                    <div className="mb-12 text-center">
+                      <h2 className="text-2xl font-bold text-card-foreground sm:text-3xl">Gửi tin nhắn</h2>
+                    </div>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div>

@@ -70,7 +70,7 @@ export function ExhibitorCategories() {
                 VN Security 2026 quy tụ đa dạng các lĩnh vực trong ngành công nghiệp an ninh, từ thiết bị phần cứng đến giải pháp phần mềm.
               </p>
             </div>
-            <Button asChild variant="outline" className="shrink-0 border-primary/15 bg-white/50 text-foreground hover:bg-white/80">
+            <Button asChild variant="outline" className="shrink-0 border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
               <Link href="/sponsor/categories">
                 Xem tất cả
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -137,7 +137,7 @@ export function ExhibitorCategories() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="flex-1 border-primary/15">
+                <Button variant="outline" className="flex-1 border-primary/25 hover:border-primary hover:bg-primary hover:text-primary-foreground">
                   Liên hệ tư vấn
                 </Button>
               </div>

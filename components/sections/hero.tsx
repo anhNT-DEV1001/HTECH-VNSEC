@@ -141,7 +141,7 @@ export function Hero() {
             </div>
 
             <h1 className="animate-fade-in mb-6 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
-              VN-<span className="text-primary">SECURITY'2026</span>
+              VN-<span className="text-primary">SECURITY' 2026</span>
             </h1>
 
             <p className="animate-fade-in mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "0.2s" }}>
@@ -174,7 +174,7 @@ export function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/15 bg-white/50 text-foreground hover:bg-white/80">
+              <Button asChild variant="outline" size="lg" className="border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href="/about/general-info">Tìm hiểu thêm</Link>
               </Button>
             </div>
