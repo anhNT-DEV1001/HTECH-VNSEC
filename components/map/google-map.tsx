@@ -9,7 +9,7 @@ interface GoogleMapComponentProps {
 }
 
 function GoogleMapComponent({
-  center = { lat: 10.73121, lng: 106.721481 },
+  center = { lat: 21.0875625, lng: 105.8652656 },
   zoom = 15,
   height = "400px",
 }: GoogleMapComponentProps) {

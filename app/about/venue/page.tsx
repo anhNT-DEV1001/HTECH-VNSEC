@@ -115,7 +115,7 @@ export default function VenuePage() {
                 Địa điểm Tổ chức
               </h1>
               <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-                Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC) - Trung tâm triển lãm lớn nhất Việt Nam
+                Trung tâm Hội chợ Triển lãm Quốc gia (VEC) - Trung tâm triển lãm lớn nhất Việt Nam
               </p>
             </div>
           </div>
@@ -135,16 +135,16 @@ export default function VenuePage() {
                 ))}
               </div>
 
-              {/* About SECC */}
+              {/* About VEC */}
               <div className="mb-16">
-                <h2 className="mb-6 text-2xl font-bold text-foreground">Về SECC</h2>
+                <h2 className="mb-6 text-2xl font-bold text-foreground">Về VEC</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p className="leading-relaxed">
-                    Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC) là trung tâm triển lãm quốc tế lớn nhất Việt Nam, 
-                    tọa lạc tại khu đô thị Phú Mỹ Hưng, Quận 7, TP. Hồ Chí Minh.
+                    Trung tâm Hội chợ Triển lãm Quốc gia (VEC) là trung tâm triển lãm quốc tế lớn nhất Việt Nam, 
+                    tọa lạc tại xã Đông Hội và Xuân Canh, huyện Đông Anh, TP. Hà Nội.
                   </p>
                   <p className="leading-relaxed">
-                    Với diện tích tổng thể hơn 100,000m2, SECC được trang bị đầy đủ các tiện nghi hiện đại, 
+                    Với diện tích tổng thể hơn 100,000m2, VEC được trang bị đầy đủ các tiện nghi hiện đại, 
                     đáp ứng tiêu chuẩn quốc tế cho các sự kiện triển lãm và hội nghị quy mô lớn.
                   </p>
                 </div>
