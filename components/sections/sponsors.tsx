@@ -1,4 +1,6 @@
 import Image from "next/image"
+import Link from "next/link"
+import { Building2 } from "lucide-react"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 import { cn } from "@/lib/utils"
 import { Exhibitor } from "@/types/sponsor"
@@ -52,38 +54,45 @@ export async function Sponsors() {
 export function SponsorCard({ exhibitor, tier }: { exhibitor: Exhibitor; tier: string }) {
   const imageUrl = resolveApiAssetUrl(exhibitor.img)
 
-  // Size theo hạng
   const sizeClasses = {
-    diamond: "w-52 h-36",
-    vàng: "w-40 h-28",
-    bạc: "w-32 h-24",
+    diamond: "w-full max-w-lg min-h-24",
+    vàng: "w-full max-w-md min-h-22",
+    bạc: "w-full max-w-sm min-h-20",
   }
 
   return (
-    <a
-      href={exhibitor.web?.url || "#"}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href="/sponsor/exhibitor"
       className={cn(
-        "flex items-center justify-center border border-border rounded-xl",
-        "bg-card p-4 transition-all duration-200",
+        "flex items-center gap-4 rounded-xl border border-border",
+        "bg-card px-4 py-3 transition-all duration-200",
         "hover:border-primary/50 hover:shadow-lg hover:-translate-y-1",
-        sizeClasses[tier as keyof typeof sizeClasses] || "w-40 h-28"
+        sizeClasses[tier as keyof typeof sizeClasses] || "w-full max-w-sm min-h-20"
       )}
     >
       {imageUrl ? (
-        <Image
-          src={imageUrl}
-          alt={exhibitor.name}
-          width={180}
-          height={100}
-          className="object-contain w-full h-full"
-        />
+        <div className="flex h-14 w-20 shrink-0 items-center justify-center overflow-hidden sm:h-16 sm:w-24">
+          <Image
+            src={imageUrl}
+            alt={exhibitor.name}
+            width={96}
+            height={96}
+            className="h-full w-full object-contain"
+          />
+        </div>
       ) : (
-        <span className="text-sm text-muted-foreground font-medium">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-muted sm:h-16 sm:w-16">
+          <div className="flex h-full w-full items-center justify-center bg-primary/10 text-primary">
+            <Building2 className="h-6 w-6" />
+          </div>
+        </div>
+      )}
+
+      <div className="min-w-0 flex-1">
+        <span className="line-clamp-2 text-left text-sm font-semibold text-card-foreground sm:text-base">
           {exhibitor.name}
         </span>
-      )}
-    </a>
+      </div>
+    </Link>
   )
 }

@@ -226,7 +226,7 @@ export default function ContactPage() {
         </section>
 
         {/* Map Section */}
-        <section className="bg-muted/30">
+        {/* <section className="bg-muted/30">
           <div className="container mx-auto px-4 py-16">
             <div className="mx-auto max-w-6xl">
               <div className="overflow-hidden rounded-2xl border border-border">
@@ -244,7 +244,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>
