@@ -130,7 +130,7 @@ export default function ExhibitorsPage() {
                       "rounded-full px-4 py-2 text-sm font-medium transition-all",
                       activeCategory === category
                         ? "bg-primary text-primary-foreground"
-                        : "bg-muted text-muted-foreground hover:bg-muted/80"
+                        : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                     )}
                   >
                     {category}
@@ -205,6 +205,14 @@ export default function ExhibitorsPage() {
                         </div>
 
                         <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <h3 className="mb-1 text-lg font-semibold text-card-foreground group-hover:text-primary">
+                                {exhibitor.name}
+                              </h3>
+                            </div>
+                          </div>
+
                           <div className="mb-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1">
                               <Layers3 className="h-4 w-4" />

@@ -13,6 +13,7 @@ export default function NewsPage() {
     title: string
     excerpt: string
     date?: string
+    category?: string
   }>
 
   const featuredNews = newsItems.slice(0, 2)
@@ -74,10 +75,24 @@ export default function NewsPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h2 className="mb-3 text-xl font-bold text-card-foreground transition-colors group-hover:text-primary">
-                      <Link href={`/${locale}/media/${i + 1}`}>{item.title}</Link>
-                    </h2>
+                    <div className="p-6">
+                      <div className="mb-3 flex items-center gap-4 text-sm text-muted-foreground">
+                        {item.date ? (
+                          <span className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            {item.date}
+                          </span>
+                        ) : null}
+                        {item.category ? (
+                          <span className="flex items-center gap-1">
+                            <Tag className="h-4 w-4" />
+                            {item.category}
+                          </span>
+                        ) : null}
+                      </div>
+                      <h2 className="mb-3 text-xl font-bold text-card-foreground transition-colors group-hover:text-primary">
+                        <Link href={`/${locale}/media/${i + 1}`}>{item.title}</Link>
+                      </h2>
                     <p className="mb-4 line-clamp-2 text-muted-foreground">
                       {item.excerpt}
                     </p>
@@ -100,6 +115,19 @@ export default function NewsPage() {
                   key={i}
                   className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
                 >
+                  <div className="mb-3 flex items-center gap-4 text-sm text-muted-foreground">
+                    {item.date ? (
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        {item.date}
+                      </span>
+                    ) : null}
+                    {item.category ? (
+                      <span className="rounded-full bg-muted px-2 py-0.5 text-xs">
+                        {item.category}
+                      </span>
+                    ) : null}
+                  </div>
                   <h3 className="mb-3 line-clamp-2 text-lg font-semibold text-card-foreground transition-colors group-hover:text-primary">
                     <Link href={`/${locale}/media/${i + 3}`}>{item.title}</Link>
                   </h3>

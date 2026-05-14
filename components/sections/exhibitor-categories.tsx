@@ -44,14 +44,14 @@ export function ExhibitorCategories() {
       <section className="bg-warm-surface py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
+            <div className="max-w-4xl">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
                 {t("section_badge")}
               </span>
-              <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="homepage-section-title mb-4 max-w-4xl text-balance text-foreground">
                 {t("title")}
               </h2>
-              <p className="text-pretty text-muted-foreground">{t("description")}</p>
+              <p className="max-w-3xl text-pretty text-muted-foreground">{t("description")}</p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -75,20 +75,16 @@ export function ExhibitorCategories() {
       <section className="bg-warm-surface py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-            <div className="max-w-2xl">
+            <div className="max-w-4xl">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
                 {t("section_badge")}
               </span>
-              <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <h2 className="homepage-section-title mb-4 max-w-4xl text-balance text-foreground">
                 {t("title")}
               </h2>
-              <p className="text-pretty text-muted-foreground">{t("description")}</p>
+              <p className="max-w-3xl text-pretty text-muted-foreground">{t("description")}</p>
             </div>
-            <Button
-              asChild
-              variant="outline"
-              className="shrink-0 border-primary/15 bg-white/50 text-foreground hover:bg-white/80"
-            >
+            <Button asChild variant="outline" className="shrink-0 border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
               <Link href={`/${locale}/sponsor/categories`}>
                 {t("cta")}
                 <ArrowRight className="ml-2 h-4 w-4" />

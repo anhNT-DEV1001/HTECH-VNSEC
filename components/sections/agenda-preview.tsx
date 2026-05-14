@@ -75,14 +75,14 @@ export function AgendaPreview() {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-12 max-w-5xl text-center">
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("section_badge")}
           </span>
-          <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="homepage-section-title mx-auto mb-6 max-w-5xl text-balance text-foreground">
             {t("title")}
           </h2>
-          <p className="text-pretty text-muted-foreground">
+          <p className="mx-auto max-w-3xl text-pretty text-muted-foreground">
             {t("description")}
           </p>
         </div>

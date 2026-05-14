@@ -10,19 +10,24 @@ export function AboutPreview() {
   const locale = useLocale()
 
   const features = t.raw("features") as Array<{ title: string; description: string }>
+  const titleLines = t.raw("title_lines") as string[]
 
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-16 w-full max-w-7xl text-center">
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("section_badge")}
           </span>
-          <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            {t("title")}
+          <h2 className="homepage-section-title mx-auto mb-6 max-w-7xl text-foreground">
+            {titleLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </h2>
-          <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto max-w-4xl text-pretty text-lg leading-relaxed text-muted-foreground">
             {t("description")}
           </p>
         </div>

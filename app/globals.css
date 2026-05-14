@@ -154,19 +154,33 @@
   }
 
   span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] {
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
     line-height: 1.5 !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.08em !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em !important;
   }
 
   span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1,
-  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2 {
+  span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2:not(.homepage-section-title) {
     /* Title Size */
     font-size: clamp(2.375rem, 4.2vw, 3.75rem) !important;
     line-height: 1.32 !important;
     font-weight: 800 !important;
     letter-spacing: 0 !important;
+  }
+
+  .homepage-section-title {
+    font-size: clamp(2rem, 3vw, 3rem) !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+  }
+
+  @media (max-width: 639px) {
+    .homepage-section-title {
+      font-size: 1.75rem !important;
+      line-height: 1.38 !important;
+    }
   }
 
   span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1 + p,
@@ -199,7 +213,7 @@
 
   @media (max-width: 639px) {
     span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h1,
-    span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2 {
+    span[class*="uppercase"][class*="tracking-wider"][class*="text-primary"] + h2:not(.homepage-section-title) {
       font-size: 2.25rem !important;
       line-height: 1.28 !important;
     }

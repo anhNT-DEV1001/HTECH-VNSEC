@@ -92,8 +92,8 @@ export default function ContactPage() {
             <div className="grid gap-12 lg:grid-cols-5">
               {/* Contact Info */}
               <div className="lg:col-span-2">
-                <h2 className="mb-6 text-xl font-bold text-foreground">{t("info.title")}</h2>
-                <div className="space-y-6">
+                <h2 className="mb-15 text-2xl font-bold text-foreground sm:text-3xl">{t("info.title")}</h2>
+                <div className="space-y-8">
                   {[
                     { icon: MapPin, label: t("info.address.label"), value: t("info.address.value") },
                     { icon: Phone, label: t("info.phone.label"), value: t("info.phone.value"), sub: t("info.phone.hotline") },
@@ -105,7 +105,8 @@ export default function ContactPage() {
                         <item.icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <div className="font-semibold text-foreground">{item.value}</div>
+                        <div className="font-semibold text-foreground">{item.label}</div>
+                        <div className="text-muted-foreground">{item.value}</div>
                         {item.sub && (
                           <div className="text-sm text-muted-foreground">{item.sub}</div>
                         )}
@@ -139,7 +140,9 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div className="lg:col-span-3">
                 <div className="rounded-2xl border border-border bg-card p-8">
-                  <h2 className="mb-6 text-xl font-bold text-card-foreground">{t("form.title")}</h2>
+                  <div className="mb-12 text-center">
+                    <h2 className="text-2xl font-bold text-card-foreground sm:text-3xl">{t("form.title")}</h2>
+                  </div>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>

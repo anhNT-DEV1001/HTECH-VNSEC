@@ -36,8 +36,12 @@
 
     "about": {
       "section_badge": "About",
-      "title": "International Security Exhibition in Vietnam",
-      "description": "VN Security 2026 brings together leading manufacturers, distributors, and experts in the security industry, creating the largest international trade forum in the region.",
+      "title": "THE FIRST INTERNATIONAL EXHIBITION AND CONFERENCE ON SECURITY TECHNOLOGY IN VIETNAM",
+      "title_lines": [
+        "THE FIRST INTERNATIONAL EXHIBITION AND CONFERENCE",
+        "ON SECURITY TECHNOLOGY IN VIETNAM"
+      ],
+      "description": "VN-SECURITY’ 2026 is the first International Exhibition and Conference on the Security Industry in Vietnam, positioned as an annual forum for security technology and industry. The event focuses on a comprehensive security technology ecosystem, fostering connection, collaboration, and the development of a modern security industry in Vietnam.",
       "features": [
         {
           "title": "Security Technology",
@@ -60,9 +64,9 @@
     },
 
     "categories": {
-      "section_badge": "Exhibition Categories",
-      "title": "Explore Exhibition Categories",
-      "description": "VN Security 2026 brings together diverse areas in the security industry, from hardware equipment to software solutions.",
+      "section_badge": "Technology",
+      "title": "EXPLORE THE SECURITY TECHNOLOGY ECOSYSTEM",
+      "description": "VN-SECURITY’ 2026 presents eight key technology zones, bringing together advanced solutions in security, surveillance, AI, data, UAVs, cryptography, and specialized technologies.",
       "cta": "View All",
       "card": {
         "hover": "Explore"
@@ -74,9 +78,9 @@
     },
 
     "agenda": {
-      "section_badge": "Schedule",
-      "title": "Event Agenda",
-      "description": "Follow the latest conference activities, workshops, and networking sessions.",
+      "section_badge": "Conference Agenda & Specialized Activities",
+      "title": "AGENDA",
+      "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY’ 2026.",
       "cta": "View Full Schedule",
       "loading": "Loading schedule...",
       "updating": "Schedule is being updated.",
@@ -95,14 +99,15 @@
     },
 
     "sponsors": {
-      "section_badge": "Sponsors",
-      "title": "Our Partners"
+      "section_badge": "Partners",
+      "title": "CONNECTING PARTNERS & ENTERPRISES",
+      "description": "Bringing together a network of domestic and international partners, enterprises, and technology organizations to connect, collaborate, and advance the modern security industry."
     },
 
     "cta": {
       "section_badge": "Join Now",
-      "title": "Become Part of VN Security 2026",
-      "description": "Whether you are a visitor, exhibitor, or speaker, VN Security 2026 has the right program for you.",
+      "title": "BECOME PART OF VN-SECURITY' 2026",
+      "description": "Whether you are a visitor, exhibitor, or speaker, VN-SECURITY' 2026 has the right program for you.",
       "options": [
         {
           "title": "Exhibitors",
