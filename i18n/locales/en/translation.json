@@ -1,0 +1,689 @@
+{
+  "metadata": {
+    "title": "VN-Security'2026 - International Exhibition and Conference on Security Industry",
+    "description": "The First International Exhibition and Conference on Security Industry in Vietnam - VN SECURITY 2026. Bringing together 500+ exhibitors from 50+ countries."
+  },
+
+  "home": {
+    "hero": {
+      "badge": "First Time in Vietnam",
+      "title": "VN-SECURITY'2026",
+      "description": "The First International Exhibition and Conference on Security Industry in Vietnam.",
+      "eventTime": {
+        "label": "Date",
+        "value": "October 06-08, 2026"
+      },
+      "eventLocation": {
+        "label": "Venue",
+        "value": "HALL 3, Vietnam Exhibition Center - VEC"
+      },
+      "cta": {
+        "register": "Register Now",
+        "learn": "Learn More"
+      },
+      "countdown": {
+        "onGoing": "Ongoing",
+        "ended": "Ended",
+        "days": "DAYS"
+      },
+      "stats": {
+        "organizers": "Organizers",
+        "countries": "Countries",
+        "visitors": "Visitors",
+        "booths": "Booths"
+      }
+    },
+
+    "about": {
+      "section_badge": "About",
+      "title": "International Security Exhibition in Vietnam",
+      "description": "VN Security 2026 brings together leading manufacturers, distributors, and experts in the security industry, creating the largest international trade forum in the region.",
+      "features": [
+        {
+          "title": "Security Technology",
+          "description": "Showcasing the most advanced security solutions from world-leading manufacturers."
+        },
+        {
+          "title": "International Scale",
+          "description": "Connecting Vietnamese businesses with partners from over 50 countries worldwide."
+        },
+        {
+          "title": "Specialized Conferences",
+          "description": "In-depth seminars featuring participation from leading experts."
+        },
+        {
+          "title": "Business Opportunities",
+          "description": "Creating connections between suppliers and customers in the security industry."
+        }
+      ],
+      "cta": "View event details"
+    },
+
+    "categories": {
+      "section_badge": "Exhibition Categories",
+      "title": "Explore Exhibition Categories",
+      "description": "VN Security 2026 brings together diverse areas in the security industry, from hardware equipment to software solutions.",
+      "cta": "View All",
+      "card": {
+        "hover": "Explore"
+      },
+      "modal": {
+        "register": "Register Booth",
+        "consult": "Contact for Consultation"
+      }
+    },
+
+    "agenda": {
+      "section_badge": "Schedule",
+      "title": "Event Agenda",
+      "description": "Follow the latest conference activities, workshops, and networking sessions.",
+      "cta": "View Full Schedule",
+      "loading": "Loading schedule...",
+      "updating": "Schedule is being updated.",
+      "dayContentUpdating": "This day's content is being updated.",
+      "typeLabels": {
+        "ceremony": "Ceremony",
+        "keynote": "Keynote",
+        "panel": "Panel",
+        "workshop": "Workshop",
+        "seminar": "Seminar",
+        "networking": "Networking",
+        "demo": "Demo",
+        "registration": "Registration",
+        "break": "Break"
+      }
+    },
+
+    "sponsors": {
+      "section_badge": "Sponsors",
+      "title": "Our Partners"
+    },
+
+    "cta": {
+      "section_badge": "Join Now",
+      "title": "Become Part of VN Security 2026",
+      "description": "Whether you are a visitor, exhibitor, or speaker, VN Security 2026 has the right program for you.",
+      "options": [
+        {
+          "title": "Exhibitors",
+          "description": "Showcase your products and solutions to thousands of potential customers.",
+          "cta": "Register Booth"
+        },
+        {
+          "title": "Speakers",
+          "description": "Share your knowledge and experience at specialized seminar sessions.",
+          "cta": "Register as Speaker"
+        },
+        {
+          "title": "Visitors",
+          "description": "Register for free to visit the exhibition and attend specialized seminars.",
+          "cta": "Register to Visit"
+        }
+      ],
+      "contact_question": "Have questions?",
+      "contact_link": "Contact us"
+    }
+  },
+
+  "about": {
+    "general_info": {
+      "page_badge": "About",
+      "page_title": "General Information about VN-Security'2026",
+      "page_description": "The First International Exhibition and Conference on Security Industry in Vietnam - The largest event in Southeast Asia in the security field.",
+      "section_about": {
+        "title": "About VN-Security'2026",
+        "p1": "VN-Security'2026 is the first international exhibition and conference on the security industry held in Vietnam, marking a significant step for Vietnam's security industry on the international map.",
+        "p2": "The event brings together leading manufacturers, distributors, and experts in security technology from around the world, creating the largest trade and knowledge-sharing forum in the region.",
+        "p3": "With over 20,000m2 of exhibition space at the Saigon Exhibition and Convention Center (SECC), VN-Security'2026 promises to deliver a comprehensive experience of modern security technology to over 30,000 visitors."
+      },
+      "section_objectives": {
+        "title": "Event Objectives"
+      },
+      "objectives": [
+        "Create an international trade forum for the security industry in Vietnam",
+        "Introduce the most advanced security technologies from world-leading manufacturers",
+        "Promote cooperation between domestic and international businesses",
+        "Update new trends and solutions in the security field",
+        "Create networking opportunities for professionals and businesses"
+      ],
+      "section_highlights": {
+        "title": "Highlights"
+      },
+      "highlights": [
+        {
+          "title": "International Scale",
+          "description": "Over 500 exhibitors from 50+ countries showcasing products and solutions."
+        },
+        {
+          "title": "Professional",
+          "description": "Organized by a team with experience in international event management."
+        },
+        {
+          "title": "Diverse Content",
+          "description": "Combining exhibitions, specialized conferences, workshops, and networking activities."
+        },
+        {
+          "title": "Business Opportunities",
+          "description": "B2B Matching program connecting suppliers and customers directly."
+        }
+      ]
+    },
+
+    "organizers": {
+      "page_badge": "Organizers",
+      "page_title": "Organizers & Partners",
+      "page_description": "VN Security 2026 is organized by a professional team with support from government agencies and reputable international partners.",
+      "section": {
+        "title": "Organizing Entities"
+      },
+      "main": [
+        {
+          "type": "Hosting Entity",
+          "name": "Vietnam Ministry of Public Security",
+          "description": "State management agency for national security, ensuring social order and security."
+        },
+        {
+          "type": "Co-organizer",
+          "name": "Vietnam Security Association",
+          "description": "Organization representing businesses operating in the security field in Vietnam."
+        },
+        {
+          "type": "Organizer",
+          "name": "VN Security Expo JSC",
+          "description": "Company specializing in organizing international exhibition events in Vietnam."
+        }
+      ],
+      "supporters": {
+        "title": "Supporting Entities"
+      },
+      "supporters_list": [
+        "Ministry of Industry and Trade",
+        "Ministry of Science and Technology",
+        "Ho Chi Minh City People's Committee",
+        "Vietnam Chamber of Commerce and Industry (VCCI)",
+        "Vietnam Electronics Industry Association",
+        "Vietnam Automation Association"
+      ],
+      "international": {
+        "title": "International Partners"
+      },
+      "international_partners": [
+        {
+          "name": "ASIS International",
+          "country": "United States"
+        },
+        {
+          "name": "Security Industry Association",
+          "country": "United States"
+        },
+        {
+          "name": "Asia Pacific Security Association",
+          "country": "Singapore"
+        },
+        {
+          "name": "European Security Association",
+          "country": "Belgium"
+        },
+        {
+          "name": "Japan Security Equipment Association",
+          "country": "Japan"
+        },
+        {
+          "name": "Korea Security Association",
+          "country": "South Korea"
+        }
+      ]
+    },
+
+    "venue": {
+      "page_badge": "Venue",
+      "page_title": "Event Venue",
+      "page_description": "Vietnam Exhibition Center (VEC) - The largest exhibition center in Vietnam",
+      "features": [
+        {
+          "label": "Exhibition Area",
+          "value": "20,000+ m²"
+        },
+        {
+          "label": "Number of Booths",
+          "value": "500+ booths"
+        },
+        {
+          "label": "Conference Rooms",
+          "value": "10+ rooms"
+        },
+        {
+          "label": "Hall Capacity",
+          "value": "2,000+ people"
+        }
+      ],
+      "about_vec": {
+        "title": "About VEC",
+        "p1": "Vietnam Exhibition Center (VEC) is the largest international exhibition center in Vietnam, located in Dong Hoi and Xuan Canh communes, Dong Anh district, Hanoi.",
+        "p2": "With a total area of over 100,000m2, VEC is fully equipped with modern amenities, meeting international standards for large-scale exhibitions and conferences."
+      }
+    },
+
+    "visitor_guide": {
+      "page_badge": "Guide",
+      "page_title": "Visitor Guide",
+      "page_description": "Essential information for the best experience at VN Security 2026",
+      "hours": {
+        "title": "Opening Hours",
+        "data": [
+          {
+            "day": "Day 1 - Oct 15",
+            "hours": "08:00 - 18:00",
+            "note": "Opening ceremony 08:00"
+          },
+          {
+            "day": "Day 2 - Oct 16",
+            "hours": "09:00 - 18:00",
+            "note": ""
+          },
+          {
+            "day": "Day 3 - Oct 17",
+            "hours": "09:00 - 18:00",
+            "note": "Gala Dinner 18:00"
+          },
+          {
+            "day": "Day 4 - Oct 18",
+            "hours": "09:00 - 14:00",
+            "note": "Closing ceremony 12:00"
+          }
+        ]
+      },
+      "badge": {
+        "title": "Get Your Visitor Badge",
+        "steps": [
+          {
+            "title": "Register Online",
+            "description": "Fill out the registration form on the website and receive QR code via email"
+          },
+          {
+            "title": "Check-in at Event",
+            "description": "Present QR code or ID card at the registration desk"
+          },
+          {
+            "title": "Receive Badge & Materials",
+            "description": "Get your badge, document bag, and exhibition map"
+          }
+        ]
+      },
+      "rules": {
+        "title": "Visitor Guidelines",
+        "items": [
+          "Carry your registration badge or e-ticket when entering",
+          "Dress appropriately for a business environment",
+          "No food or beverages allowed in the exhibition area",
+          "Ask permission before photographing products at booths",
+          "Follow instructions from security staff",
+          "No smoking in the exhibition area"
+        ]
+      }
+    },
+
+    "agenda": {
+      "page_badge": "Schedule",
+      "page_title": "Event Agenda",
+      "page_description": "Follow the latest conference schedule, workshops, and networking activities.",
+      "download_pdf": "Download Schedule PDF",
+      "loading": "Loading schedule...",
+      "error": "Unable to load schedule. Please try again later.",
+      "updating": "Schedule is being updated.",
+      "dayContentUpdating": "This day's content is being updated."
+    },
+
+    "faq": {
+      "page_badge": "FAQ",
+      "page_title": "Frequently Asked Questions",
+      "page_description": "Answers to common questions about VN Security 2026",
+      "categories": [
+        {
+          "title": "General Information",
+          "questions": [
+            {
+              "q": "What is VN Security 2026?",
+              "a": "VN Security 2026 is the First International Exhibition and Conference on Security Industry in Vietnam, bringing together over 500 exhibitors from 50+ countries, expected to attract 30,000+ industry visitors."
+            },
+            {
+              "q": "When and where is the event?",
+              "a": "VN Security 2026 will take place from October 15-18, 2026 at the Saigon Exhibition and Convention Center (SECC), 799 Nguyen Van Linh, District 7, Ho Chi Minh City."
+            },
+            {
+              "q": "Who should attend VN Security 2026?",
+              "a": "The event is suitable for security equipment manufacturers and distributors; industry professionals and engineers; government representatives; businesses needing security solutions; and students and researchers in related fields."
+            }
+          ]
+        },
+        {
+          "title": "Visitor Registration",
+          "questions": [
+            {
+              "q": "How do I register to visit?",
+              "a": "You can register online on the official website or register directly at the registration desk on the event day. Pre-registration will help you save time on check-in."
+            },
+            {
+              "q": "Is admission free?",
+              "a": "Visitor registration for the exhibition is completely FREE. However, some workshops and in-depth seminars may require a separate registration fee."
+            },
+            {
+              "q": "Can I cancel my registration?",
+              "a": "Yes, you can cancel your registration at any time before the event by contacting the organizers via email or hotline."
+            }
+          ]
+        },
+        {
+          "title": "Exhibition Registration",
+          "questions": [
+            {
+              "q": "How much does booth rental cost?",
+              "a": "Booth rental costs depend on location and size. Please contact the organizers for detailed pricing and early bird offers."
+            },
+            {
+              "q": "What is the exhibition registration deadline?",
+              "a": "Exhibition registration deadline is July 31, 2026. However, registering before March 31, 2026 will receive a 15% discount on booth rental."
+            },
+            {
+              "q": "What does a booth include?",
+              "a": "Standard booth includes: partitions, signage, tables and chairs, electrical outlets, and basic lighting. Additional services such as internet and AV equipment can be ordered separately."
+            }
+          ]
+        },
+        {
+          "title": "Seminars & Workshops",
+          "questions": [
+            {
+              "q": "How do I register to attend seminars?",
+              "a": "After registering as a visitor, you can register for desired seminar sessions through the online registration system. Seats are limited, register early to secure your spot."
+            },
+            {
+              "q": "Can I register as a speaker?",
+              "a": "Yes, we welcome experts to register as speakers. Please submit your profile and topic proposal through the speaker registration form on the website."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Couldn't find your answer?",
+        "description": "Contact us for assistance",
+        "button": "Contact Organizers"
+      }
+    }
+  },
+
+  "sponsor": {
+    "categories": {
+      "page_badge": "Exhibition Categories",
+      "page_title": "Exhibition Categories",
+      "page_description": "VN Security 2026 covers multiple main categories with many exhibitors",
+      "cta_question": "Interested in exhibiting in these categories?",
+      "cta_button": "Register Booth"
+    },
+
+    "exhibitor": {
+      "page_badge": "Exhibitors",
+      "page_title": "Exhibitor List",
+      "page_description": "Exhibitor list synchronized from VNSEC management system.",
+      "search_placeholder": "Search by name, rank, booth, website...",
+      "category_all": "All",
+      "showing_label": "Showing",
+      "showing_suffix": "exhibitors",
+      "legend": {
+        "diamond": "Diamond",
+        "gold": "Gold",
+        "silver": "Silver"
+      },
+      "fallbacks": {
+        "no_rank": "No rank yet",
+        "no_booth": "No booth yet",
+        "no_website": "Website not assigned",
+        "no_description": "No short description",
+        "not_linked": "Exhibition not linked"
+      },
+      "error": "Unable to load exhibitor list",
+      "not_found": "No matching exhibitors found"
+    },
+
+    "register": {
+      "page_badge": "Exhibition Registration",
+      "page_title": "Exhibition & Sponsorship Packages",
+      "page_description": "Choose the package that suits your business needs and budget",
+      "promo_badge": "Register before 31/03/2026 - 15% Off",
+      "packages": {
+        "standard": {
+          "name": "Standard",
+          "size": "9m²",
+          "features": [
+            "Standard booth 9m²",
+            "Company name signage",
+            "1 table + 2 chairs",
+            "2 power outlets 220V",
+            "Basic lighting",
+            "2 exhibitor badges",
+            "Listing in catalog"
+          ]
+        },
+        "silver": {
+          "name": "Silver",
+          "size": "18m²",
+          "features": [
+            "Booth 18m²",
+            "Basic custom design",
+            "Logo signage",
+            "2 tables + 4 chairs",
+            "4 power outlets 220V",
+            "Spotlight lighting",
+            "4 exhibitor badges",
+            "Website advertising",
+            "Logo on backdrop"
+          ]
+        },
+        "gold": {
+          "name": "Gold",
+          "size": "36m²",
+          "popular_label": "Most Popular",
+          "features": [
+            "Booth 36m²",
+            "Premium custom design",
+            "Private meeting room",
+            "AV system",
+            "6 exhibitor badges + 2 VIP",
+            "Catalog advertising",
+            "Logo on main banner",
+            "1 speaking slot (15 minutes)",
+            "Priority placement"
+          ]
+        },
+        "diamond": {
+          "name": "Diamond",
+          "size": "72m²+",
+          "features": [
+            "Booth 72m² or more",
+            "Exclusive design",
+            "Private VIP room",
+            "Premium AV system",
+            "10 exhibitor badges + 5 VIP",
+            "Full page catalog advertising",
+            "Featured logo on all materials",
+            "Keynote slot (30 minutes)",
+            "Prime location",
+            "Media PR"
+          ]
+        }
+      },
+      "package_cta": "Contact for Consultation",
+      "benefits": {
+        "title": "Benefits of Exhibiting",
+        "items": [
+          "Access to 30,000+ industry visitors",
+          "Networking with partners from 50+ countries",
+          "Participate in B2B Matching sessions",
+          "Direct product demonstration opportunities",
+          "Industry brand promotion",
+          "High-quality lead generation"
+        ]
+      },
+      "cta": {
+        "title": "Need more information?",
+        "description": "Contact our sales team for assistance",
+        "button": "Contact Now"
+      }
+    }
+  },
+
+  "contact": {
+    "page_badge": "Contact",
+    "page_title": "Contact Us",
+    "page_description": "VN Security 2026 team is always ready to assist you",
+    "info": {
+      "title": "Contact Information",
+      "address": {
+        "label": "Address",
+        "value": "12th Floor, ABC Tower, 123 Nguyen Van Linh, District 7, Ho Chi Minh City"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+84 28 1234 5678",
+        "hotline": "Hotline: 1900 1234 56"
+      },
+      "email": {
+        "label": "Email",
+        "value": "info@vnsecurity2026.com",
+        "sales": "sales@vnsecurity2026.com"
+      },
+      "hours": {
+        "label": "Business Hours",
+        "weekday": "Monday - Friday: 8:00 - 17:30",
+        "saturday": "Saturday: 8:00 - 12:00"
+      }
+    },
+    "social_label": "Follow Us",
+    "form": {
+      "title": "Send Message",
+      "name_label": "Full Name *",
+      "email_label": "Email *",
+      "phone_label": "Phone Number",
+      "company_label": "Company",
+      "department_label": "Contact Department",
+      "department_placeholder": "Select department",
+      "departments": [
+        "General Information",
+        "Exhibition Registration",
+        "Sponsorship",
+        "Visitor Registration",
+        "Media & Press",
+        "Other"
+      ],
+      "message_label": "Message *",
+      "message_placeholder": "Enter your message...",
+      "submit_button": "Send Message",
+      "success_alert": "Thank you for contacting us! We will respond as soon as possible."
+    }
+  },
+
+  "register": {
+    "page_badge": "Register",
+    "page_title": "Register for VN Security 2026",
+    "page_description": "Choose the participation type that suits you",
+    "type_section_title": "Choose Participation Type",
+    "types": {
+      "visitor": {
+        "title": "Visitors",
+        "description": "Free registration to visit the exhibition and attend seminars",
+        "benefits": [
+          "Free exhibition visit",
+          "Attend public seminars",
+          "Event materials",
+          "Basic B2B Matching"
+        ]
+      },
+      "exhibitor": {
+        "title": "Exhibitors",
+        "description": "Register a booth to showcase your products and solutions",
+        "benefits": [
+          "Exhibition booth",
+          "Brand promotion",
+          "Priority B2B Matching",
+          "Speaking opportunity"
+        ]
+      },
+      "speaker": {
+        "title": "Speakers",
+        "description": "Register as a speaker at seminar sessions",
+        "benefits": [
+          "Dedicated speaking slot",
+          "Personal branding",
+          "VIP access",
+          "Networking events"
+        ]
+      }
+    },
+    "form": {
+      "title": "Registration Information",
+      "firstName_label": "First Name *",
+      "lastName_label": "Last Name *",
+      "email_label": "Email *",
+      "phone_label": "Phone Number *",
+      "company_label": "Company / Organization",
+      "jobTitle_label": "Job Title",
+      "industry_label": "Area of Interest",
+      "industry_placeholder": "Select area",
+      "industries": [
+        "Camera & Surveillance",
+        "Access Control",
+        "Cybersecurity",
+        "Fire Safety",
+        "Biometrics",
+        "Smart Building",
+        "Other"
+      ],
+      "topic_label": "Topic you want to present",
+      "topic_placeholder": "Briefly describe the topic you want to present...",
+      "terms_text": "I agree to the Terms of Service and Privacy Policy of VN Security 2026",
+      "submit_button": "Complete Registration",
+      "success_alert": "Registration successful! We will send a confirmation email shortly."
+    }
+  },
+
+  "media": {
+    "page_badge": "Media",
+    "page_title": "News & Events",
+    "page_description": "Get the latest updates about VN Security 2026",
+    "categories": [
+      "All",
+      "Announcements",
+      "Partnerships",
+      "Speakers",
+      "Exhibition"
+    ],
+    "featured_badge": "Featured",
+    "read_more": "Read More",
+    "news": [
+      {
+        "title": "VN Security 2026 officially launches exhibitor registration campaign",
+        "excerpt": "VN Security 2026 organizers announce booth registration opening with attractive early bird offers. Businesses registering before March 31, 2026 will receive a 15% discount on booth rental."
+      },
+      {
+        "title": "Strategic partnership with Asia Pacific Security Association",
+        "excerpt": "VN Security 2026 signs partnership agreement with APSA, opening greater connection opportunities for Vietnamese businesses with the regional market."
+      },
+      {
+        "title": "First 10 keynote speakers announced",
+        "excerpt": "The event brings together leading experts from the USA, Europe, and Asia in the security industry."
+      },
+      {
+        "title": "Hikvision confirms participation with Diamond booth",
+        "excerpt": "Hikvision Group - the world's largest security camera manufacturer officially confirms participation in VN Security 2026 with a Diamond-scale booth."
+      },
+      {
+        "title": "B2B Matching program officially opens registration",
+        "excerpt": "The B2B Matching platform allows exhibitors and visitors to schedule appointments in advance, optimizing business opportunities at the event."
+      },
+      {
+        "title": "Workshop series: Exploring AI technology in security surveillance",
+        "excerpt": "A series of in-depth workshops on artificial intelligence applications in surveillance camera systems will be organized throughout the 4-day exhibition."
+      }
+    ]
+  }
+}

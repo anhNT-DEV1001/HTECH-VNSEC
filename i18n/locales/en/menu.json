@@ -1,0 +1,171 @@
+{
+  "header": {
+    "logo": "VN Security",
+    "logo_year": "2026",
+    "cta_register": "Register Now",
+    "nav": [
+      {
+        "key": "home",
+        "label": "Home",
+        "href": "/en/"
+      },
+      {
+        "key": "about",
+        "label": "About",
+        "href": "/en/about/general-info"
+      },
+      {
+        "key": "sponsor",
+        "label": "Sponsor & Exhibition",
+        "href": "/en/sponsor/categories"
+      },
+      {
+        "key": "contact",
+        "label": "Contact",
+        "href": "/en/contact"
+      }
+    ],
+    "subnav": {
+      "about": [
+        {
+          "key": "general-info",
+          "label": "General Information",
+          "href": "/en/about/general-info"
+        },
+        {
+          "key": "organizers",
+          "label": "Organizers",
+          "href": "/en/about/organizers"
+        },
+        {
+          "key": "venue",
+          "label": "Event Venue",
+          "href": "/en/about/venue"
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/en/about/agenda"
+        },
+        {
+          "key": "visitor-guide",
+          "label": "Visitor Guide",
+          "href": "/en/about/visitor-guide"
+        },
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "href": "/en/about/faq"
+        }
+      ],
+      "sponsor": [
+        {
+          "key": "categories",
+          "label": "Exhibition Categories",
+          "href": "/en/sponsor/categories"
+        },
+        {
+          "key": "exhibitor",
+          "label": "Exhibitor",
+          "href": "/en/sponsor/exhibitor"
+        },
+        {
+          "key": "register",
+          "label": "Exhibition Registration",
+          "href": "/en/sponsor/register"
+        }
+      ]
+    },
+    "mobile": {
+      "menu_label": "Menu",
+      "toggle_label": "Toggle menu"
+    }
+  },
+
+  "footer": {
+    "brand": {
+      "name": "VN Security",
+      "year": "2026",
+      "description": "The First International Exhibition and Conference on Security Industry in Vietnam"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "youtube": "Youtube",
+      "linkedin": "LinkedIn"
+    },
+    "quick_links": {
+      "title": "Quick Links",
+      "items": [
+        {
+          "key": "home",
+          "label": "Home",
+          "href": "/en/"
+        },
+        {
+          "key": "about",
+          "label": "About",
+          "href": "/en/about/general-info"
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/en/about/agenda"
+        },
+        {
+          "key": "exhibitor",
+          "label": "Exhibitor",
+          "href": "/en/sponsor/exhibitor"
+        },
+        {
+          "key": "contact",
+          "label": "Contact",
+          "href": "/en/contact"
+        }
+      ]
+    },
+    "exhibitor_links": {
+      "title": "Exhibition",
+      "items": [
+        {
+          "key": "categories",
+          "label": "Exhibition Categories",
+          "href": "/en/sponsor/categories"
+        },
+        {
+          "key": "register",
+          "label": "Exhibition Registration",
+          "href": "/en/sponsor/register"
+        },
+        {
+          "key": "visitor-guide",
+          "label": "Visitor Guide",
+          "href": "/en/about/visitor-guide"
+        },
+        {
+          "key": "faq",
+          "label": "FAQ",
+          "href": "/en/about/faq"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Saigon Exhibition and Convention Center (SECC), District 7, Ho Chi Minh City",
+      "phone": "+84 28 1234 5678",
+      "email": "info@vnsecurity2026.com"
+    },
+    "copyright": "© 2026 VN Security. All rights reserved by the Organizers.",
+    "legal": [
+      {
+        "key": "privacy",
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "key": "terms",
+        "label": "Terms of Service",
+        "href": "/terms"
+      }
+    ]
+  }
+}

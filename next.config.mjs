@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/settings.ts');
+
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
@@ -8,20 +13,25 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: "/dang-ky", destination: "/register", permanent: true },
-      { source: "/gioi-thieu", destination: "/about/general-info", permanent: true },
-      { source: "/gioi-thieu/thong-tin-chung", destination: "/about/general-info", permanent: true },
-      { source: "/gioi-thieu/ban-to-chuc", destination: "/about/organizers", permanent: true },
-      { source: "/gioi-thieu/dia-diem", destination: "/about/venue", permanent: true },
-      { source: "/gioi-thieu/agenda", destination: "/about/agenda", permanent: true },
-      { source: "/gioi-thieu/huong-dan", destination: "/about/visitor-guide", permanent: true },
-      { source: "/gioi-thieu/faq", destination: "/about/faq", permanent: true },
-      { source: "/lien-he", destination: "/contact", permanent: true },
-      { source: "/truyen-thong", destination: "/media", permanent: true },
-      { source: "/sponsor/dang-ky", destination: "/sponsor/register", permanent: true },
-      { source: "/sponsor/linh-vuc", destination: "/sponsor/categories", permanent: true },
+      { source: "/dang-ky", destination: "/vi/register", permanent: true },
+      { source: "/gioi-thieu", destination: "/vi/about/general-info", permanent: true },
+      { source: "/gioi-thieu/thong-tin-chung", destination: "/vi/about/general-info", permanent: true },
+      { source: "/gioi-thieu/ban-to-chuc", destination: "/vi/about/organizers", permanent: true },
+      { source: "/gioi-thieu/dia-diem", destination: "/vi/about/venue", permanent: true },
+      { source: "/gioi-thieu/agenda", destination: "/vi/about/agenda", permanent: true },
+      { source: "/gioi-thieu/huong-dan", destination: "/vi/about/visitor-guide", permanent: true },
+      { source: "/gioi-thieu/faq", destination: "/vi/about/faq", permanent: true },
+      { source: "/lien-he", destination: "/vi/contact", permanent: true },
+      { source: "/contact", destination: "/vi/contact", permanent: true },
+      { source: "/truyen-thong", destination: "/vi/media", permanent: true },
+      { source: "/media", destination: "/vi/media", permanent: true },
+      { source: "/sponsor/dang-ky", destination: "/vi/sponsor/register", permanent: true },
+      { source: "/sponsor/register", destination: "/vi/sponsor/register", permanent: true },
+      { source: "/sponsor/linh-vuc", destination: "/vi/sponsor/categories", permanent: true },
+      { source: "/sponsor/categories", destination: "/vi/sponsor/categories", permanent: true },
+      { source: "/sponsor/exhibitor", destination: "/vi/sponsor/exhibitor", permanent: true },
     ]
   },
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig);

@@ -12,8 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "VN-Security'2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
-  description: 'Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN SECURITY 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia.',
+  title: "VN-Security'2026",
   generator: 'v0.app',
   icons: {
     icon: [
@@ -36,12 +35,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="vi" className={`${inter.variable} bg-background`}>
-      <body className="font-sans antialiased">
+    <html suppressHydrationWarning>
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

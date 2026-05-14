@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useTranslations, useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ArrowRight } from "lucide-react"
 
-// Event dates: October 6-8, 2026
 const EVENT_START = new Date("2026-10-06T00:00:00+07:00")
 const EVENT_END = new Date("2026-10-08T23:59:59+07:00")
 
@@ -19,7 +19,6 @@ function useCountUp(target: number, duration = 2000) {
       const animate = (now: number) => {
         const elapsed = now - startTime
         const progress = Math.min(elapsed / duration, 1)
-        // easeOutQuad
         const eased = 1 - (1 - progress) * (1 - progress)
         setCount(Math.floor(eased * target))
         if (progress < 1) {
@@ -73,12 +72,13 @@ function getCountdownStatus(): CountdownStatus {
 }
 
 export function Hero() {
+  const t = useTranslations("home")
+  const locale = useLocale()
   const [status, setStatus] = useState<CountdownStatus>(getCountdownStatus)
 
   useEffect(() => {
     setStatus(getCountdownStatus())
 
-    // Update every minute to keep it fresh
     const interval = setInterval(() => {
       setStatus(getCountdownStatus())
     }, 60_000)
@@ -86,7 +86,8 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [])
 
-  // Render the center countdown content
+  const stats = t.raw("hero.stats") as Record<string, string>
+
   const renderCountdown = () => {
     switch (status.type) {
       case "countdown":
@@ -94,23 +95,21 @@ export function Hero() {
           <>
             <div className="text-7xl font-bold text-primary">{status.days}</div>
             <div className="text-xl font-medium tracking-widest text-foreground">
-              {status.days === 1 ? "DAY" : "DAYS"}
+              {t("hero.countdown.days")}
             </div>
           </>
         )
       case "ongoing":
         return (
           <>
-            <div className="text-lg font-bold leading-tight text-primary">Đang</div>
-            <div className="text-lg font-bold leading-tight text-primary">diễn ra</div>
+            <div className="text-lg font-bold leading-tight text-primary">{t("hero.countdown.onGoing")}</div>
             <div className="mt-1 h-1 w-8 mx-auto animate-pulse rounded-full bg-primary/60" />
           </>
         )
       case "ended":
         return (
           <>
-            <div className="text-lg font-bold leading-tight text-muted-foreground">Đã</div>
-            <div className="text-lg font-bold leading-tight text-muted-foreground">kết thúc</div>
+            <div className="text-lg font-bold leading-tight text-muted-foreground">{t("hero.countdown.ended")}</div>
           </>
         )
     }
@@ -136,16 +135,16 @@ export function Hero() {
             <div className="animate-fade-in mb-6">
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <span className="mr-2 h-2 w-2 animate-pulse rounded-full bg-primary" />
-                Lần đầu tiên tại Việt Nam
+                {t("hero.badge")}
               </span>
             </div>
 
-            <h1 className="animate-fade-in mb-6 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
-              VN-<span className="text-primary">SECURITY' 2026</span>
+            <h1 className="animate-fade-in mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
+              {t("hero.title")}
             </h1>
 
             <p className="animate-fade-in mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "0.2s" }}>
-              Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam.
+              {t("hero.description")}
             </p>
 
             {/* Event Info */}
@@ -153,15 +152,15 @@ export function Hero() {
               <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
                 <Calendar className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="text-xs text-muted-foreground">Thời gian</p>
-                  <p className="font-semibold text-foreground">06-08 Tháng 10, 2026</p>
+                  <p className="text-xs text-muted-foreground">{t("hero.eventTime.label")}</p>
+                  <p className="font-semibold text-foreground">{t("hero.eventTime.value")}</p>
                 </div>
               </div>
               <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="text-xs text-muted-foreground">Địa điểm</p>
-                  <p className="font-semibold text-foreground">HALL 3, Trung tâm triển lãm Việt Nam - VEC</p>
+                  <p className="text-xs text-muted-foreground">{t("hero.eventLocation.label")}</p>
+                  <p className="font-semibold text-foreground">{t("hero.eventLocation.value")}</p>
                 </div>
               </div>
             </div>
@@ -169,13 +168,13 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="animate-fade-in flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="lg" className="group animate-pulse-glow bg-primary hover:bg-primary/90">
-                <Link href="/register">
-                  Đăng ký tham gia
+                <Link href={`/${locale}/register`}>
+                  {t("hero.cta.register")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
-                <Link href="/about/general-info">Tìm hiểu thêm</Link>
+              <Button asChild variant="outline" size="lg" className="border-primary/15 bg-white/50 text-foreground hover:bg-white/80">
+                <Link href={`/${locale}/about/general-info`}>{t("hero.cta.learn")}</Link>
               </Button>
             </div>
           </div>
@@ -183,18 +182,11 @@ export function Hero() {
           {/* Visual Element */}
           <div className="relative hidden items-center justify-center lg:flex">
             <div className="relative">
-              {/* Main Visual */}
               <div className="relative h-[500px] w-[500px]">
-                {/* Outer Ring */}
                 <div className="absolute inset-0 animate-spin rounded-full border border-primary/18" style={{ animationDuration: "30s" }} />
-                
-                {/* Middle Ring */}
                 <div className="absolute inset-8 animate-spin rounded-full border-2 border-primary/24" style={{ animationDuration: "20s", animationDirection: "reverse" }} />
-                
-                {/* Inner Ring */}
                 <div className="absolute inset-16 animate-spin rounded-full border border-dashed border-primary/30" style={{ animationDuration: "15s" }} />
 
-                {/* Center Element - Countdown */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 via-primary/8 to-white/40 shadow-[0_30px_80px_rgba(234,88,12,0.12)] backdrop-blur-sm">
                     <div className="bg-warm-card-strong absolute inset-2 rounded-full border border-white/70" />
@@ -204,7 +196,6 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* Floating Elements */}
                 <div className="absolute left-0 top-1/4 h-3 w-3 rounded-full bg-primary animate-pulse" />
                 <div className="absolute right-8 top-1/3 h-2 w-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: "0.5s" }} />
                 <div className="absolute bottom-1/4 left-8 h-2 w-2 rounded-full bg-primary/60 animate-pulse" style={{ animationDelay: "1s" }} />
@@ -219,10 +210,10 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 right-0 border-t border-primary/10 bg-[rgba(255,250,245,0.8)] backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <StatItem target={200} label="Tổ chức" />
-            <StatItem target={50} label="Quốc gia" />
-            <StatItem target={15000} label="Khách tham quan" />
-            <StatItem target={300} label="Gian hàng" />
+            <StatItem target={200} label={stats.organizers} />
+            <StatItem target={50} label={stats.countries} />
+            <StatItem target={15000} label={stats.visitors} />
+            <StatItem target={300} label={stats.booths} />
           </div>
         </div>
       </div>

@@ -1,22 +1,16 @@
 import Link from "next/link"
 import { Mail, Phone, MapPin, Facebook, Youtube, Linkedin } from "lucide-react"
-
-const quickLinks = [
-  { title: "Trang chủ", href: "/" },
-  { title: "Giới thiệu", href: "/about/general-info" },
-  { title: "Agenda", href: "/about/agenda" },
-  { title: "Exhibitor", href: "/sponsor/exhibitor" },
-  { title: "Liên hệ", href: "/contact" },
-]
-
-const exhibitorLinks = [
-  { title: "Lĩnh vực trưng bày", href: "/sponsor/categories" },
-  { title: "Đăng ký triển lãm", href: "/sponsor/register" },
-  { title: "Hướng dẫn tham quan", href: "/about/visitor-guide" },
-  { title: "Câu hỏi thường gặp", href: "/about/faq" },
-]
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
 
 export function Footer() {
+  const t = useTranslations("footer")
+  const locale = useLocale()
+
+  const quickLinks = t.raw("quick_links.items") as Array<{ key: string; label: string; href: string }>
+  const exhibitorLinks = t.raw("exhibitor_links.items") as Array<{ key: string; label: string; href: string }>
+  const legalLinks = t.raw("legal") as Array<{ key: string; label: string; href: string }>
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       {/* Main Footer */}
@@ -30,13 +24,13 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold uppercase tracking-wider">
-                  VN Security
+                  {t("brand.name")}
                 </span>
-                <span className="text-sm text-secondary-foreground/70">2026</span>
+                <span className="text-sm text-muted-foreground">{t("brand.year")}</span>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-secondary-foreground/78">
-              Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("brand.description")}
             </p>
             <div className="flex gap-3">
               <Link
@@ -44,38 +38,38 @@ export function Footer() {
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-foreground/10 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
+                <span className="sr-only">{t("social.facebook")}</span>
               </Link>
               <Link
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-foreground/10 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Youtube className="h-5 w-5" />
-                <span className="sr-only">Youtube</span>
+                <span className="sr-only">{t("social.youtube")}</span>
               </Link>
               <Link
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-foreground/10 transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+                <span className="sr-only">{t("social.linkedin")}</span>
               </Link>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
-              Liên kết nhanh
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+              {t("quick_links.title")}
             </h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/78 transition-colors hover:text-primary"
+                    href={`/${locale}${link.href}`}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {link.title}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -84,17 +78,17 @@ export function Footer() {
 
           {/* Exhibitor Links */}
           <div>
-            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
-              Triển lãm
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+              {t("exhibitor_links.title")}
             </h3>
             <ul className="space-y-2">
               {exhibitorLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
-                    className="text-sm text-secondary-foreground/78 transition-colors hover:text-primary"
+                    href={`/${locale}${link.href}`}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
-                    {link.title}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -103,23 +97,23 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
-              Liên hệ
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+              {t("contact.title")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm leading-relaxed text-secondary-foreground/78">
-                  Vietnam Exposition Center, Cau Tu Lien Street, Dong Anh District, Hanoi
+                <span className="text-sm text-muted-foreground">
+                  {t("contact.address")}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-secondary-foreground/78">+84 28 1234 5678</span>
+                <span className="text-sm text-muted-foreground">{t("contact.phone")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-secondary-foreground/78">info@vnsecurity2026.com</span>
+                <span className="text-sm text-muted-foreground">{t("contact.email")}</span>
               </li>
             </ul>
           </div>
@@ -129,16 +123,15 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-secondary-foreground/10">
         <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
-          <p className="text-center text-sm text-secondary-foreground/68">
-            © 2026 VN Security. Bản quyền thuộc về Ban tổ chức.
+          <p className="text-center text-sm text-muted-foreground">
+            {t("copyright")}
           </p>
-          <div className="flex gap-6 text-sm text-secondary-foreground/68">
-            <Link href="#" className="hover:text-primary">
-              Chính sách bảo mật
-            </Link>
-            <Link href="#" className="hover:text-primary">
-              Điều khoản sử dụng
-            </Link>
+          <div className="flex gap-6 text-sm text-muted-foreground">
+            {legalLinks.map((link) => (
+              <Link key={link.href} href={`/${locale}${link.href}`} className="hover:text-primary">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

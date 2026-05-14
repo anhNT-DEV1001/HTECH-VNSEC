@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
+import { useTranslations, useLocale } from "next-intl"
 import { ArrowRight, Clock, MapPin, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -21,23 +22,13 @@ const typeStyles: Record<string, string> = {
   break: "bg-gray-500/10 text-gray-500",
 }
 
-const typeLabels: Record<string, string> = {
-  ceremony: "Lễ",
-  keynote: "Keynote",
-  panel: "Panel",
-  workshop: "Workshop",
-  seminar: "Seminar",
-  networking: "Networking",
-  demo: "Demo",
-  registration: "Đăng ký",
-  break: "Nghỉ",
-}
-
 const agendaWebId = process.env.NEXT_PUBLIC_AGENDA_WEB_ID
   ? Number(process.env.NEXT_PUBLIC_AGENDA_WEB_ID)
   : undefined
 
 export function AgendaPreview() {
+  const t = useTranslations("home.agenda")
+  const locale = useLocale()
   const [agendaView, setAgendaView] = useState<AgendaViewModel>(() =>
     buildAgendaViewModel([])
   )
@@ -86,25 +77,25 @@ export function AgendaPreview() {
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
-            Lịch trình
+            {t("section_badge")}
           </span>
           <h2 className="mb-6 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {agendaView.agenda?.name_vn || "Agenda Sự kiện"}
+            {t("title")}
           </h2>
           <p className="text-pretty text-muted-foreground">
-            Theo dõi các hoạt động hội nghị, workshop và networking mới nhất.
+            {t("description")}
           </p>
         </div>
 
         {isLoading && (
           <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card p-6 text-center text-muted-foreground">
-            Đang tải lịch trình...
+            {t("loading")}
           </div>
         )}
 
         {!isLoading && agendaView.days.length === 0 && (
           <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card p-6 text-center text-muted-foreground">
-            Lịch trình đang được cập nhật.
+            {t("updating")}
           </div>
         )}
 
@@ -139,7 +130,7 @@ export function AgendaPreview() {
                       <div className="flex-1">
                         <div className="mb-2 flex flex-wrap items-center gap-2">
                           <span className={cn("rounded-full px-3 py-1 text-xs font-medium", typeStyles[item.type] || typeStyles.seminar)}>
-                            {typeLabels[item.type] || "Seminar"}
+                            {t(`typeLabels.${item.type}` as any) || "Seminar"}
                           </span>
                         </div>
                         <h3 className="mb-2 text-lg font-semibold text-card-foreground">
@@ -167,7 +158,7 @@ export function AgendaPreview() {
                 ))
               ) : (
                 <div className="rounded-xl border border-border bg-card p-6 text-center text-muted-foreground">
-                  Nội dung ngày này đang được cập nhật.
+                  {t("dayContentUpdating")}
                 </div>
               )}
             </div>
@@ -176,8 +167,8 @@ export function AgendaPreview() {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg" className="group bg-primary hover:bg-primary/90">
-            <Link href="/about/agenda">
-              Xem lịch trình đầy đủ
+            <Link href={`/${locale}/about/agenda`}>
+              {t("cta")}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
