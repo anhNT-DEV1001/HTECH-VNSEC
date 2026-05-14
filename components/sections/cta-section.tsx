@@ -51,7 +51,7 @@ export function CTASection() {
             return (
               <div
                 key={index}
-                className="bg-warm-card group relative overflow-hidden rounded-2xl border border-primary/10 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.04)] transition-all duration-300 hover:border-primary/45 hover:bg-white/80"
+                className="bg-warm-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-primary/10 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.04)] transition-all duration-300 hover:border-primary/45 hover:bg-white/80"
               >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon className="h-8 w-8" />
@@ -59,7 +59,7 @@ export function CTASection() {
                 <h3 className="mb-3 text-xl font-semibold text-foreground">
                   {option.title}
                 </h3>
-                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {option.description}
                 </p>
                 <Button asChild className="group/btn w-full bg-primary hover:bg-primary/90">

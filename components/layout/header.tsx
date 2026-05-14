@@ -21,10 +21,10 @@ function HeaderMenuPanel({
           <li key={item.href}>
             <Link
               href={item.href}
-              className="group flex items-center justify-between rounded-xl px-3 py-2.5 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:bg-primary/6 focus:text-primary"
+              className="group/item flex items-center justify-between rounded-xl px-3 py-2.5 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:bg-primary/6 focus:text-primary"
             >
               <span>{item.label}</span>
-              <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+              <ChevronRight className="h-4 w-4 text-muted-foreground transition-all duration-200 group-hover/item:translate-x-0.5 group-hover/item:rotate-45 group-hover/item:text-primary" />
             </Link>
           </li>
         ))}
@@ -41,14 +41,14 @@ function HoverMenu({
   items: Array<{ label: string; href: string }>
 }) {
   return (
-    <div className="group relative">
+    <div className="group/menu relative">
       <button
         type="button"
         className="inline-flex h-10 items-center px-4 text-lg font-medium text-foreground transition-colors hover:text-primary focus:outline-none"
       >
         {label}
       </button>
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 w-max -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+      <div className="pointer-events-none absolute left-1/2 top-full z-50 w-max -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover/menu:pointer-events-auto group-hover/menu:opacity-100 group-focus-within/menu:pointer-events-auto group-focus-within/menu:opacity-100">
         <HeaderMenuPanel items={items} />
       </div>
     </div>

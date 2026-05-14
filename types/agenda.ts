@@ -71,6 +71,7 @@ export interface AgendaItem {
   title: string
   location: string
   type: string
+  period: "morning" | "afternoon"
   speakers?: string
 }
 

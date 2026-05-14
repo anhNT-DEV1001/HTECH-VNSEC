@@ -82,9 +82,19 @@
       "title": "AGENDA",
       "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY’ 2026.",
       "cta": "View Full Schedule",
+      "dayLabelPrefix": "Day",
+      "locationUpdating": "Updating",
       "loading": "Loading schedule...",
       "updating": "Schedule is being updated.",
       "dayContentUpdating": "This day's content is being updated.",
+      "periodLabels": {
+        "morning": "Morning",
+        "afternoon": "Afternoon"
+      },
+      "periodEmpty": {
+        "morning": "No morning sessions yet.",
+        "afternoon": "No afternoon sessions yet."
+      },
       "typeLabels": {
         "ceremony": "Ceremony",
         "keynote": "Keynote",
@@ -333,10 +343,20 @@
       "page_title": "Event Agenda",
       "page_description": "Follow the latest conference schedule, workshops, and networking activities.",
       "download_pdf": "Download Schedule PDF",
+      "dayLabelPrefix": "Day",
+      "locationUpdating": "Updating",
       "loading": "Loading schedule...",
       "error": "Unable to load schedule. Please try again later.",
       "updating": "Schedule is being updated.",
-      "dayContentUpdating": "This day's content is being updated."
+      "dayContentUpdating": "This day's content is being updated.",
+      "periodLabels": {
+        "morning": "Morning",
+        "afternoon": "Afternoon"
+      },
+      "periodEmpty": {
+        "morning": "No morning sessions yet.",
+        "afternoon": "No afternoon sessions yet."
+      }
     },
 
     "faq": {
@@ -470,7 +490,7 @@
           ]
         },
         "silver": {
-          "name": "Silver",
+          "name": "Bare Space",
           "size": "18m²",
           "features": [
             "Booth 18m²",
@@ -485,7 +505,7 @@
           ]
         },
         "gold": {
-          "name": "Gold",
+          "name": "Standard Booth",
           "size": "36m²",
           "popular_label": "Most Popular",
           "features": [

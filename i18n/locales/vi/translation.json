@@ -82,9 +82,19 @@
       "title": "AGENDA",
       "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY’ 2026.",
       "cta": "Xem lịch trình đầy đủ",
+      "dayLabelPrefix": "Ngày",
+      "locationUpdating": "Đang cập nhật",
       "loading": "Đang tải lịch trình...",
       "updating": "Lịch trình đang được cập nhật.",
       "dayContentUpdating": "Nội dung ngày này đang được cập nhật.",
+      "periodLabels": {
+        "morning": "Sáng",
+        "afternoon": "Chiều"
+      },
+      "periodEmpty": {
+        "morning": "Chưa có lịch buổi sáng.",
+        "afternoon": "Chưa có lịch buổi chiều."
+      },
       "typeLabels": {
         "ceremony": "Lễ",
         "keynote": "Keynote",
@@ -333,10 +343,20 @@
       "page_title": "Agenda Sự kiện",
       "page_description": "Theo dõi lịch trình hội nghị, workshop và các hoạt động networking mới nhất.",
       "download_pdf": "Tải lịch trình PDF",
+      "dayLabelPrefix": "Ngày",
+      "locationUpdating": "Đang cập nhật",
       "loading": "Đang tải lịch trình...",
       "error": "Chưa thể tải lịch trình. Vui lòng thử lại sau.",
       "updating": "Lịch trình đang được cập nhật.",
-      "dayContentUpdating": "Nội dung ngày này đang được cập nhật."
+      "dayContentUpdating": "Nội dung ngày này đang được cập nhật.",
+      "periodLabels": {
+        "morning": "Sáng",
+        "afternoon": "Chiều"
+      },
+      "periodEmpty": {
+        "morning": "Chưa có lịch buổi sáng.",
+        "afternoon": "Chưa có lịch buổi chiều."
+      }
     },
 
     "faq": {
@@ -470,7 +490,7 @@
           ]
         },
         "silver": {
-          "name": "Silver",
+          "name": "Đất trống",
           "size": "18m²",
           "features": [
             "Gian hàng 18m²",
@@ -485,7 +505,7 @@
           ]
         },
         "gold": {
-          "name": "Gold",
+          "name": "Gian hàng tiêu chuẩn",
           "size": "36m²",
           "popular_label": "Phổ biến nhất",
           "features": [

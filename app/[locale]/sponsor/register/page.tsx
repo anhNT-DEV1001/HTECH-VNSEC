@@ -1,23 +1,25 @@
 "use client"
 
 import { useTranslations, useLocale } from "next-intl"
-import { Check, Star, Crown, Award, ArrowRight } from "lucide-react"
+import { Check, Star, Award, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
-  standard: Award,
+  // standard: Award,
   silver: Award,
   gold: Star,
-  diamond: Crown,
+  // diamond: Crown,
 }
 
 const colors: Record<string, string> = {
-  standard: "border-border",
+  // standard: "border-border",
   silver: "border-gray-400",
   gold: "border-yellow-500",
-  diamond: "border-primary",
+  // diamond: "border-primary",
 }
+
+const visiblePackageKeys = ["silver", "gold"] as const
 
 export default function SponsorRegistrationPage() {
   const t = useTranslations("sponsor.register")
@@ -57,10 +59,11 @@ export default function SponsorRegistrationPage() {
       {/* Packages */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-4">
-            {Object.entries(packages).map(([key, pkg]) => {
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+            {visiblePackageKeys.map((key) => {
+              const pkg = packages[key]
               const Icon = icons[key] || Award
-              const isHighlight = key === "gold" || key === "diamond"
+              const isHighlight = key === "gold"
               return (
                 <div
                   key={key}
@@ -74,7 +77,7 @@ export default function SponsorRegistrationPage() {
                     </div>
                   )}
                   <div className="mb-4 flex items-center gap-3">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${key === "diamond" ? "bg-primary text-primary-foreground" : key === "gold" ? "bg-yellow-500 text-white" : "bg-muted text-muted-foreground"}`}>
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${key === "gold" ? "bg-yellow-500 text-white" : "bg-muted text-muted-foreground"}`}>
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>

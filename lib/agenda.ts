@@ -1,27 +1,11 @@
 import type { Agenda, AgendaItem, AgendaViewModel } from "@/types/agenda"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 
-const timeFormatter = new Intl.DateTimeFormat("vi-VN", {
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: false,
-  timeZone: "UTC",
-})
-
-const dateFormatter = new Intl.DateTimeFormat("vi-VN", {
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric",
-})
-
-const shortDateFormatter = new Intl.DateTimeFormat("vi-VN", {
-  day: "2-digit",
-  month: "2-digit",
-})
-
-const weekdayFormatter = new Intl.DateTimeFormat("vi-VN", {
-  weekday: "long",
-})
+type BuildAgendaViewModelOptions = {
+  locale?: string
+  dayLabelPrefix?: string
+  locationFallback?: string
+}
 
 const typeKeywords: Array<[string, string]> = [
   ["keynote", "keynote"],
@@ -49,14 +33,52 @@ const normalizeText = (value: string) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
 
-const formatTime = (value: string) => {
+const resolveAgendaLocale = (locale?: string) =>
+  locale === "en" ? "en-US" : "vi-VN"
+
+const createFormatters = (locale?: string) => {
+  const resolvedLocale = resolveAgendaLocale(locale)
+
+  return {
+    time: new Intl.DateTimeFormat(resolvedLocale, {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "UTC",
+    }),
+    date: new Intl.DateTimeFormat(resolvedLocale, {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }),
+    shortDate: new Intl.DateTimeFormat(resolvedLocale, {
+      day: "2-digit",
+      month: "2-digit",
+    }),
+    weekday: new Intl.DateTimeFormat(resolvedLocale, {
+      weekday: "long",
+    }),
+  }
+}
+
+const formatTime = (value: string, formatter: Intl.DateTimeFormat) => {
   const date = new Date(value)
-  return Number.isNaN(date.getTime()) ? "" : timeFormatter.format(date)
+  return Number.isNaN(date.getTime()) ? "" : formatter.format(date)
 }
 
 const formatDate = (value: string, formatter: Intl.DateTimeFormat) => {
   const date = new Date(value)
   return Number.isNaN(date.getTime()) ? "" : formatter.format(date)
+}
+
+const extractHour = (value: string) => {
+  const directMatch = value.match(/(?:T|^)(\d{2}):(\d{2})/)
+  if (directMatch) {
+    return Number(directMatch[1])
+  }
+
+  const date = new Date(value)
+  return Number.isNaN(date.getTime()) ? null : date.getUTCHours()
 }
 
 const resolveAgendaType = (title: string, shortName: string) => {
@@ -65,22 +87,59 @@ const resolveAgendaType = (title: string, shortName: string) => {
   return match?.[1] || "seminar"
 }
 
-export const buildAgendaViewModel = (agendas: Agenda[]): AgendaViewModel => {
+const pickLocalizedText = (
+  locale: string | undefined,
+  vietnamese?: string,
+  english?: string
+) => {
+  if (locale === "en") {
+    return english || vietnamese || ""
+  }
+
+  return vietnamese || english || ""
+}
+
+export const resolveAgendaPeriod = (value: string): "morning" | "afternoon" => {
+  const hour = extractHour(value)
+  return hour !== null && hour < 12 ? "morning" : "afternoon"
+}
+
+export const splitAgendaItemsByPeriod = (items: AgendaItem[]) =>
+  items.reduce(
+    (groups, item) => {
+      groups[item.period].push(item)
+      return groups
+    },
+    {
+      morning: [] as AgendaItem[],
+      afternoon: [] as AgendaItem[],
+    }
+  )
+
+export const buildAgendaViewModel = (
+  agendas: Agenda[],
+  options: BuildAgendaViewModelOptions = {}
+): AgendaViewModel => {
+  const { locale, dayLabelPrefix, locationFallback } = options
+  const formatters = createFormatters(locale)
   const agenda = agendas[0]
   const days = agenda?.agendaDates || []
   const itemsByDay: Record<number, AgendaItem[]> = {}
 
   days.forEach((day, index) => {
     itemsByDay[day.id] = day.timelines.map((timeline) => {
-      const title = timeline.name_vn || timeline.name_en || timeline.short_name_vn
-      const shortName = timeline.short_name_vn || timeline.short_name_en || title
+      const title = pickLocalizedText(locale, timeline.name_vn, timeline.name_en)
+        || pickLocalizedText(locale, timeline.short_name_vn, timeline.short_name_en)
+      const shortName = pickLocalizedText(locale, timeline.short_name_vn, timeline.short_name_en)
+        || title
 
       return {
         id: timeline.id,
-        time: `${formatTime(timeline.STime)} - ${formatTime(timeline.ETime)}`,
+        time: `${formatTime(timeline.STime, formatters.time)} - ${formatTime(timeline.ETime, formatters.time)}`,
         title,
-        location: timeline.locate_vn || timeline.locate_en || "Đang cập nhật",
+        location: pickLocalizedText(locale, timeline.locate_vn, timeline.locate_en) || locationFallback || "Updating",
         type: resolveAgendaType(title, shortName),
+        period: resolveAgendaPeriod(timeline.STime),
       }
     })
 
@@ -93,10 +152,10 @@ export const buildAgendaViewModel = (agendas: Agenda[]): AgendaViewModel => {
     agenda,
     days: days.map((day, index) => ({
       id: day.id,
-      date: formatDate(day.date, dateFormatter),
-      shortDate: formatDate(day.date, shortDateFormatter),
-      day: formatDate(day.date, weekdayFormatter),
-      label: `Ngày ${index + 1}`,
+      date: formatDate(day.date, formatters.date),
+      shortDate: formatDate(day.date, formatters.shortDate),
+      day: formatDate(day.date, formatters.weekday),
+      label: `${dayLabelPrefix || "Day"} ${index + 1}`,
       description: day.description,
     })),
     itemsByDay,
