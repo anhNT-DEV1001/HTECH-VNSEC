@@ -94,7 +94,7 @@ export default function AgendaPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10"
+                  className="border-secondary-foreground/20 text-secondary-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
                   <a href={agendaView.downloadUrl} target="_blank" rel="noreferrer">
                     <Download className="mr-2 h-4 w-4" />
@@ -104,7 +104,7 @@ export default function AgendaPage() {
               ) : (
                 <Button
                   variant="outline"
-                  className="border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10"
+                  className="border-secondary-foreground/20 text-secondary-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground"
                   disabled
                 >
                   <Download className="mr-2 h-4 w-4" />
@@ -145,11 +145,11 @@ export default function AgendaPage() {
                         onClick={() => setActiveDay(day.id)}
                         className={cn(
                           "flex flex-col items-center rounded-xl px-6 py-4 text-center transition-all",
-                          activeDay === day.id
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground hover:bg-muted/80"
-                        )}
-                      >
+                        activeDay === day.id
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                      )}
+                    >
                         <span className="text-xs font-medium uppercase">{day.label}</span>
                         <span className="text-lg font-bold">{day.date}</span>
                         <span className="text-xs capitalize">{day.day}</span>

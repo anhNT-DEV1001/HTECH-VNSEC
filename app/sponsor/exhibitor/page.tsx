@@ -121,7 +121,7 @@ export default function ExhibitorsPage() {
                         "rounded-full px-4 py-2 text-sm font-medium transition-all",
                         activeCategory === category
                           ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground hover:bg-muted/80"
+                          : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                       )}
                     >
                       {category}

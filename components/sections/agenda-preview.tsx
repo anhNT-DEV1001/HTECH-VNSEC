@@ -119,7 +119,7 @@ export function AgendaPreview() {
                     "rounded-full px-6 py-3 text-sm font-medium transition-all",
                     activeDay === day.id
                       ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                   )}
                 >
                   <span className="hidden sm:inline">{day.label} - </span>
