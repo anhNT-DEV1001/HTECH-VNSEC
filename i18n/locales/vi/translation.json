@@ -578,7 +578,9 @@
       "message_label": "Nội dung *",
       "message_placeholder": "Nhập nội dung tin nhắn của bạn...",
       "submit_button": "Gửi tin nhắn",
-      "success_alert": "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất."
+      "submitting_button": "Đang gửi...",
+      "success_alert": "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.",
+      "error_alert": "Gửi liên hệ thất bại. Vui lòng thử lại sau."
     }
   },
 
@@ -627,8 +629,11 @@
       "phone_label": "Số điện thoại *",
       "company_label": "Công ty / Tổ chức",
       "jobTitle_label": "Chức vụ",
+      "position_label": "Chức vụ",
       "industry_label": "Lĩnh vực quan tâm",
       "industry_placeholder": "Chọn lĩnh vực",
+      "interest_label": "Lĩnh vực quan tâm",
+      "interest_placeholder": "Chọn lĩnh vực",
       "industries": [
         "Camera & Giám sát",
         "Kiểm soát truy cập",
@@ -642,7 +647,9 @@
       "topic_placeholder": "Mô tả ngắn gọn về chủ đề bạn muốn trình bày...",
       "terms_text": "Tôi đồng ý với Điều khoản sử dụng và Chính sách bảo mật của VN Security 2026",
       "submit_button": "Hoàn tất đăng ký",
-      "success_alert": "Đăng ký thành công! Chúng tôi sẽ gửi email xác nhận trong thời gian sớm nhất."
+      "submitting_button": "Đang gửi...",
+      "success_alert": "Đăng ký thành công! Chúng tôi sẽ gửi email xác nhận trong thời gian sớm nhất.",
+      "error_alert": "Gửi đăng ký thất bại. Vui lòng thử lại sau."
     }
   },
 

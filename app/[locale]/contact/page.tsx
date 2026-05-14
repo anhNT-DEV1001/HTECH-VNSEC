@@ -1,33 +1,69 @@
 "use client"
 
-import { useTranslations, useLocale } from "next-intl"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
+import { AxiosError } from "axios"
 import { MapPin, Phone, Mail, Clock, Send, Facebook, Linkedin, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { contactService } from "@/services/contact.service"
+
+type SubmitState = {
+  type: "success" | "error"
+  message: string
+} | null
 
 export default function ContactPage() {
   const t = useTranslations("contact")
-  const locale = useLocale()
 
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "",
     company: "",
     department: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitState, setSubmitState] = useState<SubmitState>(null)
 
   const departments = t.raw("form.departments") as string[]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
-    alert(t("form.success_alert"))
+    setIsSubmitting(true)
+    setSubmitState(null)
+
+    try {
+      await contactService.submitContactForm(formData)
+      setSubmitState({
+        type: "success",
+        message: t("form.success_alert"),
+      })
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        company: "",
+        department: "",
+        message: "",
+      })
+    } catch (error) {
+      const errorMessage =
+        error instanceof AxiosError
+          ? ((error.response?.data as { message?: string } | undefined)?.message ?? t("form.error_alert"))
+          : t("form.error_alert")
+
+      setSubmitState({
+        type: "error",
+        message: errorMessage,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -107,13 +143,14 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <Label htmlFor="name">{t("form.name_label")}</Label>
+                        <Label htmlFor="fullName">{t("form.name_label")}</Label>
                         <Input
-                          id="name"
+                          id="fullName"
                           required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          value={formData.fullName}
+                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           className="mt-1.5"
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div>
@@ -125,6 +162,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="mt-1.5"
+                          disabled={isSubmitting}
                         />
                       </div>
                     </div>
@@ -137,6 +175,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="mt-1.5"
+                          disabled={isSubmitting}
                         />
                       </div>
                       <div>
@@ -146,6 +185,7 @@ export default function ContactPage() {
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           className="mt-1.5"
+                          disabled={isSubmitting}
                         />
                       </div>
                     </div>
@@ -154,6 +194,7 @@ export default function ContactPage() {
                       <Select
                         value={formData.department}
                         onValueChange={(value) => setFormData({ ...formData, department: value })}
+                        disabled={isSubmitting}
                       >
                         <SelectTrigger className="mt-1.5">
                           <SelectValue placeholder={t("form.department_placeholder")} />
@@ -177,11 +218,27 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="mt-1.5"
                         placeholder={t("form.message_placeholder")}
+                        disabled={isSubmitting}
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                    {submitState && (
+                      <div
+                        className={
+                          submitState.type === "success"
+                            ? "rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"
+                            : "rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                        }
+                      >
+                        {submitState.message}
+                      </div>
+                    )}
+                    <Button
+                      type="submit"
+                      className="w-full bg-primary hover:bg-primary/90"
+                      disabled={isSubmitting}
+                    >
                       <Send className="mr-2 h-4 w-4" />
-                      {t("form.submit_button")}
+                      {isSubmitting ? t("form.submitting_button") : t("form.submit_button")}
                     </Button>
                   </form>
                 </div>

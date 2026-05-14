@@ -578,7 +578,9 @@
       "message_label": "Message *",
       "message_placeholder": "Enter your message...",
       "submit_button": "Send Message",
-      "success_alert": "Thank you for contacting us! We will respond as soon as possible."
+      "submitting_button": "Sending...",
+      "success_alert": "Thank you for contacting us! We will respond as soon as possible.",
+      "error_alert": "Failed to send your message. Please try again later."
     }
   },
 
@@ -627,8 +629,11 @@
       "phone_label": "Phone Number *",
       "company_label": "Company / Organization",
       "jobTitle_label": "Job Title",
+      "position_label": "Position",
       "industry_label": "Area of Interest",
       "industry_placeholder": "Select area",
+      "interest_label": "Area of Interest",
+      "interest_placeholder": "Select area",
       "industries": [
         "Camera & Surveillance",
         "Access Control",
@@ -642,7 +647,9 @@
       "topic_placeholder": "Briefly describe the topic you want to present...",
       "terms_text": "I agree to the Terms of Service and Privacy Policy of VN Security 2026",
       "submit_button": "Complete Registration",
-      "success_alert": "Registration successful! We will send a confirmation email shortly."
+      "submitting_button": "Sending...",
+      "success_alert": "Registration successful! We will send a confirmation email shortly.",
+      "error_alert": "Failed to send registration. Please try again later."
     }
   },
 
