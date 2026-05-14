@@ -7,22 +7,22 @@
       {
         "key": "home",
         "label": "Trang chủ",
-        "href": "/"
+        "href": "/vi/"
       },
       {
         "key": "about",
         "label": "Giới thiệu",
-        "href": "/about/general-info"
+        "href": "/vi/about/general-info"
       },
       {
         "key": "sponsor",
         "label": "Sponsor & Triển lãm",
-        "href": "/sponsor/categories"
+        "href": "/vi/sponsor/categories"
       },
       {
         "key": "contact",
         "label": "Liên hệ",
-        "href": "/contact"
+        "href": "/vi/contact"
       }
     ],
     "subnav": {
@@ -30,49 +30,49 @@
         {
           "key": "general-info",
           "label": "Thông tin chung",
-          "href": "/about/general-info"
+          "href": "/vi/about/general-info"
         },
         {
           "key": "organizers",
           "label": "Ban tổ chức",
-          "href": "/about/organizers"
+          "href": "/vi/about/organizers"
         },
         {
           "key": "venue",
           "label": "Địa điểm tổ chức",
-          "href": "/about/venue"
+          "href": "/vi/about/venue"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/about/agenda"
+          "href": "/vi/about/agenda"
         },
         {
           "key": "visitor-guide",
           "label": "Hướng dẫn tham quan",
-          "href": "/about/visitor-guide"
+          "href": "/vi/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "Câu hỏi thường gặp",
-          "href": "/about/faq"
+          "href": "/vi/about/faq"
         }
       ],
       "sponsor": [
         {
           "key": "categories",
           "label": "Lĩnh vực trưng bày",
-          "href": "/sponsor/categories"
+          "href": "/vi/sponsor/categories"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/sponsor/exhibitor"
+          "href": "/vi/sponsor/exhibitor"
         },
         {
           "key": "register",
           "label": "Đăng ký triển lãm",
-          "href": "/sponsor/register"
+          "href": "/vi/sponsor/register"
         }
       ]
     },
@@ -99,27 +99,27 @@
         {
           "key": "home",
           "label": "Trang chủ",
-          "href": "/"
+          "href": "/vi/"
         },
         {
           "key": "about",
           "label": "Giới thiệu",
-          "href": "/about/general-info"
+          "href": "/vi/about/general-info"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/about/agenda"
+          "href": "/vi/about/agenda"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/sponsor/exhibitor"
+          "href": "/vi/sponsor/exhibitor"
         },
         {
           "key": "contact",
           "label": "Liên hệ",
-          "href": "/contact"
+          "href": "/vi/contact"
         }
       ]
     },
@@ -129,22 +129,22 @@
         {
           "key": "categories",
           "label": "Lĩnh vực trưng bày",
-          "href": "/sponsor/categories"
+          "href": "/vi/sponsor/categories"
         },
         {
           "key": "register",
           "label": "Đăng ký triển lãm",
-          "href": "/sponsor/register"
+          "href": "/vi/sponsor/register"
         },
         {
           "key": "visitor-guide",
           "label": "Hướng dẫn tham quan",
-          "href": "/about/visitor-guide"
+          "href": "/vi/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "Câu hỏi thường gặp",
-          "href": "/about/faq"
+          "href": "/vi/about/faq"
         }
       ]
     },

@@ -7,22 +7,22 @@
       {
         "key": "home",
         "label": "Home",
-        "href": "/"
+        "href": "/en/"
       },
       {
         "key": "about",
         "label": "About",
-        "href": "/about/general-info"
+        "href": "/en/about/general-info"
       },
       {
         "key": "sponsor",
         "label": "Sponsor & Exhibition",
-        "href": "/sponsor/categories"
+        "href": "/en/sponsor/categories"
       },
       {
         "key": "contact",
         "label": "Contact",
-        "href": "/contact"
+        "href": "/en/contact"
       }
     ],
     "subnav": {
@@ -30,49 +30,49 @@
         {
           "key": "general-info",
           "label": "General Information",
-          "href": "/about/general-info"
+          "href": "/en/about/general-info"
         },
         {
           "key": "organizers",
           "label": "Organizers",
-          "href": "/about/organizers"
+          "href": "/en/about/organizers"
         },
         {
           "key": "venue",
           "label": "Event Venue",
-          "href": "/about/venue"
+          "href": "/en/about/venue"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/about/agenda"
+          "href": "/en/about/agenda"
         },
         {
           "key": "visitor-guide",
           "label": "Visitor Guide",
-          "href": "/about/visitor-guide"
+          "href": "/en/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "FAQ",
-          "href": "/about/faq"
+          "href": "/en/about/faq"
         }
       ],
       "sponsor": [
         {
           "key": "categories",
           "label": "Exhibition Categories",
-          "href": "/sponsor/categories"
+          "href": "/en/sponsor/categories"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/sponsor/exhibitor"
+          "href": "/en/sponsor/exhibitor"
         },
         {
           "key": "register",
           "label": "Exhibition Registration",
-          "href": "/sponsor/register"
+          "href": "/en/sponsor/register"
         }
       ]
     },
@@ -99,27 +99,27 @@
         {
           "key": "home",
           "label": "Home",
-          "href": "/"
+          "href": "/en/"
         },
         {
           "key": "about",
           "label": "About",
-          "href": "/about/general-info"
+          "href": "/en/about/general-info"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/about/agenda"
+          "href": "/en/about/agenda"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/sponsor/exhibitor"
+          "href": "/en/sponsor/exhibitor"
         },
         {
           "key": "contact",
           "label": "Contact",
-          "href": "/contact"
+          "href": "/en/contact"
         }
       ]
     },
@@ -129,22 +129,22 @@
         {
           "key": "categories",
           "label": "Exhibition Categories",
-          "href": "/sponsor/categories"
+          "href": "/en/sponsor/categories"
         },
         {
           "key": "register",
           "label": "Exhibition Registration",
-          "href": "/sponsor/register"
+          "href": "/en/sponsor/register"
         },
         {
           "key": "visitor-guide",
           "label": "Visitor Guide",
-          "href": "/about/visitor-guide"
+          "href": "/en/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "FAQ",
-          "href": "/about/faq"
+          "href": "/en/about/faq"
         }
       ]
     },

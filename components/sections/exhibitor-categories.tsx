@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { exhibitionService, ExhibitionCategory } from "@/services/exhibition.service";
 import { LucideIconByName } from "@/components/ui/lucide-icon";
@@ -124,12 +126,12 @@ export function ExhibitorCategories() {
           )}
           {selectedCategory && (
             <div className="p-6 pt-4">
-              <h2 className="text-2xl font-bold text-foreground mb-3">
+              <DialogTitle className="text-2xl font-bold text-foreground mb-3">
                 {locale === "vi" ? selectedCategory.name_vn : selectedCategory.name_en}
-              </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              </DialogTitle>
+              <DialogDescription className="text-muted-foreground mb-6 leading-relaxed">
                 {locale === "vi" ? selectedCategory.sumary_vn : selectedCategory.sumary_en}
-              </p>
+              </DialogDescription>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild className="flex-1 bg-primary hover:bg-primary/90">
                   <Link href={`/${locale}/sponsor/register`}>

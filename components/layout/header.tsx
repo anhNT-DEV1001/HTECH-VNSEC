@@ -12,7 +12,7 @@ import { useLocale } from "next-intl"
 function HeaderMenuPanel({
   items,
 }: {
-  items: Array<{ title: string; href: string }>
+  items: Array<{ label: string; href: string }>
 }) {
   return (
     <div className="w-[320px] rounded-2xl border border-primary/10 bg-[rgba(255,250,245,0.96)] p-3 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur-xl">
@@ -23,7 +23,7 @@ function HeaderMenuPanel({
               href={item.href}
               className="group flex items-center justify-between rounded-xl px-3 py-2.5 text-lg font-medium text-foreground transition-colors hover:bg-primary/6 hover:text-primary focus:bg-primary/6 focus:text-primary"
             >
-              <span>{item.title}</span>
+              <span>{item.label}</span>
               <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
             </Link>
           </li>
@@ -38,7 +38,7 @@ function HoverMenu({
   items,
 }: {
   label: string
-  items: Array<{ title: string; href: string }>
+  items: Array<{ label: string; href: string }>
 }) {
   return (
     <div className="group relative">
