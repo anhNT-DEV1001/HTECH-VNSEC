@@ -18,6 +18,8 @@ export interface ExhibitionCategory {
 interface PublicExhibitionRef {
   id: number;
   name_vn: string;
+  name_en?: string | null;
+  img?: string | null;
 }
 
 export interface PublicExhibitor {

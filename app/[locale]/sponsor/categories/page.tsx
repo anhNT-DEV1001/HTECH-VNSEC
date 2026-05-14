@@ -1,12 +1,14 @@
 "use client"
 
 import { useTranslations, useLocale } from "next-intl"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { ExhibitionCategory, exhibitionService } from "@/services/exhibition.service"
 import { LucideIconByName } from "@/components/ui/lucide-icon"
+import { resolveApiAssetUrl } from "@/lib/api-asset"
 
 export function ExhibitionCategories() {
   const t = useTranslations("sponsor.categories")
@@ -49,14 +51,27 @@ export function ExhibitionCategories() {
                   <div key={i} className="h-52 animate-pulse rounded-2xl bg-muted" />
                 ))
               : categories.map((category) => (
-                  <div
+                  <Link
                     key={category.id}
+                    href={`/${locale}/sponsor/categories/${category.id}`}
                     className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
                   >
-                    <div className="mb-4 flex items-start justify-between">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                        <LucideIconByName name={category.logo} className="h-7 w-7" />
-                      </div>
+                    <div className="mb-4 flex items-start justify-between gap-4">
+                      {resolveApiAssetUrl(category.img) ? (
+                        <div className="flex h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-primary/10 bg-white">
+                          <Image
+                            src={resolveApiAssetUrl(category.img)!}
+                            alt={(locale === "vi" ? category.name_vn : category.name_en) || category.name_vn}
+                            width={64}
+                            height={64}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
+                          <LucideIconByName name={category.logo} className="h-7 w-7" />
+                        </div>
+                      )}
                       <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
                         +
                       </span>
@@ -67,7 +82,7 @@ export function ExhibitionCategories() {
                     <p className="text-sm text-muted-foreground">
                       {locale === "vi" ? category.sumary_vn : category.sumary_en}
                     </p>
-                  </div>
+                  </Link>
                 ))}
           </div>
 

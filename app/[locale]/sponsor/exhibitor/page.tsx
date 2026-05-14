@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
 import { Search, MapPin, Building2, Layers3, ShieldAlert } from "lucide-react"
 import { Input } from "@/components/ui/input"
@@ -124,7 +125,7 @@ export default function ExhibitorsPage() {
                 {categories.map((category) => (
                   <button
                     key={category}
-                    onClick={() => setActiveCategory(category)}
+                    onClick={() => setActiveCategory(category as any)}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm font-medium transition-all",
                       activeCategory === category
@@ -226,12 +227,26 @@ export default function ExhibitorsPage() {
                           <div className="flex flex-wrap gap-2">
                             {exhibitor.exhibitions?.length ? (
                               exhibitor.exhibitions.map((exhibition) => (
-                                <span
+                                <Link
                                   key={exhibition.id}
-                                  className="inline-flex rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground"
+                                  href={`/${locale}/sponsor/categories/${exhibition.id}`}
+                                  className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-2.5 py-1 pr-3 text-xs text-muted-foreground transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                                 >
-                                  {locale === "vi" ? exhibition.name_vn : exhibition.name_en}
-                                </span>
+                                  {resolveApiAssetUrl(exhibition.img) ? (
+                                    <span className="flex h-6 w-6 shrink-0 overflow-hidden rounded-full border border-white/70 bg-white">
+                                      <Image
+                                        src={resolveApiAssetUrl(exhibition.img)!}
+                                        alt={(locale === "vi" ? exhibition.name_vn : exhibition.name_en) || exhibition.name_vn}
+                                        width={24}
+                                        height={24}
+                                        className="h-full w-full object-cover"
+                                      />
+                                    </span>
+                                  ) : null}
+                                  <span>
+                                    {(locale === "vi" ? exhibition.name_vn : exhibition.name_en) || exhibition.name_vn}
+                                  </span>
+                                </Link>
                               ))
                             ) : (
                               <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
