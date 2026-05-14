@@ -36,8 +36,12 @@
 
     "about": {
       "section_badge": "Giới thiệu",
-      "title": "Triển lãm An ninh Quốc tế tại Việt Nam",
-      "description": "VN Security 2026 là sự kiện quy tụ các nhà sản xuất, phân phối và chuyên gia hàng đầu trong lĩnh vực công nghiệp an ninh, tạo nên diễn đàn giao thương quốc tế lớn nhất khu vực.",
+      "title": "TRIỂN LÃM VÀ HỘI NGHỊ QUỐC TẾ LẦN THỨ NHẤT VỀ CÔNG NGHỆ AN NINH TẠI VIỆT NAM",
+      "title_lines": [
+        "TRIỂN LÃM VÀ HỘI NGHỊ QUỐC TẾ LẦN THỨ NHẤT",
+        "VỀ CÔNG NGHỆ AN NINH TẠI VIỆT NAM"
+      ],
+      "description": "VN-SECURITY’ 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, được định hướng trở thành diễn đàn thường niên dành cho lĩnh vực công nghệ và công nghiệp an ninh. Sự kiện tập trung vào hệ sinh thái công nghệ an ninh toàn diện, thúc đẩy kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại tại Việt Nam.",
       "features": [
         {
           "title": "Công nghệ An ninh",
@@ -60,9 +64,9 @@
     },
 
     "categories": {
-      "section_badge": "Lĩnh vực trưng bày",
-      "title": "Khám phá Các Danh mục Triển lãm",
-      "description": "VN Security 2026 quy tụ đa dạng các lĩnh vực trong ngành công nghiệp an ninh, từ thiết bị phần cứng đến giải pháp phần mềm.",
+      "section_badge": "Công nghệ",
+      "title": "KHÁM PHÁ HỆ SINH THÁI CÔNG NGHỆ AN NINH",
+      "description": "VN-SECURITY’ 2026 giới thiệu 08 khu vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
       "cta": "Xem tất cả",
       "card": {
         "hover": "Khám phá"
@@ -74,9 +78,9 @@
     },
 
     "agenda": {
-      "section_badge": "Lịch trình",
-      "title": "Agenda Sự kiện",
-      "description": "Theo dõi các hoạt động hội nghị, workshop và networking mới nhất.",
+      "section_badge": "Chương trình nghị sự & hoạt động chuyên đề",
+      "title": "AGENDA",
+      "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY’ 2026.",
       "cta": "Xem lịch trình đầy đủ",
       "loading": "Đang tải lịch trình...",
       "updating": "Lịch trình đang được cập nhật.",
@@ -95,14 +99,15 @@
     },
 
     "sponsors": {
-      "section_badge": "Nhà tài trợ",
-      "title": "Đơn vị đồng hành"
+      "section_badge": "Đơn vị đồng hành",
+      "title": "KẾT NỐI ĐỐI TÁC & DOANH NGHIỆP",
+      "description": "Quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại."
     },
 
     "cta": {
       "section_badge": "Tham gia ngay",
-      "title": "Hãy Trở Thành Một Phần của VN Security 2026",
-      "description": "Dù bạn là khách tham quan, nhà triển lãm hay diễn giả, VN Security 2026 đều có chương trình phù hợp dành cho bạn.",
+      "title": "HÃY TRỞ THÀNH MỘT PHẦN CỦA VN-SECURITY' 2026",
+      "description": "Dù bạn là khách tham quan, nhà triển lãm hay diễn giả, VN-SECURITY' 2026 đều có chương trình phù hợp dành cho bạn.",
       "options": [
         {
           "title": "Nhà triển lãm",

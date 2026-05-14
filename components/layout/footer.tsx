@@ -26,10 +26,10 @@ export function Footer() {
                 <span className="text-lg font-bold uppercase tracking-wider">
                   {t("brand.name")}
                 </span>
-                <span className="text-sm text-muted-foreground">{t("brand.year")}</span>
+                <span className="text-sm text-secondary-foreground/70">{t("brand.year")}</span>
               </div>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-secondary-foreground/78">
               {t("brand.description")}
             </p>
             <div className="flex gap-3">
@@ -59,7 +59,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
               {t("quick_links.title")}
             </h3>
             <ul className="space-y-2">
@@ -67,7 +67,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={`/${locale}${link.href}`}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-secondary-foreground/78 transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -78,7 +78,7 @@ export function Footer() {
 
           {/* Exhibitor Links */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
               {t("exhibitor_links.title")}
             </h3>
             <ul className="space-y-2">
@@ -86,7 +86,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={`/${locale}${link.href}`}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-secondary-foreground/78 transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -97,23 +97,23 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+            <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
               {t("contact.title")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm leading-relaxed text-secondary-foreground/78">
                   {t("contact.address")}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">{t("contact.phone")}</span>
+                <span className="text-sm text-secondary-foreground/78">{t("contact.phone")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground">{t("contact.email")}</span>
+                <span className="text-sm text-secondary-foreground/78">{t("contact.email")}</span>
               </li>
             </ul>
           </div>
@@ -123,10 +123,10 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-secondary-foreground/10">
         <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-secondary-foreground/68">
             {t("copyright")}
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex gap-6 text-sm text-secondary-foreground/68">
             {legalLinks.map((link) => (
               <Link key={link.href} href={`/${locale}${link.href}`} className="hover:text-primary">
                 {link.label}
