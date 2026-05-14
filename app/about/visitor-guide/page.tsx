@@ -189,7 +189,7 @@ export default function VisitorGuidePage() {
               </div> */}
 
               {/* Emergency Contact */}
-              <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+              {/* <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
                 <div className="flex items-center gap-3">
                   <Phone className="h-6 w-6 text-primary" />
                   <div>
@@ -197,7 +197,7 @@ export default function VisitorGuidePage() {
                     <div className="text-lg font-bold text-primary">1900 1234 56</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
