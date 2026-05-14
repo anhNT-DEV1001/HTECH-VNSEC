@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +13,8 @@ import { exhibitionService, ExhibitionCategory } from "@/services/exhibition.ser
 import { LucideIconByName } from "@/components/ui/lucide-icon";
 
 export function ExhibitorCategories() {
+  const t = useTranslations("home.categories");
+  const locale = useLocale();
   const [categories, setCategories] = useState<ExhibitionCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<ExhibitionCategory | null>(null);
@@ -30,22 +33,19 @@ export function ExhibitorCategories() {
           <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
-                Lĩnh vực trưng bày
+                {t("section_badge")}
               </span>
               <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Khám phá Các Danh mục Triển lãm
+                {t("title")}
               </h2>
               <p className="text-pretty text-muted-foreground">
-                VN Security 2026 quy tụ đa dạng các lĩnh vực trong ngành công nghiệp an ninh, từ thiết bị phần cứng đến giải pháp phần mềm.
+                {t("description")}
               </p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-44 animate-pulse rounded-xl bg-muted"
-              />
+              <div key={i} className="h-44 animate-pulse rounded-xl bg-muted" />
             ))}
           </div>
         </div>
@@ -61,18 +61,18 @@ export function ExhibitorCategories() {
           <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
-                Lĩnh vực trưng bày
+                {t("section_badge")}
               </span>
               <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Khám phá Các Danh mục Triển lãm
+                {t("title")}
               </h2>
               <p className="text-pretty text-muted-foreground">
-                VN Security 2026 quy tụ đa dạng các lĩnh vực trong ngành công nghiệp an ninh, từ thiết bị phần cứng đến giải pháp phần mềm.
+                {t("description")}
               </p>
             </div>
             <Button asChild variant="outline" className="shrink-0 border-primary/15 bg-white/50 text-foreground hover:bg-white/80">
-              <Link href="/sponsor/categories">
-                Xem tất cả
+              <Link href={`/${locale}/sponsor/categories`}>
+                {t("cta")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -95,13 +95,13 @@ export function ExhibitorCategories() {
                   </span>
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">
-                  {category.name_vn}
+                  {locale === "vi" ? category.name_vn : category.name_en}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {category.sumary_vn}
+                  {locale === "vi" ? category.sumary_vn : category.sumary_en}
                 </p>
                 <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Khám phá
+                  {t("card.hover")}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </div>
               </div>
@@ -125,20 +125,20 @@ export function ExhibitorCategories() {
           {selectedCategory && (
             <div className="p-6 pt-4">
               <h2 className="text-2xl font-bold text-foreground mb-3">
-                {selectedCategory.name_vn}
+                {locale === "vi" ? selectedCategory.name_vn : selectedCategory.name_en}
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                {selectedCategory.sumary_vn}
+                {locale === "vi" ? selectedCategory.sumary_vn : selectedCategory.sumary_en}
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild className="flex-1 bg-primary hover:bg-primary/90">
-                  <Link href="/sponsor/register">
-                    Đăng ký gian hàng
+                  <Link href={`/${locale}/sponsor/register`}>
+                    {t("modal.register")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button variant="outline" className="flex-1 border-primary/15">
-                  Liên hệ tư vấn
+                  {t("modal.consult")}
                 </Button>
               </div>
             </div>

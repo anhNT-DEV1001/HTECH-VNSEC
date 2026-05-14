@@ -1,0 +1,689 @@
+{
+  "metadata": {
+    "title": "VN-Security'2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
+    "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN SECURITY 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia."
+  },
+
+  "home": {
+    "hero": {
+      "badge": "Lần đầu tiên tại Việt Nam",
+      "title": "VN-SECURITY'2026",
+      "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam.",
+      "eventTime": {
+        "label": "Thời gian",
+        "value": "06-08 Tháng 10, 2026"
+      },
+      "eventLocation": {
+        "label": "Địa điểm",
+        "value": "HALL 3, Trung tâm triển lãm Việt Nam - VEC"
+      },
+      "cta": {
+        "register": "Đăng ký tham gia",
+        "learn": "Tìm hiểu thêm"
+      },
+      "countdown": {
+        "onGoing": "Đang diễn ra",
+        "ended": "Đã kết thúc",
+        "days": "NGÀY"
+      },
+      "stats": {
+        "organizers": "Tổ chức",
+        "countries": "Quốc gia",
+        "visitors": "Khách tham quan",
+        "booths": "Gian hàng"
+      }
+    },
+
+    "about": {
+      "section_badge": "Giới thiệu",
+      "title": "Triển lãm An ninh Quốc tế tại Việt Nam",
+      "description": "VN Security 2026 là sự kiện quy tụ các nhà sản xuất, phân phối và chuyên gia hàng đầu trong lĩnh vực công nghiệp an ninh, tạo nên diễn đàn giao thương quốc tế lớn nhất khu vực.",
+      "features": [
+        {
+          "title": "Công nghệ An ninh",
+          "description": "Trưng bày các giải pháp an ninh tiên tiến nhất từ các nhà sản xuất hàng đầu thế giới."
+        },
+        {
+          "title": "Quy mô Quốc tế",
+          "description": "Kết nối doanh nghiệp Việt Nam với đối tác từ hơn 50 quốc gia trên toàn cầu."
+        },
+        {
+          "title": "Hội nghị Chuyên đề",
+          "description": "Các buổi hội thảo chuyên sâu với sự tham gia của chuyên gia hàng đầu."
+        },
+        {
+          "title": "Cơ hội Kinh doanh",
+          "description": "Tạo cầu nối giữa nhà cung cấp và khách hàng trong ngành an ninh."
+        }
+      ],
+      "cta": "Xem chi tiết về sự kiện"
+    },
+
+    "categories": {
+      "section_badge": "Lĩnh vực trưng bày",
+      "title": "Khám phá Các Danh mục Triển lãm",
+      "description": "VN Security 2026 quy tụ đa dạng các lĩnh vực trong ngành công nghiệp an ninh, từ thiết bị phần cứng đến giải pháp phần mềm.",
+      "cta": "Xem tất cả",
+      "card": {
+        "hover": "Khám phá"
+      },
+      "modal": {
+        "register": "Đăng ký gian hàng",
+        "consult": "Liên hệ tư vấn"
+      }
+    },
+
+    "agenda": {
+      "section_badge": "Lịch trình",
+      "title": "Agenda Sự kiện",
+      "description": "Theo dõi các hoạt động hội nghị, workshop và networking mới nhất.",
+      "cta": "Xem lịch trình đầy đủ",
+      "loading": "Đang tải lịch trình...",
+      "updating": "Lịch trình đang được cập nhật.",
+      "dayContentUpdating": "Nội dung ngày này đang được cập nhật.",
+      "typeLabels": {
+        "ceremony": "Lễ",
+        "keynote": "Keynote",
+        "panel": "Panel",
+        "workshop": "Workshop",
+        "seminar": "Seminar",
+        "networking": "Networking",
+        "demo": "Demo",
+        "registration": "Đăng ký",
+        "break": "Nghỉ"
+      }
+    },
+
+    "sponsors": {
+      "section_badge": "Nhà tài trợ",
+      "title": "Đơn vị đồng hành"
+    },
+
+    "cta": {
+      "section_badge": "Tham gia ngay",
+      "title": "Hãy Trở Thành Một Phần của VN Security 2026",
+      "description": "Dù bạn là khách tham quan, nhà triển lãm hay diễn giả, VN Security 2026 đều có chương trình phù hợp dành cho bạn.",
+      "options": [
+        {
+          "title": "Nhà triển lãm",
+          "description": "Giới thiệu sản phẩm và giải pháp của bạn đến hàng nghìn khách hàng tiềm năng.",
+          "cta": "Đăng ký gian hàng"
+        },
+        {
+          "title": "Diễn giả",
+          "description": "Chia sẻ kiến thức và kinh nghiệm tại các phiên hội thảo chuyên đề.",
+          "cta": "Đăng ký diễn giả"
+        },
+        {
+          "title": "Khách tham quan",
+          "description": "Đăng ký miễn phí để tham quan triển lãm và tham dự các hội thảo chuyên đề.",
+          "cta": "Đăng ký tham quan"
+        }
+      ],
+      "contact_question": "Có câu hỏi?",
+      "contact_link": "Liên hệ với chúng tôi"
+    }
+  },
+
+  "about": {
+    "general_info": {
+      "page_badge": "Giới thiệu",
+      "page_title": "Thông tin chung về VN-Security'2026",
+      "page_description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - Sự kiện quy mô lớn nhất khu vực Đông Nam Á trong lĩnh vực an ninh.",
+      "section_about": {
+        "title": "Về VN-Security'2026",
+        "p1": "VN-Security'2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, đánh dấu bước phát triển quan trọng của ngành an ninh Việt Nam trên bản đồ quốc tế.",
+        "p2": "Sự kiện quy tụ các nhà sản xuất, phân phối, và chuyên gia hàng đầu trong lĩnh vực công nghệ an ninh từ khắp nơi trên thế giới, tạo nên diễn đàn giao thương và chia sẻ kiến thức chuyên ngành lớn nhất khu vực.",
+        "p3": "Với diện tích trưng bày hơn 20,000m2 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), VN-Security'2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan."
+      },
+      "section_objectives": {
+        "title": "Mục tiêu Sự kiện"
+      },
+      "objectives": [
+        "Tạo diễn đàn giao thương quốc tế cho ngành công nghiệp an ninh tại Việt Nam",
+        "Giới thiệu công nghệ an ninh tiên tiến nhất từ các nhà sản xuất hàng đầu thế giới",
+        "Thúc đẩy hợp tác giữa doanh nghiệp trong nước và quốc tế",
+        "Cập nhật xu hướng và giải pháp mới trong lĩnh vực an ninh",
+        "Tạo cơ hội networking cho các chuyên gia và doanh nghiệp"
+      ],
+      "section_highlights": {
+        "title": "Điểm nổi bật"
+      },
+      "highlights": [
+        {
+          "title": "Quy mô Quốc tế",
+          "description": "Hơn 500 nhà triển lãm từ 50+ quốc gia tham gia trưng bày sản phẩm và giải pháp."
+        },
+        {
+          "title": "Chuyên nghiệp",
+          "description": "Được tổ chức bởi đội ngũ có kinh nghiệm trong lĩnh vực tổ chức sự kiện quốc tế."
+        },
+        {
+          "title": "Đa dạng Nội dung",
+          "description": "Kết hợp triển lãm, hội nghị chuyên đề, workshop và hoạt động networking."
+        },
+        {
+          "title": "Cơ hội Kinh doanh",
+          "description": "Chương trình B2B Matching kết nối trực tiếp nhà cung cấp và khách hàng."
+        }
+      ]
+    },
+
+    "organizers": {
+      "page_badge": "Ban tổ chức",
+      "page_title": "Ban Tổ chức & Đối tác",
+      "page_description": "VN Security 2026 được tổ chức bởi đội ngũ chuyên nghiệp với sự hỗ trợ của các cơ quan nhà nước và đối tác quốc tế uy tín.",
+      "section": {
+        "title": "Đơn vị tổ chức"
+      },
+      "main": [
+        {
+          "type": "Đơn vị chủ trì",
+          "name": "Bộ Công an Việt Nam",
+          "description": "Cơ quan quản lý nhà nước về an ninh quốc gia, đảm bảo an ninh trật tự xã hội."
+        },
+        {
+          "type": "Đơn vị đồng tổ chức",
+          "name": "Hiệp hội An ninh Việt Nam",
+          "description": "Tổ chức đại diện cho các doanh nghiệp hoạt động trong lĩnh vực an ninh tại Việt Nam."
+        },
+        {
+          "type": "Đơn vị tổ chức",
+          "name": "VN Security Expo JSC",
+          "description": "Công ty chuyên tổ chức các sự kiện triển lãm quốc tế tại Việt Nam."
+        }
+      ],
+      "supporters": {
+        "title": "Đơn vị bảo trợ"
+      },
+      "supporters_list": [
+        "Bộ Công Thương",
+        "Bộ Khoa học và Công nghệ",
+        "UBND TP. Hồ Chí Minh",
+        "Phòng Thương mại và Công nghiệp Việt Nam (VCCI)",
+        "Hiệp hội Doanh nghiệp Điện tử Việt Nam",
+        "Hội Tự động hóa Việt Nam"
+      ],
+      "international": {
+        "title": "Đối tác quốc tế"
+      },
+      "international_partners": [
+        {
+          "name": "ASIS International",
+          "country": "Hoa Kỳ"
+        },
+        {
+          "name": "Security Industry Association",
+          "country": "Hoa Kỳ"
+        },
+        {
+          "name": "Asia Pacific Security Association",
+          "country": "Singapore"
+        },
+        {
+          "name": "European Security Association",
+          "country": "Bỉ"
+        },
+        {
+          "name": "Japan Security Equipment Association",
+          "country": "Nhật Bản"
+        },
+        {
+          "name": "Korea Security Association",
+          "country": "Hàn Quốc"
+        }
+      ]
+    },
+
+    "venue": {
+      "page_badge": "Địa điểm",
+      "page_title": "Địa điểm Tổ chức",
+      "page_description": "Trung tâm Hội chợ Triển lãm Quốc gia (VEC) - Trung tâm triển lãm lớn nhất Việt Nam",
+      "features": [
+        {
+          "label": "Diện tích triển lãm",
+          "value": "20,000+ m²"
+        },
+        {
+          "label": "Số gian hàng",
+          "value": "500+ gian"
+        },
+        {
+          "label": "Phòng hội thảo",
+          "value": "10+ phòng"
+        },
+        {
+          "label": "Sức chứa hội trường",
+          "value": "2,000+ người"
+        }
+      ],
+      "about_vec": {
+        "title": "Về VEC",
+        "p1": "Trung tâm Hội chợ Triển lãm Quốc gia (VEC) là trung tâm triển lãm quốc tế lớn nhất Việt Nam, tọa lạc tại xã Đông Hội và Xuân Canh, huyện Đông Anh, TP. Hà Nội.",
+        "p2": "Với diện tích tổng thể hơn 100,000m2, VEC được trang bị đầy đủ các tiện nghi hiện đại, đáp ứng tiêu chuẩn quốc tế cho các sự kiện triển lãm và hội nghị quy mô lớn."
+      }
+    },
+
+    "visitor_guide": {
+      "page_badge": "Hướng dẫn",
+      "page_title": "Hướng dẫn Tham quan",
+      "page_description": "Thông tin cần thiết để có trải nghiệm tốt nhất tại VN Security 2026",
+      "hours": {
+        "title": "Giờ mở cửa",
+        "data": [
+          {
+            "day": "Ngày 1 - 15/10",
+            "hours": "08:00 - 18:00",
+            "note": "Lễ khai mạc 08:00"
+          },
+          {
+            "day": "Ngày 2 - 16/10",
+            "hours": "09:00 - 18:00",
+            "note": ""
+          },
+          {
+            "day": "Ngày 3 - 17/10",
+            "hours": "09:00 - 18:00",
+            "note": "Gala Dinner 18:00"
+          },
+          {
+            "day": "Ngày 4 - 18/10",
+            "hours": "09:00 - 14:00",
+            "note": "Lễ bế mạc 12:00"
+          }
+        ]
+      },
+      "badge": {
+        "title": "Nhận thẻ tham quan",
+        "steps": [
+          {
+            "title": "Đăng ký trực tuyến",
+            "description": "Điền form đăng ký tại website và nhận mã QR qua email"
+          },
+          {
+            "title": "Check-in tại sự kiện",
+            "description": "Xuất trình mã QR hoặc CMND/CCCD tại quầy đăng ký"
+          },
+          {
+            "title": "Nhận thẻ & tài liệu",
+            "description": "Nhận thẻ đeo, túi tài liệu và sơ đồ triển lãm"
+          }
+        ]
+      },
+      "rules": {
+        "title": "Nội quy tham quan",
+        "items": [
+          "Mang theo thẻ đăng ký hoặc vé điện tử khi vào cửa",
+          "Trang phục lịch sự, phù hợp môi trường kinh doanh",
+          "Không mang đồ ăn thức uống vào khu vực triển lãm",
+          "Xin phép trước khi chụp ảnh sản phẩm tại các gian hàng",
+          "Tuân thủ hướng dẫn của nhân viên an ninh",
+          "Không hút thuốc trong khu vực triển lãm"
+        ]
+      }
+    },
+
+    "agenda": {
+      "page_badge": "Lịch trình",
+      "page_title": "Agenda Sự kiện",
+      "page_description": "Theo dõi lịch trình hội nghị, workshop và các hoạt động networking mới nhất.",
+      "download_pdf": "Tải lịch trình PDF",
+      "loading": "Đang tải lịch trình...",
+      "error": "Chưa thể tải lịch trình. Vui lòng thử lại sau.",
+      "updating": "Lịch trình đang được cập nhật.",
+      "dayContentUpdating": "Nội dung ngày này đang được cập nhật."
+    },
+
+    "faq": {
+      "page_badge": "FAQ",
+      "page_title": "Câu hỏi Thường gặp",
+      "page_description": "Giải đáp các thắc mắc thường gặp về VN Security 2026",
+      "categories": [
+        {
+          "title": "Thông tin chung",
+          "questions": [
+            {
+              "q": "VN Security 2026 là gì?",
+              "a": "VN Security 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, quy tụ hơn 500 nhà triển lãm từ 50+ quốc gia, dự kiến thu hút 30,000+ khách tham quan chuyên ngành."
+            },
+            {
+              "q": "Sự kiện diễn ra khi nào và ở đâu?",
+              "a": "VN Security 2026 sẽ diễn ra từ ngày 15-18 tháng 10 năm 2026 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh."
+            },
+            {
+              "q": "Ai nên tham gia VN Security 2026?",
+              "a": "Sự kiện phù hợp với các nhà sản xuất, phân phối thiết bị an ninh; chuyên gia, kỹ sư trong ngành; đại diện cơ quan nhà nước; các doanh nghiệp cần giải pháp an ninh; và sinh viên, nghiên cứu sinh ngành liên quan."
+            }
+          ]
+        },
+        {
+          "title": "Đăng ký tham quan",
+          "questions": [
+            {
+              "q": "Làm thế nào để đăng ký tham quan?",
+              "a": "Bạn có thể đăng ký trực tuyến tại website chính thức hoặc đăng ký trực tiếp tại quầy đăng ký vào ngày diễn ra sự kiện. Đăng ký trước sẽ giúp bạn tiết kiệm thời gian check-in."
+            },
+            {
+              "q": "Tham quan có mất phí không?",
+              "a": "Đăng ký tham quan triển lãm hoàn toàn MIỄN PHÍ. Tuy nhiên, một số workshop và hội thảo chuyên sâu có thể yêu cầu phí tham dự riêng."
+            },
+            {
+              "q": "Tôi có thể hủy đăng ký không?",
+              "a": "Có, bạn có thể hủy đăng ký bất kỳ lúc nào trước ngày diễn ra sự kiện bằng cách liên hệ với Ban tổ chức qua email hoặc hotline."
+            }
+          ]
+        },
+        {
+          "title": "Đăng ký triển lãm",
+          "questions": [
+            {
+              "q": "Chi phí thuê gian hàng là bao nhiêu?",
+              "a": "Chi phí thuê gian hàng tùy thuộc vào vị trí và diện tích. Vui lòng liên hệ Ban tổ chức để nhận bảng giá chi tiết và các gói ưu đãi đăng ký sớm."
+            },
+            {
+              "q": "Deadline đăng ký triển lãm là khi nào?",
+              "a": "Deadline đăng ký triển lãm là ngày 31/07/2026. Tuy nhiên, đăng ký trước ngày 31/03/2026 sẽ được hưởng ưu đãi 15% giá thuê gian hàng."
+            },
+            {
+              "q": "Gian hàng bao gồm những gì?",
+              "a": "Gian hàng tiêu chuẩn bao gồm: vách ngăn, biển hiệu, bàn ghế, ổ điện, đèn chiếu sáng. Các dịch vụ bổ sung như internet, thiết bị AV có thể đặt thêm."
+            }
+          ]
+        },
+        {
+          "title": "Hội thảo & Workshop",
+          "questions": [
+            {
+              "q": "Làm thế nào để đăng ký tham dự hội thảo?",
+              "a": "Sau khi đăng ký tham quan, bạn có thể đăng ký các phiên hội thảo mong muốn thông qua hệ thống đăng ký trực tuyến. Số lượng có hạn, đăng ký sớm để đảm bảo chỗ ngồi."
+            },
+            {
+              "q": "Tôi có thể đăng ký làm diễn giả không?",
+              "a": "Có, chúng tôi hoan nghênh các chuyên gia đăng ký làm diễn giả. Vui lòng gửi hồ sơ và đề xuất chủ đề qua form đăng ký diễn giả trên website."
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "title": "Không tìm thấy câu trả lời?",
+        "description": "Liên hệ với chúng tôi để được hỗ trợ",
+        "button": "Liên hệ Ban tổ chức"
+      }
+    }
+  },
+
+  "sponsor": {
+    "categories": {
+      "page_badge": "Lĩnh vực trưng bày",
+      "page_title": "Các Lĩnh vực Triển lãm",
+      "page_description": "VN Security 2026 bao gồm nhiều lĩnh vực chính với nhiều nhà triển lãm",
+      "cta_question": "Quan tâm tham gia triển lãm trong các lĩnh vực trên?",
+      "cta_button": "Đăng ký gian hàng"
+    },
+
+    "exhibitor": {
+      "page_badge": "Nhà triển lãm",
+      "page_title": "Danh sách Exhibitor",
+      "page_description": "Danh sách exhibitor được đồng bộ từ hệ thống quản trị VNSEC.",
+      "search_placeholder": "Tìm theo tên, rank, booth, web-site...",
+      "category_all": "Tất cả",
+      "showing_label": "Hiển thị",
+      "showing_suffix": "nhà triển lãm",
+      "legend": {
+        "diamond": "Kim cương",
+        "gold": "Vàng",
+        "silver": "Bạc"
+      },
+      "fallbacks": {
+        "no_rank": "Chưa có rank",
+        "no_booth": "Chưa có booth",
+        "no_website": "Chưa gán web-site",
+        "no_description": "Chưa có mô tả ngắn",
+        "not_linked": "Chưa liên kết exhibition"
+      },
+      "error": "Không thể tải danh sách exhibitor",
+      "not_found": "Không tìm thấy nhà triển lãm phù hợp"
+    },
+
+    "register": {
+      "page_badge": "Đăng ký triển lãm",
+      "page_title": "Gói Triển lãm & Tài trợ",
+      "page_description": "Lựa chọn gói phù hợp với nhu cầu và ngân sách của doanh nghiệp bạn",
+      "promo_badge": "Đăng ký trước 31/03/2026 - Giảm 15%",
+      "packages": {
+        "standard": {
+          "name": "Standard",
+          "size": "9m²",
+          "features": [
+            "Gian hàng tiêu chuẩn 9m²",
+            "Biển hiệu tên công ty",
+            "1 bàn + 2 ghế",
+            "2 ổ điện 220V",
+            "Đèn chiếu sáng cơ bản",
+            "2 thẻ exhibitor",
+            "Listing trong catalog"
+          ]
+        },
+        "silver": {
+          "name": "Silver",
+          "size": "18m²",
+          "features": [
+            "Gian hàng 18m²",
+            "Thiết kế tùy chỉnh cơ bản",
+            "Biển hiệu có logo",
+            "2 bàn + 4 ghế",
+            "4 ổ điện 220V",
+            "Đèn spotlight",
+            "4 thẻ exhibitor",
+            "Quảng cáo trên website",
+            "Logo trên backdrop"
+          ]
+        },
+        "gold": {
+          "name": "Gold",
+          "size": "36m²",
+          "popular_label": "Phổ biến nhất",
+          "features": [
+            "Gian hàng 36m²",
+            "Thiết kế tùy chỉnh cao cấp",
+            "Phòng họp riêng",
+            "Hệ thống AV",
+            "6 thẻ exhibitor + 2 VIP",
+            "Quảng cáo trên catalog",
+            "Logo trên banner chính",
+            "1 speaking slot (15 phút)",
+            "Ưu tiên vị trí"
+          ]
+        },
+        "diamond": {
+          "name": "Diamond",
+          "size": "72m²+",
+          "features": [
+            "Gian hàng 72m² trở lên",
+            "Thiết kế độc quyền",
+            "Phòng VIP riêng",
+            "Hệ thống AV cao cấp",
+            "10 thẻ exhibitor + 5 VIP",
+            "Quảng cáo full page catalog",
+            "Logo nổi bật mọi ấn phẩm",
+            "Keynote slot (30 phút)",
+            "Vị trí prime",
+            "PR truyền thông"
+          ]
+        }
+      },
+      "package_cta": "Liên hệ tư vấn",
+      "benefits": {
+        "title": "Lợi ích khi tham gia Triển lãm",
+        "items": [
+          "Tiếp cận 30,000+ khách tham quan chuyên ngành",
+          "Networking với đối tác từ 50+ quốc gia",
+          "Tham gia các phiên B2B Matching",
+          "Cơ hội trình diễn sản phẩm trực tiếp",
+          "Quảng bá thương hiệu trong ngành",
+          "Thu thập lead chất lượng cao"
+        ]
+      },
+      "cta": {
+        "title": "Cần tư vấn thêm?",
+        "description": "Liên hệ với đội ngũ bán hàng của chúng tôi để được hỗ trợ",
+        "button": "Liên hệ ngay"
+      }
+    }
+  },
+
+  "contact": {
+    "page_badge": "Liên hệ",
+    "page_title": "Liên hệ với Chúng tôi",
+    "page_description": "Đội ngũ VN Security 2026 luôn sẵn sàng hỗ trợ bạn",
+    "info": {
+      "title": "Thông tin liên hệ",
+      "address": {
+        "label": "Địa chỉ",
+        "value": "Tầng 12, Tòa nhà ABC, 123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh"
+      },
+      "phone": {
+        "label": "Điện thoại",
+        "value": "+84 28 1234 5678",
+        "hotline": "Hotline: 1900 1234 56"
+      },
+      "email": {
+        "label": "Email",
+        "value": "info@vnsecurity2026.com",
+        "sales": "sales@vnsecurity2026.com"
+      },
+      "hours": {
+        "label": "Giờ làm việc",
+        "weekday": "Thứ 2 - Thứ 6: 8:00 - 17:30",
+        "saturday": "Thứ 7: 8:00 - 12:00"
+      }
+    },
+    "social_label": "Theo dõi chúng tôi",
+    "form": {
+      "title": "Gửi tin nhắn",
+      "name_label": "Họ và tên *",
+      "email_label": "Email *",
+      "phone_label": "Số điện thoại",
+      "company_label": "Công ty",
+      "department_label": "Bộ phận liên hệ",
+      "department_placeholder": "Chọn bộ phận",
+      "departments": [
+        "Thông tin chung",
+        "Đăng ký triển lãm",
+        "Tài trợ",
+        "Đăng ký tham quan",
+        "Truyền thông & Báo chí",
+        "Khác"
+      ],
+      "message_label": "Nội dung *",
+      "message_placeholder": "Nhập nội dung tin nhắn của bạn...",
+      "submit_button": "Gửi tin nhắn",
+      "success_alert": "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong thời gian sớm nhất."
+    }
+  },
+
+  "register": {
+    "page_badge": "Đăng ký",
+    "page_title": "Đăng ký Tham gia VN Security 2026",
+    "page_description": "Chọn hình thức tham gia phù hợp với bạn",
+    "type_section_title": "Chọn hình thức tham gia",
+    "types": {
+      "visitor": {
+        "title": "Khách tham quan",
+        "description": "Đăng ký miễn phí tham quan triển lãm và tham dự các hội thảo",
+        "benefits": [
+          "Tham quan triển lãm miễn phí",
+          "Tham dự hội thảo công khai",
+          "Tài liệu sự kiện",
+          "B2B Matching cơ bản"
+        ]
+      },
+      "exhibitor": {
+        "title": "Nhà triển lãm",
+        "description": "Đăng ký gian hàng để trưng bày sản phẩm và giải pháp",
+        "benefits": [
+          "Gian hàng triển lãm",
+          "Quảng bá thương hiệu",
+          "B2B Matching ưu tiên",
+          "Cơ hội speaking"
+        ]
+      },
+      "speaker": {
+        "title": "Diễn giả",
+        "description": "Đăng ký trở thành diễn giả tại các phiên hội thảo",
+        "benefits": [
+          "Slot speaking riêng",
+          "Quảng bá cá nhân",
+          "VIP access",
+          "Networking events"
+        ]
+      }
+    },
+    "form": {
+      "title": "Thông tin đăng ký",
+      "firstName_label": "Họ *",
+      "lastName_label": "Tên *",
+      "email_label": "Email *",
+      "phone_label": "Số điện thoại *",
+      "company_label": "Công ty / Tổ chức",
+      "jobTitle_label": "Chức vụ",
+      "industry_label": "Lĩnh vực quan tâm",
+      "industry_placeholder": "Chọn lĩnh vực",
+      "industries": [
+        "Camera & Giám sát",
+        "Kiểm soát truy cập",
+        "An ninh mạng",
+        "Phòng cháy chữa cháy",
+        "Sinh trắc học",
+        "Smart Building",
+        "Khác"
+      ],
+      "topic_label": "Chủ đề bạn muốn trình bày",
+      "topic_placeholder": "Mô tả ngắn gọn về chủ đề bạn muốn trình bày...",
+      "terms_text": "Tôi đồng ý với Điều khoản sử dụng và Chính sách bảo mật của VN Security 2026",
+      "submit_button": "Hoàn tất đăng ký",
+      "success_alert": "Đăng ký thành công! Chúng tôi sẽ gửi email xác nhận trong thời gian sớm nhất."
+    }
+  },
+
+  "media": {
+    "page_badge": "Truyền thông",
+    "page_title": "Tin tức & Sự kiện",
+    "page_description": "Cập nhật thông tin mới nhất về VN Security 2026",
+    "categories": [
+      "Tất cả",
+      "Thông báo",
+      "Hợp tác",
+      "Diễn giả",
+      "Triển lãm"
+    ],
+    "featured_badge": "Nổi bật",
+    "read_more": "Đọc tiếp",
+    "news": [
+      {
+        "title": "VN Security 2026 chính thức khởi động chiến dịch đăng ký nhà triển lãm",
+        "excerpt": "Ban tổ chức VN Security 2026 thông báo mở đăng ký gian hàng triển lãm với nhiều ưu đãi hấp dẫn cho đăng ký sớm. Các doanh nghiệp đăng ký trước ngày 31/03/2026 sẽ được giảm 15% chi phí thuê gian hàng."
+      },
+      {
+        "title": "Hợp tác chiến lược với Hiệp hội An ninh Châu Á - Thái Bình Dương",
+        "excerpt": "VN Security 2026 ký kết thỏa thuận hợp tác với APSA, mở ra cơ hội kết nối rộng lớn hơn cho các doanh nghiệp Việt Nam với thị trường khu vực."
+      },
+      {
+        "title": "Công bố danh sách 10 diễn giả keynote đầu tiên",
+        "excerpt": "Sự kiện quy tụ các chuyên gia hàng đầu từ Mỹ, Châu Âu và Châu Á trong lĩnh vực công nghiệp an ninh."
+      },
+      {
+        "title": "Hikvision xác nhận tham gia với gian hàng Diamond",
+        "excerpt": "Tập đoàn Hikvision - nhà sản xuất camera an ninh lớn nhất thế giới chính thức xác nhận tham gia VN Security 2026 với quy mô gian hàng Diamond."
+      },
+      {
+        "title": "Chương trình B2B Matching chính thức mở đăng ký",
+        "excerpt": "Nền tảng B2B Matching cho phép các nhà triển lãm và khách tham quan đặt lịch hẹn trước, tối ưu hóa cơ hội kinh doanh tại sự kiện."
+      },
+      {
+        "title": "Workshop series: Tìm hiểu công nghệ AI trong giám sát an ninh",
+        "excerpt": "Chuỗi workshop chuyên sâu về ứng dụng trí tuệ nhân tạo trong hệ thống camera giám sát sẽ được tổ chức xuyên suốt 4 ngày triển lãm."
+      }
+    ]
+  }
+}

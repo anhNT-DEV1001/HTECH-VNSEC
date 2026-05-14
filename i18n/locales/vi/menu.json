@@ -1,0 +1,171 @@
+{
+  "header": {
+    "logo": "VN Security",
+    "logo_year": "2026",
+    "cta_register": "Đăng ký ngay",
+    "nav": [
+      {
+        "key": "home",
+        "label": "Trang chủ",
+        "href": "/"
+      },
+      {
+        "key": "about",
+        "label": "Giới thiệu",
+        "href": "/about/general-info"
+      },
+      {
+        "key": "sponsor",
+        "label": "Sponsor & Triển lãm",
+        "href": "/sponsor/categories"
+      },
+      {
+        "key": "contact",
+        "label": "Liên hệ",
+        "href": "/contact"
+      }
+    ],
+    "subnav": {
+      "about": [
+        {
+          "key": "general-info",
+          "label": "Thông tin chung",
+          "href": "/about/general-info"
+        },
+        {
+          "key": "organizers",
+          "label": "Ban tổ chức",
+          "href": "/about/organizers"
+        },
+        {
+          "key": "venue",
+          "label": "Địa điểm tổ chức",
+          "href": "/about/venue"
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/about/agenda"
+        },
+        {
+          "key": "visitor-guide",
+          "label": "Hướng dẫn tham quan",
+          "href": "/about/visitor-guide"
+        },
+        {
+          "key": "faq",
+          "label": "Câu hỏi thường gặp",
+          "href": "/about/faq"
+        }
+      ],
+      "sponsor": [
+        {
+          "key": "categories",
+          "label": "Lĩnh vực trưng bày",
+          "href": "/sponsor/categories"
+        },
+        {
+          "key": "exhibitor",
+          "label": "Exhibitor",
+          "href": "/sponsor/exhibitor"
+        },
+        {
+          "key": "register",
+          "label": "Đăng ký triển lãm",
+          "href": "/sponsor/register"
+        }
+      ]
+    },
+    "mobile": {
+      "menu_label": "Menu",
+      "toggle_label": "Mở/đóng menu"
+    }
+  },
+
+  "footer": {
+    "brand": {
+      "name": "VN Security",
+      "year": "2026",
+      "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "youtube": "Youtube",
+      "linkedin": "LinkedIn"
+    },
+    "quick_links": {
+      "title": "Liên kết nhanh",
+      "items": [
+        {
+          "key": "home",
+          "label": "Trang chủ",
+          "href": "/"
+        },
+        {
+          "key": "about",
+          "label": "Giới thiệu",
+          "href": "/about/general-info"
+        },
+        {
+          "key": "agenda",
+          "label": "Agenda",
+          "href": "/about/agenda"
+        },
+        {
+          "key": "exhibitor",
+          "label": "Exhibitor",
+          "href": "/sponsor/exhibitor"
+        },
+        {
+          "key": "contact",
+          "label": "Liên hệ",
+          "href": "/contact"
+        }
+      ]
+    },
+    "exhibitor_links": {
+      "title": "Triển lãm",
+      "items": [
+        {
+          "key": "categories",
+          "label": "Lĩnh vực trưng bày",
+          "href": "/sponsor/categories"
+        },
+        {
+          "key": "register",
+          "label": "Đăng ký triển lãm",
+          "href": "/sponsor/register"
+        },
+        {
+          "key": "visitor-guide",
+          "label": "Hướng dẫn tham quan",
+          "href": "/about/visitor-guide"
+        },
+        {
+          "key": "faq",
+          "label": "Câu hỏi thường gặp",
+          "href": "/about/faq"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "address": "Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), Quận 7, TP. Hồ Chí Minh",
+      "phone": "+84 28 1234 5678",
+      "email": "info@vnsecurity2026.com"
+    },
+    "copyright": "© 2026 VN Security. Bản quyền thuộc về Ban tổ chức.",
+    "legal": [
+      {
+        "key": "privacy",
+        "label": "Chính sách bảo mật",
+        "href": "/privacy"
+      },
+      {
+        "key": "terms",
+        "label": "Điều khoản sử dụng",
+        "href": "/terms"
+      }
+    ]
+  }
+}

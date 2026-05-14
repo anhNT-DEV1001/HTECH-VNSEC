@@ -1,19 +1,27 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Building2 } from "lucide-react"
+import { useTranslations, useLocale } from "next-intl"
+import { useEffect, useState } from "react"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 import { cn } from "@/lib/utils"
 import { Exhibitor } from "@/types/sponsor"
 import { groupSponsorsByTier } from "@/lib/sponsor.helpers"
 import { sponsorService } from "@/services/sponsor.service"
 
-async function getExhibitors(): Promise<Exhibitor[]> {
-  return sponsorService.getPublicExhibitors()
-}
+export function Sponsors() {
+  const t = useTranslations("home")
+  const locale = useLocale()
+  const [tiers, setTiers] = useState<ReturnType<typeof groupSponsorsByTier>>([])
 
-export async function Sponsors() {
-  const exhibitors = await getExhibitors()
-  const tiers = groupSponsorsByTier(exhibitors)
+  useEffect(() => {
+    sponsorService.getPublicExhibitors()
+      .then(groupSponsorsByTier)
+      .then(setTiers)
+      .catch(console.error)
+  }, [])
 
   if (tiers.length === 0) return null
 
@@ -22,10 +30,10 @@ export async function Sponsors() {
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
-            Nhà tài trợ
+            {t("sponsors.section_badge")}
           </span>
           <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Đơn vị đồng hành
+            {t("sponsors.title")}
           </h2>
         </div>
 

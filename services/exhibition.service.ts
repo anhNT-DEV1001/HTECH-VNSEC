@@ -3,7 +3,9 @@ import axiosInstance from "@/lib/axios";
 export interface ExhibitionCategory {
   id: number;
   name_vn: string;
+  name_en?: string | null;
   sumary_vn: string;
+  sumary_en?: string | null;
   logo?: string | null;
   display_order: number;
 }
