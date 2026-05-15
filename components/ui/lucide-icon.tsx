@@ -1,13 +1,12 @@
 "use client"
 
-import * as LucideIcons from "lucide-react"
+import { useEffect, useState } from "react"
+import { Shield } from "lucide-react"
+import dynamicIconImports from "lucide-react/dynamicIconImports"
 import type { LucideIcon, LucideProps } from "lucide-react"
 
-const FALLBACK_ICON = LucideIcons.Shield
-
-const isLucideIcon = (value: unknown): value is LucideIcon =>
-  typeof value === "function" ||
-  (typeof value === "object" && value !== null && "$$typeof" in value)
+const FALLBACK_ICON = Shield
+type DynamicIconName = keyof typeof dynamicIconImports
 
 const toPascalCase = (value: string) =>
   value
@@ -18,21 +17,37 @@ const toPascalCase = (value: string) =>
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
     .join("")
 
-export const resolveLucideIcon = (name?: string | null): LucideIcon => {
+const toKebabCase = (value: string) =>
+  value
+    .trim()
+    .replace(/icon$/i, "")
+    .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
+    .replace(/[\s_]+/g, "-")
+    .replace(/--+/g, "-")
+    .toLowerCase()
+
+const resolveCandidateIconNames = (name?: string | null) => {
   const normalizedName = name?.trim()
-  if (!normalizedName) return FALLBACK_ICON
+  if (!normalizedName) return []
 
-  const candidateNames = [
-    normalizedName,
-    toPascalCase(normalizedName),
-  ]
+  return Array.from(
+    new Set([
+      normalizedName,
+      toPascalCase(normalizedName),
+      toKebabCase(normalizedName),
+      toKebabCase(toPascalCase(normalizedName)),
+    ])
+  )
+}
 
-  for (const candidateName of candidateNames) {
-    const iconCandidate = LucideIcons[candidateName as keyof typeof LucideIcons]
-    if (isLucideIcon(iconCandidate)) return iconCandidate
-  }
+export const resolveLucideIconName = (name?: string | null): DynamicIconName | null => {
+  const candidateNames = resolveCandidateIconNames(name)
 
-  return FALLBACK_ICON
+  return (
+    candidateNames.find(
+      (candidateName) => candidateName in dynamicIconImports
+    ) as DynamicIconName | undefined
+  ) ?? null
 }
 
 type LucideIconByNameProps = Omit<LucideProps, "ref" | "name"> & {
@@ -40,6 +55,33 @@ type LucideIconByNameProps = Omit<LucideProps, "ref" | "name"> & {
 }
 
 export function LucideIconByName({ name, ...props }: LucideIconByNameProps) {
-  const Icon = resolveLucideIcon(name)
+  const [Icon, setIcon] = useState<LucideIcon>(FALLBACK_ICON)
+
+  useEffect(() => {
+    let isMounted = true
+
+    const iconName = resolveLucideIconName(name)
+    if (!iconName) {
+      setIcon(() => FALLBACK_ICON)
+      return () => {
+        isMounted = false
+      }
+    }
+
+    dynamicIconImports[iconName]()
+      .then((module: { default: LucideIcon }) => {
+        if (!isMounted) return
+        setIcon(() => module.default)
+      })
+      .catch(() => {
+        if (!isMounted) return
+        setIcon(() => FALLBACK_ICON)
+      })
+
+    return () => {
+      isMounted = false
+    }
+  }, [name])
+
   return <Icon {...props} />
 }
