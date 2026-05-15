@@ -46,9 +46,6 @@ export default function SponsorRegistrationPage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="mb-8 text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
             <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
               {t("promo_badge")}
             </div>
@@ -59,6 +56,9 @@ export default function SponsorRegistrationPage() {
       {/* Packages */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
+          <h2 className="text-pretty mb-16 text-2xl text-center leading-relaxed text-muted-foreground">
+              {t("page_description")}
+          </h2>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             {visiblePackageKeys.map((key) => {
               const pkg = packages[key]

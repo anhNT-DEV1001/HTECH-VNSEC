@@ -28,9 +28,6 @@ export default function OrganizersPage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
           </div>
         </div>
       </section>
@@ -39,6 +36,9 @@ export default function OrganizersPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
+            <h2 className="text-pretty mb-8 text-xl text-center leading-relaxed text-muted-foreground">
+                {t("page_description")}
+            </h2>
             <div className="mb-12 flex items-center gap-3">
               <Building2 className="h-6 w-6 text-primary" />
               <h2 className="text-2xl font-bold text-foreground">{t("section.title")}</h2>

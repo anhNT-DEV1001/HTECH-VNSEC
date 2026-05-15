@@ -256,20 +256,28 @@
       "page_description": "Vietnam Exhibition Center (VEC) - The largest exhibition center in Vietnam",
       "features": [
         {
-          "label": "Exhibition Area",
-          "value": "20,000+ m²"
+          "label": "Organizations",
+          "value": "200",
+          "unit": "+",
+          "num": 200
         },
         {
-          "label": "Number of Booths",
-          "value": "500+ booths"
+          "label": "Countries",
+          "value": "50",
+          "unit": "+",
+          "num": 50
         },
         {
-          "label": "Conference Rooms",
-          "value": "10+ rooms"
+          "label": "Visitors",
+          "value": "15.000",
+          "unit": "+",
+          "num": 15000
         },
         {
-          "label": "Hall Capacity",
-          "value": "2,000+ people"
+          "label": "Booths",
+          "value": "300",
+          "unit": "+",
+          "num": 300
         }
       ],
       "about_vec": {
@@ -449,7 +457,7 @@
     "exhibitor": {
       "page_badge": "Exhibitors",
       "page_title": "Exhibitor List",
-      "page_description": "Exhibitor list synchronized from VNSEC management system.",
+      "page_description": "Explore the list of exhibitors participating in VN-SECURITY 2026",
       "search_placeholder": "Search by name, rank, booth, website...",
       "category_all": "All",
       "showing_label": "Showing",

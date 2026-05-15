@@ -105,9 +105,7 @@ export default function AgendaPage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="mb-8 text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
+
             {agendaView.downloadUrl ? (
               <Button
                 asChild
@@ -137,6 +135,9 @@ export default function AgendaPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
+            <h2 className="mb-8 text-pretty text-lg text-center leading-relaxed text-muted-foreground">
+                {t("page_description")}
+            </h2>
             {isLoading && (
               <div className="rounded-xl border border-border bg-card p-6 text-center text-muted-foreground">
                 {t("loading")}

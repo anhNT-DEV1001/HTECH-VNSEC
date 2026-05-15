@@ -2,51 +2,15 @@
 
 import { useTranslations } from "next-intl"
 import { MapPin, Car, Train, Plane } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import GoogleMapComponent from "@/components/map/google-map"
+import { useCountUp, formatNumber } from "@/hooks/useCountUp"
 
-const venueFeatures = [
-  { label: "Diện tích triển lãm", value: "20,000+ ", unit: "m²", num: 20000 },
-  { label: "Số gian hàng", value: "500", unit: "", num: 500 },
-  { label: "Phòng hội thảo", value: "15", unit: "", num: 15 },
-  { label: "Sức chứa hội trường", value: "3,000", unit: "", num: 3000 },
-]
-
-function FeatureCard({ label, value, unit, num }: typeof venueFeatures[0]) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [inView, setInView] = useState(false)
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setInView(true)
-        observer.disconnect()
-      }
-    })
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (!inView) return
-    const duration = 2000
-    const start = performance.now()
-    const animate = (now: number) => {
-      const t = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - t, 3)
-      setCount(Math.floor(eased * num))
-      if (t < 1) requestAnimationFrame(animate)
-    }
-    requestAnimationFrame(animate)
-  }, [inView, num])
+function FeatureCard({ label, value, unit, num }: { label: string; value: string; unit: string; num?: number }) {
+  const count = useCountUp(num ?? 0)
 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -54,7 +18,7 @@ function FeatureCard({ label, value, unit, num }: typeof venueFeatures[0]) {
       className="rounded-xl border border-border bg-card p-6 text-center"
     >
       <div className="mb-1 text-3xl font-bold text-primary">
-        {count.toLocaleString()}{unit}
+        {formatNumber(count)}{unit}
       </div>
       <div className="text-sm text-muted-foreground">{label}</div>
     </motion.div>
@@ -63,7 +27,7 @@ function FeatureCard({ label, value, unit, num }: typeof venueFeatures[0]) {
 
 export default function VenuePage() {
   const t = useTranslations("about.venue")
-  const features = t.raw("features") as Array<{ label: string; value: string }>
+  const features = (t.raw("features") as Array<{ label: string; value: string; unit: string; num?: number }> | undefined) ?? []
   const aboutVec = t.raw("about_vec") as { title: string; p1: string; p2: string }
 
   return (
@@ -78,9 +42,6 @@ export default function VenuePage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
           </div>
         </div>
       </section>
@@ -89,13 +50,16 @@ export default function VenuePage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
+            <h2 className="text-pretty mb-8 text-xl text-center leading-relaxed text-muted-foreground">
+              {t("page_description")}
+            </h2>
             {/* Map */}
             <GoogleMapComponent height="400px" />
 
             {/* Venue Features */}
-            <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 pt-10">
               {features.map((f, i) => (
-                <FeatureCard key={i} label={f.label} value={f.value} unit="" num={20000} />
+                <FeatureCard key={i} label={f.label} value={f.value} unit={f.unit} num={f.num} />
               ))}
             </div>
 

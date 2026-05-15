@@ -23,9 +23,6 @@ export default function AboutPage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl lg:text-6xl">
               {t("page_title")}
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
           </div>
         </div>
       </section>

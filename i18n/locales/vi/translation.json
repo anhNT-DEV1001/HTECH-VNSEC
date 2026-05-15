@@ -256,20 +256,28 @@
       "page_description": "Trung tâm Hội chợ Triển lãm Quốc gia (VEC) - Trung tâm triển lãm lớn nhất Việt Nam",
       "features": [
         {
-          "label": "Diện tích triển lãm",
-          "value": "20,000+ m²"
+          "label": "Tổ chức",
+          "value": "200",
+          "unit": "+",
+          "num": 200
         },
         {
-          "label": "Số gian hàng",
-          "value": "500+ gian"
+          "label": "Quốc gia",
+          "value": "50",
+          "unit": "+",
+          "num": 50
         },
         {
-          "label": "Phòng hội thảo",
-          "value": "10+ phòng"
+          "label": "Khách tham quan",
+          "value": "15.000",
+          "unit": "+",
+          "num": 15000
         },
         {
-          "label": "Sức chứa hội trường",
-          "value": "2,000+ người"
+          "label": "Gian hàng",
+          "value": "300",
+          "unit": "+",
+          "num": 300
         }
       ],
       "about_vec": {
@@ -449,7 +457,7 @@
     "exhibitor": {
       "page_badge": "Nhà triển lãm",
       "page_title": "Danh sách Exhibitor",
-      "page_description": "Danh sách exhibitor được đồng bộ từ hệ thống quản trị VNSEC.",
+      "page_description": "Khám phá danh sách các nhà triển lãm tham gia VN-SECURITY 2026",
       "search_placeholder": "Tìm theo tên, rank, booth, web-site...",
       "category_all": "Tất cả",
       "showing_label": "Hiển thị",
@@ -457,7 +465,8 @@
       "legend": {
         "diamond": "Kim cương",
         "gold": "Vàng",
-        "silver": "Bạc"
+        "silver": "Bạc",
+        "bronze": "Đồng"
       },
       "fallbacks": {
         "no_rank": "Chưa có rank",

@@ -23,9 +23,6 @@ export default function VisitorGuidePage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
           </div>
         </div>
       </section>
@@ -34,6 +31,9 @@ export default function VisitorGuidePage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
+            <h2 className="text-pretty mb-8 text-xl text-center leading-relaxed text-muted-foreground">
+              {t("page_description")}
+            </h2>
             {/* Opening Hours */}
             <div className="mb-16">
               <div className="mb-6 flex items-center gap-3">

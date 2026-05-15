@@ -14,6 +14,7 @@ const tierColors = {
   diamond: "border-l-primary",
   gold: "border-l-yellow-500",
   silver: "border-l-slate-400",
+  bronze: "border-l-bronze",
   standard: "border-l-border",
 } as const
 
@@ -24,6 +25,7 @@ const getTier = (rankName?: string | null) => {
   if (normalizedRank.includes("diamond") || normalizedRank.includes("kim cương")) return "diamond"
   if (normalizedRank.includes("gold") || normalizedRank.includes("vàng")) return "gold"
   if (normalizedRank.includes("silver") || normalizedRank.includes("bạc")) return "silver"
+  if (normalizedRank.includes("bronze") || normalizedRank.includes("đồng")) return "bronze"
   return "standard"
 }
 
@@ -100,9 +102,6 @@ export default function ExhibitorsPage() {
             <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
-            <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </p>
           </div>
         </div>
       </section>
@@ -110,6 +109,9 @@ export default function ExhibitorsPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
+          <h2 className="text-pretty mb-16 text-2xl text-center leading-relaxed text-muted-foreground">
+              {t("page_description")}
+          </h2>
             <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
@@ -143,7 +145,7 @@ export default function ExhibitorsPage() {
               <p className="text-sm text-muted-foreground">
                 {t("showing_label")} <span className="font-semibold text-foreground">{filteredExhibitors.length}</span> {t("showing_suffix")}
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pr-4">
                 <span className="flex items-center gap-1">
                   <span className="h-3 w-3 rounded-full bg-primary" />
                   {legend.diamond}
@@ -155,6 +157,10 @@ export default function ExhibitorsPage() {
                 <span className="flex items-center gap-1">
                   <span className="h-3 w-3 rounded-full bg-slate-400" />
                   {legend.silver}
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="h-3 w-3 rounded-full bg-amber-600" />
+                  {legend.bronze}
                 </span>
               </div>
             </div>

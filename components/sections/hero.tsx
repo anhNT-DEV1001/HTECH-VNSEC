@@ -5,40 +5,10 @@ import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ArrowRight } from "lucide-react"
+import { useCountUp, formatNumber } from "@/hooks/useCountUp"
 
 const EVENT_START = new Date("2026-10-06T00:00:00+07:00")
 const EVENT_END = new Date("2026-10-08T23:59:59+07:00")
-
-function useCountUp(target: number, duration = 2000) {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const startTime = performance.now()
-
-      const animate = (now: number) => {
-        const elapsed = now - startTime
-        const progress = Math.min(elapsed / duration, 1)
-        const eased = 1 - (1 - progress) * (1 - progress)
-        setCount(Math.floor(eased * target))
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        } else {
-          setCount(target)
-        }
-      }
-      requestAnimationFrame(animate)
-    }, 300)
-
-    return () => clearTimeout(timeout)
-  }, [target, duration])
-
-  return count
-}
-
-function formatNumber(n: number): string {
-  return n.toLocaleString("vi-VN")
-}
 
 function StatItem({ target, label }: { target: number; label: string }) {
   const count = useCountUp(target)
