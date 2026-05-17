@@ -106,27 +106,6 @@ export default function AgendaPage() {
               {t("page_title")}
             </h1>
 
-            {agendaView.downloadUrl ? (
-              <Button
-                asChild
-                variant="outline"
-                className={downloadButtonClass}
-              >
-                <a href={agendaView.downloadUrl} target="_blank" rel="noreferrer">
-                  <Download className="mr-2 h-4 w-4" />
-                  {t("download_pdf")}
-                </a>
-              </Button>
-            ) : (
-              <Button
-                variant="outline"
-                className={downloadButtonClass}
-                disabled
-              >
-                <Download className="mr-2 h-4 w-4" />
-                {t("download_pdf")}
-              </Button>
-            )}
           </div>
         </div>
       </section>
@@ -138,6 +117,7 @@ export default function AgendaPage() {
             <h2 className="mb-8 text-pretty text-lg text-center leading-relaxed text-muted-foreground">
                 {t("page_description")}
             </h2>
+
             {isLoading && (
               <div className="rounded-xl border border-border bg-card p-6 text-center text-muted-foreground">
                 {t("loading")}
@@ -234,6 +214,32 @@ export default function AgendaPage() {
                 </div>
               </>
             )}
+
+            {/* Download Button */}
+            <div className="flex justify-center mt-8">
+            {agendaView.downloadUrl ? (
+              <Button
+                asChild
+                variant="outline"
+                className={downloadButtonClass}
+              >
+                <a href={agendaView.downloadUrl} target="_blank" rel="noreferrer">
+                  <Download className="mr-2 h-4 w-4" />
+                  {t("download_pdf")}
+                </a>
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                className={downloadButtonClass}
+                disabled
+              >
+                <Download className="mr-2 h-4 w-4" />
+                {t("download_pdf")}
+              </Button>
+            )}
+            </div>
+
           </div>
         </div>
       </section>
