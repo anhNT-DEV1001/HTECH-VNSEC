@@ -9,7 +9,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { LucideIconByName } from "@/components/ui/lucide-icon"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
-import { exhibitionService, type ExhibitionCategory } from "@/services/exhibition.service"
+import {
+  exhibitionService,
+  getLocalizedZoneField,
+  type ExhibitionCategory,
+  type ExhibitionZone,
+} from "@/services/exhibition.service"
 
 const hasHtmlMarkup = (value?: string | null) => /<\/?[a-z][\s\S]*>/i.test(value || "")
 
@@ -70,6 +75,7 @@ export default function ExhibitionCategoryDetailPage() {
   const params = useParams<{ id: string }>()
   const locale = useLocale()
   const [category, setCategory] = useState<ExhibitionCategory | null>(null)
+  const [categoryZones, setCategoryZones] = useState<ExhibitionZone[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
@@ -78,19 +84,24 @@ export default function ExhibitionCategoryDetailPage() {
 
     if (!Number.isFinite(categoryId)) {
       setError(locale === "vi" ? "Lĩnh vực triển lãm không hợp lệ." : "Invalid exhibition category.")
+      setCategory(null)
+      setCategoryZones([])
       setLoading(false)
       return
     }
 
     exhibitionService
-      .getCategoryById(categoryId)
+      .getCategoryWithZonesById(categoryId)
       .then((data) => {
         if (!data) {
           setError(locale === "vi" ? "Không tìm thấy lĩnh vực triển lãm." : "Exhibition category not found.")
+          setCategory(null)
+          setCategoryZones([])
           return
         }
 
-        setCategory(data)
+        setCategory(data.category)
+        setCategoryZones(data.zones)
         setError("")
       })
       .catch((err: unknown) => {
@@ -100,6 +111,8 @@ export default function ExhibitionCategoryDetailPage() {
             ? "Không thể tải nội dung lĩnh vực triển lãm."
             : "Unable to load exhibition category content."
         )
+        setCategory(null)
+        setCategoryZones([])
       })
       .finally(() => setLoading(false))
   }, [locale, params?.id])
@@ -109,6 +122,11 @@ export default function ExhibitionCategoryDetailPage() {
   const categorySummary = locale === "vi" ? category?.sumary_vn : category?.sumary_en || category?.sumary_vn
   const categoryTitle = locale === "vi" ? category?.title_vn : category?.title_en || category?.title_vn
   const categoryContent = locale === "vi" ? category?.content_vn : category?.content_en || category?.content_vn
+  const zoneFields = useMemo(
+    () => Array.from(new Set(categoryZones.map((zone) => getLocalizedZoneField(zone, locale)).filter(Boolean))),
+    [categoryZones, locale]
+  )
+  const primaryLabel = zoneFields[0] || categoryTitle || (locale === "vi" ? "Lĩnh vực triển lãm" : "Exhibition Category")
 
   return (
     <main className="flex-1">
@@ -142,8 +160,20 @@ export default function ExhibitionCategoryDetailPage() {
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">
                       <LucideIconByName name={category.logo} className="h-4 w-4" />
                     </span>
-                    {categoryTitle || (locale === "vi" ? "Lĩnh vực triển lãm" : "Exhibition Category")}
+                    {primaryLabel}
                   </span>
+                  {zoneFields.length > 1 ? (
+                    <div className="mb-5 flex flex-wrap gap-2">
+                      {zoneFields.map((field) => (
+                        <span
+                          key={field}
+                          className="inline-flex rounded-full border border-primary/15 bg-white/70 px-3 py-1 text-xs font-semibold text-primary"
+                        >
+                          {field}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
                   <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
                     {categoryName}
                   </h1>

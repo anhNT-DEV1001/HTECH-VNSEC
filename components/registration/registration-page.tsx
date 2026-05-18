@@ -3,7 +3,7 @@
   import { useState } from "react"
   import { useTranslations } from "next-intl"
   import { AxiosError } from "axios"
-  import { User, Building2, Mic, Check, ArrowRight } from "lucide-react"
+  import { User, Building2, Mic, Handshake, Check, ArrowRight } from "lucide-react"
   import { Button } from "@/components/ui/button"
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
@@ -19,7 +19,7 @@
   } | null
 
   function normalizeRegistrationType(type?: string): RegisterType {
-    if (type === "exhibitor" || type === "speaker") return type
+    if (type === "exhibitor" || type === "speaker" || type === "sponsor") return type
     return "visitor"
   }
 
@@ -119,13 +119,14 @@
               {/* Type Selection */}
               <div className="mb-12">
                 <h2 className="mb-6 text-xl font-bold text-foreground">{t("type_section_title")}</h2>
-                <div className="grid gap-4 md:grid-cols-3">
-                  {(["visitor", "exhibitor", "speaker"] as const).map((typeId) => {
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  {(["visitor", "exhibitor", "speaker", "sponsor"] as const).map((typeId) => {
                     const type = types[typeId]
                     const icons: Record<string, React.ComponentType<{ className?: string }>> = {
                       visitor: User,
                       exhibitor: Building2,
                       speaker: Mic,
+                      sponsor: Handshake,
                     }
                     const Icon = icons[typeId]
                     return (

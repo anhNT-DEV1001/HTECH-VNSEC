@@ -32,7 +32,7 @@ export function Sponsors() {
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("sponsors.section_badge")}
           </span>
-          <h2 className="homepage-section-title mx-auto mb-6 max-w-5xl text-balance text-foreground">
+          <h2 className="homepage-section-title mx-auto mb-6 max-w-5xl text-balance text-[#2c54ce]">
             {t("sponsors.title")}
           </h2>
           <p className="mx-auto max-w-3xl text-pretty text-lg text-muted-foreground">

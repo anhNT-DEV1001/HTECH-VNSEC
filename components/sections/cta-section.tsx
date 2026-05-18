@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
-import { ArrowRight, Calendar, Users, Building2 } from "lucide-react"
+import { ArrowRight, Calendar, Users, Building2, Handshake } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
   exhibitors: Building2,
   speakers: Users,
   visitors: Calendar,
+  sponsors: Handshake,
 }
 
 export function CTASection() {
@@ -19,7 +20,7 @@ export function CTASection() {
     cta: string
   }>
 
-  const optionKeys = ["exhibitors", "speakers", "visitors"] as const
+  const optionKeys = ["exhibitors", "speakers", "visitors", "sponsors"] as const
 
   return (
     <section className="bg-warm-surface relative overflow-hidden py-20 lg:py-28">
@@ -36,7 +37,7 @@ export function CTASection() {
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("section_badge")}
           </span>
-          <h2 className="homepage-section-title mx-auto mb-6 max-w-5xl text-balance text-foreground">
+          <h2 className="homepage-section-title mx-auto mb-6 max-w-5xl text-balance text-[#2c54ce]">
             {t("title")}
           </h2>
           <p className="mx-auto max-w-3xl text-pretty text-lg text-muted-foreground">
@@ -45,9 +46,24 @@ export function CTASection() {
         </div>
 
         {/* CTA Cards */}
-        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {options.map((option, index) => {
-            const Icon = icons[optionKeys[index]]
+            const optionKey = optionKeys[index]
+            const Icon = icons[optionKey] ?? Calendar
+            const registerType =
+              optionKey === "exhibitors"
+                ? "exhibitor"
+                : optionKey === "speakers"
+                  ? "speaker"
+                  : optionKey === "visitors"
+                    ? "visitor"
+                    : optionKey === "sponsors"
+                      ? "sponsor"
+                      : undefined
+            const href = registerType
+              ? `/${locale}/register?type=${registerType}`
+              : `/${locale}/register`
+
             return (
               <div
                 key={index}
@@ -63,7 +79,7 @@ export function CTASection() {
                   {option.description}
                 </p>
                 <Button asChild className="group/btn w-full bg-primary hover:bg-primary/90">
-                  <Link href={`/${locale}/register?type=${optionKeys[index] === "exhibitors" ? "exhibitor" : optionKeys[index] === "speakers" ? "speaker" : "visitor"}`}>
+                  <Link href={href}>
                     {option.cta}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
@@ -74,7 +90,7 @@ export function CTASection() {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 flex justify-end">
           <p className="text-muted-foreground">
             {t("contact_question")}{" "}
             <Link href={`/${locale}/contact`} className="font-medium text-primary hover:underline">

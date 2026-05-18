@@ -13,6 +13,17 @@ export interface ExhibitionCategory {
   img?: string | null;
   logo?: string | null;
   display_order: number;
+  web_id?: number;
+}
+
+export interface ExhibitionZone {
+  id: number;
+  name_vn: string;
+  name_en?: string | null;
+  field_vn?: string | null;
+  field_en?: string | null;
+  web_id: number;
+  exhibitions?: ExhibitionCategory[];
 }
 
 interface PublicExhibitionRef {
@@ -48,10 +59,10 @@ export interface PublicExhibitor {
   updated_at?: string;
 }
 
-interface ApiResponse {
+interface ZoneApiResponse {
   status: string;
   message: string;
-  data: ExhibitionCategory[];
+  data: ExhibitionZone[];
 }
 
 interface ExhibitorApiResponse {
@@ -60,17 +71,81 @@ interface ExhibitorApiResponse {
   data: PublicExhibitor[];
 }
 
+const DEFAULT_EXHIBITION_WEB_ID = 2;
+
+const getExhibitionWebId = () => {
+  const webId = Number(process.env.NEXT_PUBLIC_EXHIBITION_WEB_ID);
+  return Number.isFinite(webId) && webId > 0 ? webId : DEFAULT_EXHIBITION_WEB_ID;
+};
+
+const getUniqueCategoriesFromZones = (zones: ExhibitionZone[]) => {
+  const categoryMap = new Map<number, ExhibitionCategory>();
+
+  zones.forEach((zone) => {
+    zone.exhibitions?.forEach((category) => {
+      if (!categoryMap.has(category.id)) {
+        categoryMap.set(category.id, category);
+      }
+    });
+  });
+
+  return Array.from(categoryMap.values()).sort((a, b) => {
+    const orderResult = (a.display_order || 0) - (b.display_order || 0);
+    return orderResult || a.id - b.id;
+  });
+};
+
+export const getLocalizedZoneField = (zone: ExhibitionZone, locale: string) => {
+  const field = locale === "vi" ? zone.field_vn : zone.field_en || zone.field_vn;
+  const fallbackName = locale === "vi" ? zone.name_vn : zone.name_en || zone.name_vn;
+  return field?.trim() || fallbackName;
+};
+
+export interface ExhibitionCategoryWithZones {
+  category: ExhibitionCategory;
+  zones: ExhibitionZone[];
+}
+
 export const exhibitionService = {
+  getZonesWithExhibitions: async (
+    webId = getExhibitionWebId()
+  ): Promise<ExhibitionZone[]> => {
+    const res: ZoneApiResponse = await axiosInstance.get(
+      `/exhibition/public/zones/web/${webId}`
+    );
+    return res.data;
+  },
+
   getCategories: async (): Promise<ExhibitionCategory[]> => {
-    const res = (await axiosInstance.get(
-      "/exhibition/public/exhibitions"
-    )) as { status: string; message: string; data: ExhibitionCategory[] };
-    return res.data.sort((a, b) => a.display_order - b.display_order);
+    const zones = await exhibitionService.getZonesWithExhibitions();
+    return getUniqueCategoriesFromZones(zones);
   },
 
   getCategoryById: async (id: number): Promise<ExhibitionCategory | null> => {
     const categories = await exhibitionService.getCategories();
     return categories.find((category) => category.id === id) || null;
+  },
+
+  getCategoryWithZonesById: async (
+    id: number
+  ): Promise<ExhibitionCategoryWithZones | null> => {
+    const zones = await exhibitionService.getZonesWithExhibitions();
+    let category: ExhibitionCategory | null = null;
+    const matchedZones: ExhibitionZone[] = [];
+
+    zones.forEach((zone) => {
+      const matchedCategory = zone.exhibitions?.find((item) => item.id === id);
+
+      if (matchedCategory) {
+        category = category || matchedCategory;
+        matchedZones.push({
+          ...zone,
+          exhibitions: zone.exhibitions?.filter(Boolean) || [],
+        });
+      }
+    });
+
+    return category ? { category, zones: matchedZones } : null;
   },
 
   getExhibitors: async (): Promise<PublicExhibitor[]> => {

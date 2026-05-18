@@ -1,6 +1,6 @@
 import api from "@/lib/axios"
 
-export type RegisterType = "visitor" | "exhibitor" | "speaker"
+export type RegisterType = "visitor" | "exhibitor" | "speaker" | "sponsor"
 
 export interface RegisterPayload {
   registerType: RegisterType

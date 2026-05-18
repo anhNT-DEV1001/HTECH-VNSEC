@@ -3,7 +3,6 @@
     "title": "VN-Security'2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
     "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN SECURITY 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia."
   },
-
   "home": {
     "hero": {
       "badge": "Lần đầu tiên tại Việt Nam",
@@ -33,7 +32,6 @@
         "booths": "Gian hàng"
       }
     },
-
     "about": {
       "section_badge": "Giới thiệu",
       "title": "TRIỂN LÃM VÀ HỘI NGHỊ QUỐC TẾ LẦN THỨ NHẤT VỀ CÔNG NGHỆ AN NINH TẠI VIỆT NAM",
@@ -62,7 +60,6 @@
       ],
       "cta": "Xem chi tiết về sự kiện"
     },
-
     "categories": {
       "section_badge": "Công nghệ",
       "title": "KHÁM PHÁ HỆ SINH THÁI CÔNG NGHỆ AN NINH",
@@ -76,10 +73,9 @@
         "consult": "Liên hệ tư vấn"
       }
     },
-
     "agenda": {
       "section_badge": "Chương trình nghị sự & hoạt động chuyên đề",
-      "title": "AGENDA",
+      "title": "Thời gian chương trình",
       "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY’ 2026.",
       "cta": "Xem lịch trình đầy đủ",
       "dayLabelPrefix": "Ngày",
@@ -107,13 +103,11 @@
         "break": "Nghỉ"
       }
     },
-
     "sponsors": {
-      "section_badge": "Đơn vị đồng hành",
+      "section_badge": "Đơn vị đơn vị tài trợ",
       "title": "KẾT NỐI ĐỐI TÁC & DOANH NGHIỆP",
       "description": "Quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại."
     },
-
     "cta": {
       "section_badge": "Tham gia ngay",
       "title": "HÃY TRỞ THÀNH MỘT PHẦN CỦA VN-SECURITY' 2026",
@@ -133,13 +127,17 @@
           "title": "Khách tham quan",
           "description": "Đăng ký miễn phí để tham quan triển lãm và tham dự các hội thảo chuyên đề.",
           "cta": "Đăng ký tham quan"
+        },
+        {
+          "title": "Nhà tài trợ",
+          "description": "Đăng ký tham gia tài trợ sự kiện triển lãm.",
+          "cta": "Đăng ký tài trợ"
         }
       ],
       "contact_question": "Có câu hỏi?",
       "contact_link": "Liên hệ với chúng tôi"
     }
   },
-
   "about": {
     "general_info": {
       "page_badge": "Giới thiệu",
@@ -183,7 +181,6 @@
         }
       ]
     },
-
     "organizers": {
       "page_badge": "Ban tổ chức",
       "page_title": "Ban Tổ chức & Đối tác",
@@ -249,7 +246,6 @@
         }
       ]
     },
-
     "venue": {
       "page_badge": "Địa điểm",
       "page_title": "Địa điểm Tổ chức",
@@ -286,7 +282,6 @@
         "p2": "Với diện tích tổng thể hơn 100,000m2, VEC được trang bị đầy đủ các tiện nghi hiện đại, đáp ứng tiêu chuẩn quốc tế cho các sự kiện triển lãm và hội nghị quy mô lớn."
       }
     },
-
     "visitor_guide": {
       "page_badge": "Hướng dẫn",
       "page_title": "Hướng dẫn Tham quan",
@@ -345,7 +340,6 @@
         ]
       }
     },
-
     "agenda": {
       "page_badge": "Lịch trình",
       "page_title": "Agenda Sự kiện",
@@ -366,7 +360,6 @@
         "afternoon": "Chưa có lịch buổi chiều."
       }
     },
-
     "faq": {
       "page_badge": "FAQ",
       "page_title": "Câu hỏi Thường gặp",
@@ -444,7 +437,6 @@
       }
     }
   },
-
   "sponsor": {
     "categories": {
       "page_badge": "Lĩnh vực trưng bày",
@@ -453,7 +445,6 @@
       "cta_question": "Quan tâm tham gia triển lãm trong các lĩnh vực trên?",
       "cta_button": "Đăng ký gian hàng"
     },
-
     "exhibitor": {
       "page_badge": "Nhà triển lãm",
       "page_title": "Danh sách Exhibitor",
@@ -478,7 +469,6 @@
       "error": "Không thể tải danh sách exhibitor",
       "not_found": "Không tìm thấy nhà triển lãm phù hợp"
     },
-
     "register": {
       "page_badge": "Đăng ký triển lãm",
       "page_title": "Gói Triển lãm & Tài trợ",
@@ -565,7 +555,6 @@
       }
     }
   },
-
   "contact": {
     "page_badge": "Liên hệ",
     "page_title": "Liên hệ với Chúng tôi",
@@ -617,7 +606,6 @@
       "error_alert": "Gửi liên hệ thất bại. Vui lòng thử lại sau."
     }
   },
-
   "register": {
     "page_badge": "Đăng ký",
     "page_title": "Đăng ký Tham gia VN Security 2026",
@@ -653,6 +641,16 @@
           "VIP access",
           "Networking events"
         ]
+      },
+      "sponsor": {
+        "title": "Nhà tài trợ",
+        "description": "Đăng ký trở thành nhà tài trợ và đồng hành cùng sự kiện",
+        "benefits": [
+          "Gói tài trợ phù hợp",
+          "Nhận diện thương hiệu",
+          "Quyền lợi truyền thông",
+          "Kết nối đối tác VIP"
+        ]
       }
     },
     "form": {
@@ -686,7 +684,6 @@
       "error_alert": "Gửi đăng ký thất bại. Vui lòng thử lại sau."
     }
   },
-
   "media": {
     "page_badge": "Truyền thông",
     "page_title": "Tin tức & Sự kiện",

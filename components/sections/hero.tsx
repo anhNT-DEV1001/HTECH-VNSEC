@@ -109,8 +109,8 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="animate-fade-in mb-6 text-balance text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
-              VN-<span className="text-primary">SECURITY</span>' <span className="text-primary">2026</span>
+            <h1 className="animate-fade-in mb-6 text-balance text-4xl font-extrabold tracking-tight text-[#2c54ce] sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
+              <span className="text-red-500">VN-</span><span className="text-[#2c54ce]">SECURITY</span>' <span className="text-[#2c54ce]">2026</span>
             </h1>
 
             <p className="animate-fade-in mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "0.2s" }}>

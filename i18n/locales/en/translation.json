@@ -3,7 +3,6 @@
     "title": "VN-Security'2026 - International Exhibition and Conference on Security Industry",
     "description": "The First International Exhibition and Conference on Security Industry in Vietnam - VN SECURITY 2026. Bringing together 500+ exhibitors from 50+ countries."
   },
-
   "home": {
     "hero": {
       "badge": "First Time in Vietnam",
@@ -33,7 +32,6 @@
         "booths": "Booths"
       }
     },
-
     "about": {
       "section_badge": "About",
       "title": "THE FIRST INTERNATIONAL EXHIBITION AND CONFERENCE ON SECURITY TECHNOLOGY IN VIETNAM",
@@ -62,7 +60,6 @@
       ],
       "cta": "View event details"
     },
-
     "categories": {
       "section_badge": "Technology",
       "title": "EXPLORE THE SECURITY TECHNOLOGY ECOSYSTEM",
@@ -76,10 +73,9 @@
         "consult": "Contact for Consultation"
       }
     },
-
     "agenda": {
       "section_badge": "Conference Agenda & Specialized Activities",
-      "title": "AGENDA",
+      "title": "Program Schedule",
       "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY’ 2026.",
       "cta": "View Full Schedule",
       "dayLabelPrefix": "Day",
@@ -107,13 +103,11 @@
         "break": "Break"
       }
     },
-
     "sponsors": {
       "section_badge": "Partners",
       "title": "CONNECTING PARTNERS & ENTERPRISES",
       "description": "Bringing together a network of domestic and international partners, enterprises, and technology organizations to connect, collaborate, and advance the modern security industry."
     },
-
     "cta": {
       "section_badge": "Join Now",
       "title": "BECOME PART OF VN-SECURITY' 2026",
@@ -133,13 +127,17 @@
           "title": "Visitors",
           "description": "Register for free to visit the exhibition and attend specialized seminars.",
           "cta": "Register to Visit"
+        },
+        {
+          "title": "Sponsors",
+          "description": "Register to participate as a sponsor for the exhibition event.",
+          "cta": "Register as Sponsor"
         }
       ],
       "contact_question": "Have questions?",
       "contact_link": "Contact us"
     }
   },
-
   "about": {
     "general_info": {
       "page_badge": "About",
@@ -183,7 +181,6 @@
         }
       ]
     },
-
     "organizers": {
       "page_badge": "Organizers",
       "page_title": "Organizers & Partners",
@@ -249,7 +246,6 @@
         }
       ]
     },
-
     "venue": {
       "page_badge": "Venue",
       "page_title": "Event Venue",
@@ -286,7 +282,6 @@
         "p2": "With a total area of over 100,000m2, VEC is fully equipped with modern amenities, meeting international standards for large-scale exhibitions and conferences."
       }
     },
-
     "visitor_guide": {
       "page_badge": "Guide",
       "page_title": "Visitor Guide",
@@ -345,7 +340,6 @@
         ]
       }
     },
-
     "agenda": {
       "page_badge": "Schedule",
       "page_title": "Event Agenda",
@@ -366,7 +360,6 @@
         "afternoon": "No afternoon sessions yet."
       }
     },
-
     "faq": {
       "page_badge": "FAQ",
       "page_title": "Frequently Asked Questions",
@@ -444,7 +437,6 @@
       }
     }
   },
-
   "sponsor": {
     "categories": {
       "page_badge": "Exhibition Categories",
@@ -453,7 +445,6 @@
       "cta_question": "Interested in exhibiting in these categories?",
       "cta_button": "Register Booth"
     },
-
     "exhibitor": {
       "page_badge": "Exhibitors",
       "page_title": "Exhibitor List",
@@ -477,7 +468,6 @@
       "error": "Unable to load exhibitor list",
       "not_found": "No matching exhibitors found"
     },
-
     "register": {
       "page_badge": "Exhibition Registration",
       "page_title": "Exhibition & Sponsorship Packages",
@@ -564,7 +554,6 @@
       }
     }
   },
-
   "contact": {
     "page_badge": "Contact",
     "page_title": "Contact Us",
@@ -616,7 +605,6 @@
       "error_alert": "Failed to send your message. Please try again later."
     }
   },
-
   "register": {
     "page_badge": "Register",
     "page_title": "Register for VN Security 2026",
@@ -652,6 +640,16 @@
           "VIP access",
           "Networking events"
         ]
+      },
+      "sponsor": {
+        "title": "Sponsors",
+        "description": "Register as a sponsor and partner with the event",
+        "benefits": [
+          "Suitable sponsorship packages",
+          "Brand visibility",
+          "Media benefits",
+          "VIP partner networking"
+        ]
       }
     },
     "form": {
@@ -685,7 +683,6 @@
       "error_alert": "Failed to send registration. Please try again later."
     }
   },
-
   "media": {
     "page_badge": "Media",
     "page_title": "News & Events",

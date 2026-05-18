@@ -6,22 +6,46 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
-import { ExhibitionCategory, exhibitionService } from "@/services/exhibition.service"
+import {
+  ExhibitionCategory,
+  ExhibitionZone,
+  exhibitionService,
+  getLocalizedZoneField,
+} from "@/services/exhibition.service"
 import { LucideIconByName } from "@/components/ui/lucide-icon"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 
 export function ExhibitionCategories() {
   const t = useTranslations("sponsor.categories")
   const locale = useLocale()
-  const [categories, setCategories] = useState<ExhibitionCategory[]>([])
+  const [zones, setZones] = useState<ExhibitionZone[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    exhibitionService.getCategories()
-      .then(setCategories)
+    exhibitionService.getZonesWithExhibitions()
+      .then(setZones)
       .catch(console.error)
       .finally(() => setLoading(false))
   }, [])
+
+  const getZoneName = (zone: ExhibitionZone) =>
+    locale === "vi" ? zone.name_vn : zone.name_en || zone.name_vn
+
+  const getCategoryName = (category: ExhibitionCategory) =>
+    (locale === "vi" ? category.name_vn : category.name_en) || category.name_vn
+
+  const getCategorySummary = (category: ExhibitionCategory) =>
+    (locale === "vi" ? category.sumary_vn : category.sumary_en) || category.sumary_vn
+
+  const displayZones = zones.map((zone) => ({
+    ...zone,
+    exhibitions: zone.exhibitions?.filter(Boolean) || [],
+  }))
+
+  const emptyZoneText =
+    locale === "vi"
+      ? "Đang cập nhật lĩnh vực trưng bày"
+      : "Exhibition categories are being updated"
 
   return (
     <>
@@ -42,49 +66,78 @@ export function ExhibitionCategories() {
       {/* Categories Grid */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-pretty mb-16 text-2xl text-center leading-relaxed text-muted-foreground">
+          <p className="mx-auto mb-16 max-w-4xl text-pretty text-center text-lg leading-relaxed text-muted-foreground">
               {t("page_description")}
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {loading
-              ? Array.from({ length: 6 }).map((_, i) => (
-                  <div key={i} className="h-52 animate-pulse rounded-2xl bg-muted" />
-                ))
-              : categories.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/${locale}/sponsor/categories/${category.id}`}
-                    className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
-                  >
-                    <div className="mb-4 flex items-start justify-between gap-4">
-                      {resolveApiAssetUrl(category.img) ? (
-                        <div className="flex h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-primary/10 bg-white">
-                          <Image
-                            src={resolveApiAssetUrl(category.img)!}
-                            alt={(locale === "vi" ? category.name_vn : category.name_en) || category.name_vn}
-                            width={64}
-                            height={64}
-                            className="h-full w-full object-cover"
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                          <LucideIconByName name={category.logo} className="h-7 w-7" />
-                        </div>
-                      )}
-                      <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
-                        +
-                      </span>
-                    </div>
-                    <h3 className="mb-2 text-xl font-semibold text-card-foreground">
-                      {locale === "vi" ? category.name_vn : category.name_en}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {locale === "vi" ? category.sumary_vn : category.sumary_en}
+          </p>
+          {loading ? (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="h-44 animate-pulse rounded-2xl bg-muted" />
+              ))}
+            </div>
+          ) : displayZones.length > 0 ? (
+            <div className="space-y-14">
+              {displayZones.map((zone) => (
+                <section key={zone.id} className="space-y-6">
+                  <div className="text-center">
+                    <p className="text-sm font-semibold leading-relaxed text-primary/70">
+                      {getLocalizedZoneField(zone, locale)}
                     </p>
-                  </Link>
-                ))}
-          </div>
+                    <h3 className="mt-2 text-3xl font-semibold leading-snug text-foreground">
+                      {getZoneName(zone)}
+                    </h3>
+                  </div>
+
+                  {zone.exhibitions.length > 0 ? (
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                      {zone.exhibitions.map((category) => (
+                        <Link
+                          key={`${zone.id}-${category.id}`}
+                          href={`/${locale}/sponsor/categories/${category.id}`}
+                          className="group rounded-2xl border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-lg"
+                        >
+                          <div className="mb-3 flex items-start justify-between gap-3">
+                            {resolveApiAssetUrl(category.img) ? (
+                              <div className="flex h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-primary/10 bg-white">
+                                <Image
+                                  src={resolveApiAssetUrl(category.img)!}
+                                  alt={getCategoryName(category)}
+                                  width={48}
+                                  height={48}
+                                  className="h-full w-full object-cover"
+                                />
+                              </div>
+                            ) : (
+                              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
+                                <LucideIconByName name={category.logo} className="h-6 w-6" />
+                              </div>
+                            )}
+                            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-semibold text-primary">
+                              +
+                            </span>
+                          </div>
+                          <h3 className="mb-2 text-lg font-semibold text-card-foreground">
+                            {getCategoryName(category)}
+                          </h3>
+                          <p className="line-clamp-2 text-sm text-muted-foreground">
+                            {getCategorySummary(category)}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+                      {emptyZoneText}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+              {emptyZoneText}
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-16 text-center">

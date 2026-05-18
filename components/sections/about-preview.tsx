@@ -20,7 +20,7 @@ export function AboutPreview() {
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("section_badge")}
           </span>
-          <h2 className="homepage-section-title mx-auto mb-6 max-w-7xl text-center text-foreground">
+          <h2 className="homepage-section-title mx-auto mb-6 max-w-7xl text-center text-[#2c54ce]">
             {titleLines.map((line) => (
               <span key={line} className="block text-center">
                 {line}

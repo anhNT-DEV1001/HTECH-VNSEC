@@ -36,7 +36,7 @@ export function NewsPreview() {
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               Tin tức
             </span>
-            <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight text-[#2c54ce] sm:text-4xl">
               Tin Tức & Sự Kiện
             </h2>
             <p className="text-pretty text-muted-foreground">
