@@ -141,7 +141,7 @@
   "about": {
     "general_info": {
       "page_badge": "Giới thiệu",
-      "page_title": "Thông tin chung về VN-Security'2026",
+      "page_title": "VN-Security'2026",
       "page_description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - Sự kiện quy mô lớn nhất khu vực Đông Nam Á trong lĩnh vực an ninh.",
       "section_about": {
         "title": "Về VN-Security'2026",
@@ -153,11 +153,30 @@
         "title": "Mục tiêu Sự kiện"
       },
       "objectives": [
-        "Tạo diễn đàn giao thương quốc tế cho ngành công nghiệp an ninh tại Việt Nam",
-        "Giới thiệu công nghệ an ninh tiên tiến nhất từ các nhà sản xuất hàng đầu thế giới",
-        "Thúc đẩy hợp tác giữa doanh nghiệp trong nước và quốc tế",
-        "Cập nhật xu hướng và giải pháp mới trong lĩnh vực an ninh",
-        "Tạo cơ hội networking cho các chuyên gia và doanh nghiệp"
+        {
+          "title": "Kết nối trực tiếp với các cơ quan quản lý và nhà hoạch định chính sách",
+          "description": "Tạo điều kiện kết nối trực tiếp với cơ quan quản lý, nhà hoạch định chính sách, giúp doanh nghiệp nắm bắt định hướng phát triển và cơ hội tham gia các dự án an ninh trọng điểm; hiện đại hoá trang thiết bị nghiệp vụ chuyên dụng cho lực lượng CAND"
+        },
+        {
+          "title": "Tiếp cận Chuỗi Dự án & Tổng thầu",
+          "description": "Mở rộng cơ hội hợp tác với các tổng thầu, thúc đẩy liên kết trong toàn bộ chuỗi giá trị ngành"
+        },
+        {
+          "title": "Phát triển Khách hàng B2B Chất lượng cao",
+          "description": "Tiếp cận trực tiếp đối tác tiềm năng, tạo ra lead chất lượng cao và cơ hội ký kết hợp đồng thực tế"
+        },
+        {
+          "title": "Hợp tác Quốc tế",
+          "description": "Kết nối với đối tác nước ngoài, mở rộng cơ hội chuyển giao công nghệ lõi, tăng tỷ lệ nội địa hoá tại Việt Nam"
+        },
+        {
+          "title": "Cập nhật Xu hướng & Chiến lược Ngành",
+          "description": "Cung cấp thông tin chuyên sâu về xu hướng phát triển, tiêu chuẩn kỹ thuật và chiến lược đầu tư, giúp doanh nghiệp định hướng dài hạn"
+        },
+        {
+          "title": "Trình diễn Công nghệ & Giải pháp Thực tế",
+          "description": "Tạo sân chơi để demo công nghệ, giải pháp tiên tiến, tiếp cận đúng khách hàng mục tiêu và đối tác chiến lược"
+        }
       ],
       "section_highlights": {
         "title": "Điểm nổi bật"
@@ -179,71 +198,77 @@
           "title": "Cơ hội Kinh doanh",
           "description": "Chương trình B2B Matching kết nối trực tiếp nhà cung cấp và khách hàng."
         }
+      ],
+      "section_notes": {
+        "title": "Thông tin lưu ý"
+      },
+      "notes": [
+        {
+          "title": "Thủ tục nhập cảnh (Visa)",
+          "content": "Ban Tổ chức sẽ hỗ trợ đại biểu quốc tế trong công tác nhập cảnh thông qua việc cung cấp hướng dẫn đăng ký E-visa theo quy định hiện hành và phát hành thư mời chính thức khi cần thiết nhằm bảo đảm thủ tục được thực hiện thuận lợi."
+        },
+        {
+          "title": "Vận chuyển và Lưu trú",
+          "content": "Danh sách khách sạn tiêu chuẩn 3–5 sao gần Trung tâm Triển lãm Việt Nam (VEC) cùng phương án trung chuyển từ trung tâm Hà Nội và Sân bay Quốc tế Nội Bài sẽ được cung cấp nhằm bảo đảm việc lưu trú và đi lại thuận tiện."
+        },
+        {
+          "title": "Ngôn ngữ và Tài liệu",
+          "content": "Sự kiện được tổ chức song ngữ (Tiếng Việt - Tiếng Anh); toàn bộ nội dung và hệ thống chỉ dẫn thể hiện bằng hai ngôn ngữ. Các đơn vị tham gia được khuyến nghị chuẩn bị ấn phẩm giới thiệu song ngữ để tối ưu hiệu quả kết nối và hợp tác."
+        }
       ]
     },
     "organizers": {
       "page_badge": "Ban tổ chức",
       "page_title": "Ban Tổ chức & Đối tác",
-      "page_description": "VN Security 2026 được tổ chức bởi đội ngũ chuyên nghiệp với sự hỗ trợ của các cơ quan nhà nước và đối tác quốc tế uy tín.",
+      "page_description": "VN-SECURITY 2026 được tổ chức dưới sự chỉ đạo của các cơ quan nhà nước, quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại.",
       "section": {
-        "title": "Đơn vị tổ chức"
+        "title": "Cơ cấu tổ chức"
       },
-      "main": [
-        {
-          "type": "Đơn vị chủ trì",
-          "name": "Bộ Công an Việt Nam",
-          "description": "Cơ quan quản lý nhà nước về an ninh quốc gia, đảm bảo an ninh trật tự xã hội."
-        },
-        {
-          "type": "Đơn vị đồng tổ chức",
-          "name": "Hiệp hội An ninh Việt Nam",
-          "description": "Tổ chức đại diện cho các doanh nghiệp hoạt động trong lĩnh vực an ninh tại Việt Nam."
-        },
-        {
-          "type": "Đơn vị tổ chức",
-          "name": "VN Security Expo JSC",
-          "description": "Công ty chuyên tổ chức các sự kiện triển lãm quốc tế tại Việt Nam."
-        }
+      "directive": {
+        "title": "Cơ quan chỉ đạo"
+      },
+      "implementation": {
+        "title": "Đơn vị chỉ đạo thực hiện"
+      },
+      "organizer": {
+        "title": "Đơn vị tổ chức thực hiện"
+      },
+      "co_organizer": {
+        "title": "Đơn vị đồng tổ chức"
+      },
+      "accompanying_left": {
+        "title": "Đơn vị đồng hành"
+      },
+      "accompanying_right": {
+        "title": "Đơn vị đồng hành"
+      },
+      "planned": "(dự kiến)",
+      "planned_label": "dự kiến",
+      "directive_list": [
+        "Bộ Công an",
+        "Bộ Khoa học và Công nghệ"
       ],
-      "supporters": {
-        "title": "Đơn vị bảo trợ"
-      },
-      "supporters_list": [
-        "Bộ Công Thương",
-        "Bộ Khoa học và Công nghệ",
-        "UBND TP. Hồ Chí Minh",
-        "Phòng Thương mại và Công nghiệp Việt Nam (VCCI)",
-        "Hiệp hội Doanh nghiệp Điện tử Việt Nam",
-        "Hội Tự động hóa Việt Nam"
+      "implementation_list": [
+        "Cục Công nghiệp An ninh (H08)",
+        "Học viện Kỹ thuật và Công nghệ an ninh"
       ],
-      "international": {
-        "title": "Đối tác quốc tế"
-      },
-      "international_partners": [
-        {
-          "name": "ASIS International",
-          "country": "Hoa Kỳ"
-        },
-        {
-          "name": "Security Industry Association",
-          "country": "Hoa Kỳ"
-        },
-        {
-          "name": "Asia Pacific Security Association",
-          "country": "Singapore"
-        },
-        {
-          "name": "European Security Association",
-          "country": "Bỉ"
-        },
-        {
-          "name": "Japan Security Equipment Association",
-          "country": "Nhật Bản"
-        },
-        {
-          "name": "Korea Security Association",
-          "country": "Hàn Quốc"
-        }
+      "organizer_main": "HTECH",
+      "co_organizer_list": [
+        "EverPartner",
+        "Trung tâm PSST",
+        "Công ty TNHH MTV Bạch Đằng"
+      ],
+      "accompanying_left_list": [
+        "Hiệp hội An ninh chuyên nghiệp Châu Á tại Việt Nam (APSA)",
+        "Hiệp hội UAV Thế giới tại Việt Nam",
+        "Hiệp hội Internet Việt Nam",
+        "Hiệp hội Doanh nghiệp trẻ Việt Nam tại Châu Âu"
+      ],
+      "accompanying_right_list": [
+        "Báo Công an Nhân dân",
+        "Truyền hình Công an Nhân dân",
+        "Báo đầu tư",
+        "SUNNY VIỆT NAM"
       ]
     },
     "venue": {
@@ -290,24 +315,19 @@
         "title": "Giờ mở cửa",
         "data": [
           {
-            "day": "Ngày 1 - 15/10",
+            "day": "06/10/2026",
             "hours": "08:00 - 18:00",
             "note": "Lễ khai mạc 08:00"
           },
           {
-            "day": "Ngày 2 - 16/10",
+            "day": "07/10/2026",
             "hours": "09:00 - 18:00",
             "note": ""
           },
           {
-            "day": "Ngày 3 - 17/10",
+            "day": "08/10/2026",
             "hours": "09:00 - 18:00",
             "note": "Gala Dinner 18:00"
-          },
-          {
-            "day": "Ngày 4 - 18/10",
-            "hours": "09:00 - 14:00",
-            "note": "Lễ bế mạc 12:00"
           }
         ]
       },
@@ -441,7 +461,7 @@
     "categories": {
       "page_badge": "Lĩnh vực trưng bày",
       "page_title": "Các Lĩnh vực Triển lãm",
-      "page_description": "VN Security 2026 bao gồm nhiều lĩnh vực chính với nhiều nhà triển lãm",
+      "page_description": "VN-SECURITY’ 2026 giới thiệu 08 lĩnh vực vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
       "cta_question": "Quan tâm tham gia triển lãm trong các lĩnh vực trên?",
       "cta_button": "Đăng ký gian hàng"
     },

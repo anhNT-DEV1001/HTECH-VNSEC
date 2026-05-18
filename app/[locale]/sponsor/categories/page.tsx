@@ -66,9 +66,9 @@ export function ExhibitionCategories() {
       {/* Categories Grid */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <p className="mx-auto mb-16 max-w-4xl text-pretty text-center text-lg leading-relaxed text-muted-foreground">
+          <h2 className="mx-auto mb-16 max-w-4xl text-pretty text-center text-lg leading-relaxed text-muted-foreground">
               {t("page_description")}
-          </p>
+          </h2>
           {loading ? (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {Array.from({ length: 6 }).map((_, i) => (

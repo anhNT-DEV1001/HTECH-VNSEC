@@ -141,7 +141,7 @@
   "about": {
     "general_info": {
       "page_badge": "About",
-      "page_title": "General Information about VN-Security'2026",
+      "page_title": "VN-Security'2026",
       "page_description": "The First International Exhibition and Conference on Security Industry in Vietnam - The largest event in Southeast Asia in the security field.",
       "section_about": {
         "title": "About VN-Security'2026",
@@ -153,11 +153,30 @@
         "title": "Event Objectives"
       },
       "objectives": [
-        "Create an international trade forum for the security industry in Vietnam",
-        "Introduce the most advanced security technologies from world-leading manufacturers",
-        "Promote cooperation between domestic and international businesses",
-        "Update new trends and solutions in the security field",
-        "Create networking opportunities for professionals and businesses"
+        {
+          "title": "Direct Connection with Regulatory Agencies and Policy Makers",
+          "description": "Facilitate direct connections with regulatory agencies and policy makers, helping businesses understand development directions and opportunities to participate in key security projects; modernize specialized equipment for the People's Public Security forces"
+        },
+        {
+          "title": "Access to Project Chains & Main Contractors",
+          "description": "Expand cooperation opportunities with main contractors, promoting linkages throughout the entire industry value chain"
+        },
+        {
+          "title": "Develop High-Quality B2B Customers",
+          "description": "Directly approach potential partners, generate high-quality leads, and create opportunities for actual contract signing"
+        },
+        {
+          "title": "International Cooperation",
+          "description": "Connect with foreign partners, expand opportunities for core technology transfer, and increase localization rate in Vietnam"
+        },
+        {
+          "title": "Update Industry Trends & Strategies",
+          "description": "Provide in-depth information on development trends, technical standards, and investment strategies to help businesses with long-term orientation"
+        },
+        {
+          "title": "Technology & Solutions Demonstration",
+          "description": "Create a platform to demonstrate advanced technologies and solutions, reaching the right target customers and strategic partners"
+        }
       ],
       "section_highlights": {
         "title": "Highlights"
@@ -179,71 +198,77 @@
           "title": "Business Opportunities",
           "description": "B2B Matching program connecting suppliers and customers directly."
         }
+      ],
+      "section_notes": {
+        "title": "Important Information"
+      },
+      "notes": [
+        {
+          "title": "Visa & Immigration",
+          "content": "The Organizing Committee will assist international delegates with immigration procedures by providing guidance on E-visa registration according to current regulations and issuing official invitation letters when necessary to ensure smooth procedures."
+        },
+        {
+          "title": "Transportation & Accommodation",
+          "content": "A list of 3–5 star standard hotels near Vietnam Exhibition Center (VEC), along with transfer options from central Hanoi and Noi Bai International Airport, will be provided to ensure convenient accommodation and travel."
+        },
+        {
+          "title": "Language & Materials",
+          "content": "The event is organized in bilingual format (Vietnamese - English); all content and signage are presented in both languages. Participants are encouraged to prepare bilingual promotional materials to optimize networking and cooperation effectiveness."
+        }
       ]
     },
     "organizers": {
       "page_badge": "Organizers",
       "page_title": "Organizers & Partners",
-      "page_description": "VN Security 2026 is organized by a professional team with support from government agencies and reputable international partners.",
+      "page_description": "VN-SECURITY 2026 is organized under the direction of state agencies, bringing together a network of partners, businesses, and technology units from domestic and international backgrounds, all participating in connecting, cooperating, and developing the modern security industry.",
       "section": {
-        "title": "Organizing Entities"
+        "title": "Organizational Structure"
       },
-      "main": [
-        {
-          "type": "Hosting Entity",
-          "name": "Vietnam Ministry of Public Security",
-          "description": "State management agency for national security, ensuring social order and security."
-        },
-        {
-          "type": "Co-organizer",
-          "name": "Vietnam Security Association",
-          "description": "Organization representing businesses operating in the security field in Vietnam."
-        },
-        {
-          "type": "Organizer",
-          "name": "VN Security Expo JSC",
-          "description": "Company specializing in organizing international exhibition events in Vietnam."
-        }
+      "directive": {
+        "title": "Directing Authorities"
+      },
+      "implementation": {
+        "title": "Implementation Directors"
+      },
+      "organizer": {
+        "title": "Main Organizer"
+      },
+      "co_organizer": {
+        "title": "Co-Organizers"
+      },
+      "accompanying_left": {
+        "title": "Accompanying Units"
+      },
+      "accompanying_right": {
+        "title": "Accompanying Units"
+      },
+      "planned": "(planned)",
+      "planned_label": "planned",
+      "directive_list": [
+        "Ministry of Public Security",
+        "Ministry of Science and Technology"
       ],
-      "supporters": {
-        "title": "Supporting Entities"
-      },
-      "supporters_list": [
-        "Ministry of Industry and Trade",
-        "Ministry of Science and Technology",
-        "Ho Chi Minh City People's Committee",
-        "Vietnam Chamber of Commerce and Industry (VCCI)",
-        "Vietnam Electronics Industry Association",
-        "Vietnam Automation Association"
+      "implementation_list": [
+        "Police Industry Department (H08)",
+        "Academy of Security Engineering and Technology"
       ],
-      "international": {
-        "title": "International Partners"
-      },
-      "international_partners": [
-        {
-          "name": "ASIS International",
-          "country": "United States"
-        },
-        {
-          "name": "Security Industry Association",
-          "country": "United States"
-        },
-        {
-          "name": "Asia Pacific Security Association",
-          "country": "Singapore"
-        },
-        {
-          "name": "European Security Association",
-          "country": "Belgium"
-        },
-        {
-          "name": "Japan Security Equipment Association",
-          "country": "Japan"
-        },
-        {
-          "name": "Korea Security Association",
-          "country": "South Korea"
-        }
+      "organizer_main": "HTECH",
+      "co_organizer_list": [
+        "EverPartner",
+        "PSST Center",
+        "Bach Dang Co., Ltd."
+      ],
+      "accompanying_left_list": [
+        "Asia Pacific Professional Security Association in Vietnam (APSA)",
+        "UAV World Association in Vietnam",
+        "Vietnam Internet Association",
+        "Vietnam Young Entrepreneurs Association in Europe"
+      ],
+      "accompanying_right_list": [
+        "People's Public Security Newspaper",
+        "People's Public Security Television",
+        "Investment Newspaper",
+        "SUNNY VIETNAM"
       ]
     },
     "venue": {
@@ -290,24 +315,19 @@
         "title": "Opening Hours",
         "data": [
           {
-            "day": "Day 1 - Oct 15",
+            "day": "Oct 06, 2026",
             "hours": "08:00 - 18:00",
             "note": "Opening ceremony 08:00"
           },
           {
-            "day": "Day 2 - Oct 16",
+            "day": "Oct 07, 2026",
             "hours": "09:00 - 18:00",
             "note": ""
           },
           {
-            "day": "Day 3 - Oct 17",
+            "day": "Oct 08, 2026",
             "hours": "09:00 - 18:00",
             "note": "Gala Dinner 18:00"
-          },
-          {
-            "day": "Day 4 - Oct 18",
-            "hours": "09:00 - 14:00",
-            "note": "Closing ceremony 12:00"
           }
         ]
       },
@@ -441,7 +461,7 @@
     "categories": {
       "page_badge": "Exhibition Categories",
       "page_title": "Exhibition Categories",
-      "page_description": "VN Security 2026 covers multiple main categories with many exhibitors",
+      "page_description": "VN-SECURITY' 2026 showcases 08 key technology areas, featuring cutting-edge solutions in security, surveillance, AI, data, UAV, cryptography, and specialized technologies.",
       "cta_question": "Interested in exhibiting in these categories?",
       "cta_button": "Register Booth"
     },
