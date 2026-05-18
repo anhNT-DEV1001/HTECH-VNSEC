@@ -212,7 +212,7 @@ export function AgendaPreview() {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg" className="group bg-primary hover:bg-primary/90">
-            <Link href={`/${locale}/agenda`}>
+            <Link href={`/${locale}/about/agenda`}>
               {t("cta")}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
