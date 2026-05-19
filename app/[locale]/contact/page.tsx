@@ -96,9 +96,9 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   {[
                     { icon: MapPin, label: t("info.address.label"), value: t("info.address.value") },
-                    { icon: Phone, label: t("info.phone.label"), value: t("info.phone.value"), sub: t("info.phone.hotline") },
-                    { icon: Mail, label: t("info.email.label"), value: t("info.email.value"), sub: t("info.email.sales") },
-                    { icon: Clock, label: t("info.hours.label"), value: t("info.hours.weekday"), sub: t("info.hours.saturday") },
+                    { icon: Phone, label: t("info.phone.label"), value: t("info.phone.value") },
+                    { icon: Mail, label: t("info.email.label"), value: t("info.email.value")},
+                    // { icon: Clock, label: t("info.hours.label"), value: t("info.hours.weekday"), sub: t("info.hours.saturday") },
                   ].map((item) => (
                     <div key={item.label} className="flex gap-4">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -107,16 +107,13 @@ export default function ContactPage() {
                       <div>
                         <div className="font-semibold text-foreground">{item.label}</div>
                         <div className="text-muted-foreground">{item.value}</div>
-                        {item.sub && (
-                          <div className="text-sm text-muted-foreground">{item.sub}</div>
-                        )}
                       </div>
                     </div>
                   ))}
                 </div>
 
                 {/* Social Links */}
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <h3 className="mb-4 font-semibold text-foreground">{t("social_label")}</h3>
                   <div className="flex gap-3">
                     {[
@@ -134,7 +131,7 @@ export default function ContactPage() {
                       </a>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Contact Form */}
