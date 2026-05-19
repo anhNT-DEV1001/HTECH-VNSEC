@@ -586,13 +586,11 @@
       },
       "phone": {
         "label": "Phone",
-        "value": "+84 28 1234 5678",
-        "hotline": "Hotline: 1900 1234 56"
+        "value": "+84 28 1234 5678"
       },
       "email": {
         "label": "Email",
-        "value": "info@vnsecurity2026.com",
-        "sales": "sales@vnsecurity2026.com"
+        "value": "info@vnsecurity2026.com"
       },
       "hours": {
         "label": "Business Hours",

@@ -2,7 +2,7 @@
   "header": {
     "logo": "VN Security",
     "logo_year": "2026",
-    "cta_register": "Register Now",
+    "cta_register": "Register",
     "nav": [
       {
         "key": "home",
@@ -99,27 +99,27 @@
         {
           "key": "home",
           "label": "Home",
-          "href": "/en/"
+          "href": "/"
         },
         {
           "key": "about",
           "label": "About",
-          "href": "/en/about/general-info"
+          "href": "/about/general-info"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/en/about/agenda"
+          "href": "/about/agenda"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/en/sponsor/exhibitor"
+          "href": "/sponsor/exhibitor"
         },
         {
           "key": "contact",
           "label": "Contact",
-          "href": "/en/contact"
+          "href": "/contact"
         }
       ]
     },
@@ -129,22 +129,22 @@
         {
           "key": "categories",
           "label": "Exhibition Categories",
-          "href": "/en/sponsor/categories"
+          "href": "/sponsor/categories"
         },
         {
           "key": "register",
           "label": "Exhibition Registration",
-          "href": "/en/sponsor/register"
+          "href": "/sponsor/register"
         },
         {
           "key": "visitor-guide",
           "label": "Visitor Guide",
-          "href": "/en/about/visitor-guide"
+          "href": "/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "FAQ",
-          "href": "/en/about/faq"
+          "href": "/about/faq"
         }
       ]
     },
@@ -166,6 +166,10 @@
         "label": "Terms of Service",
         "href": "/terms"
       }
-    ]
+    ],
+    "legal_labels": {
+      "privacy_title": "Privacy Policy",
+      "terms_title": "Terms of Service"
+    }
   }
 }

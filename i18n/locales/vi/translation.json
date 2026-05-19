@@ -141,16 +141,16 @@
   "about": {
     "general_info": {
       "page_badge": "Giới thiệu",
-      "page_title": "VN-Security'2026",
+      "page_title": "VN-SECURITY' 2026",
       "page_description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - Sự kiện quy mô lớn nhất khu vực Đông Nam Á trong lĩnh vực an ninh.",
       "section_about": {
-        "title": "Về VN-Security'2026",
+        "title": "VỀ VN-SECURITY' 2026",
         "p1": "VN-Security'2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, đánh dấu bước phát triển quan trọng của ngành an ninh Việt Nam trên bản đồ quốc tế.",
         "p2": "Sự kiện quy tụ các nhà sản xuất, phân phối, và chuyên gia hàng đầu trong lĩnh vực công nghệ an ninh từ khắp nơi trên thế giới, tạo nên diễn đàn giao thương và chia sẻ kiến thức chuyên ngành lớn nhất khu vực.",
         "p3": "Với diện tích trưng bày hơn 20,000m2 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), VN-Security'2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan."
       },
       "section_objectives": {
-        "title": "Mục tiêu Sự kiện"
+        "title": "MỤC TIÊU SỰ KIỆN"
       },
       "objectives": [
         {
@@ -200,7 +200,7 @@
         }
       ],
       "section_notes": {
-        "title": "Thông tin lưu ý"
+        "title": "THÔNG TIN LƯU Ý"
       },
       "notes": [
         {
@@ -577,7 +577,7 @@
   },
   "contact": {
     "page_badge": "Liên hệ",
-    "page_title": "Liên hệ với Chúng tôi",
+    "page_title": "Liên hệ với chúng tôi",
     "page_description": "Đội ngũ VN Security 2026 luôn sẵn sàng hỗ trợ bạn",
     "info": {
       "title": "Thông tin liên hệ",
@@ -587,13 +587,11 @@
       },
       "phone": {
         "label": "Điện thoại",
-        "value": "+84 28 1234 5678",
-        "hotline": "Hotline: 1900 1234 56"
+        "value": "+84 28 1234 5678"
       },
       "email": {
         "label": "Email",
-        "value": "info@vnsecurity2026.com",
-        "sales": "sales@vnsecurity2026.com"
+        "value": "info@vnsecurity2026.com"
       },
       "hours": {
         "label": "Giờ làm việc",

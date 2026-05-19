@@ -115,12 +115,12 @@ export function ExhibitorCategories() {
             {displayZones.map((zone) => (
               <section key={zone.id} className="space-y-6">
                 <div>
-                  <p className="text-sm font-semibold leading-relaxed text-primary/70">
-                    {getLocalizedZoneField(zone, locale)}
-                  </p>
-                  <h3 className="mt-2 text-2xl font-semibold leading-snug text-foreground">
+                  <h3 className="mt-2 mb-2 text-4xl font-bold leading-snug text-foreground">
                     {getZoneName(zone)}
                   </h3>
+                  <p className="text-medium font-semibold leading-relaxed text-primary/70">
+                    {getLocalizedZoneField(zone, locale)}
+                  </p>
                 </div>
 
                 {zone.exhibitions.length > 0 ? (
@@ -175,7 +175,7 @@ export function ExhibitorCategories() {
                     })}
                   </div>
                 ) : (
-                  <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-sm text-muted-foreground">
+                  <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-medium font-semibold text-muted-foreground">
                     {emptyZoneText}
                   </div>
                 )}
@@ -183,7 +183,7 @@ export function ExhibitorCategories() {
             ))}
 
             {displayZones.length === 0 ? (
-              <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-sm text-muted-foreground">
+              <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-medium font-semibold text-muted-foreground">
                 {emptyZoneText}
               </div>
             ) : null}

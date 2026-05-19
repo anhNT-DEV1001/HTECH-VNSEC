@@ -2,7 +2,7 @@
   "header": {
     "logo": "VN Security",
     "logo_year": "2026",
-    "cta_register": "Đăng ký ngay",
+    "cta_register": "Đăng ký tham gia",
     "nav": [
       {
         "key": "home",
@@ -98,27 +98,27 @@
         {
           "key": "home",
           "label": "Trang chủ",
-          "href": "/vi/"
+          "href": "/"
         },
         {
           "key": "about",
           "label": "Giới thiệu",
-          "href": "/vi/about/general-info"
+          "href": "/about/general-info"
         },
         {
           "key": "agenda",
           "label": "Agenda",
-          "href": "/vi/about/agenda"
+          "href": "/about/agenda"
         },
         {
           "key": "exhibitor",
           "label": "Exhibitor",
-          "href": "/vi/sponsor/exhibitor"
+          "href": "/sponsor/exhibitor"
         },
         {
           "key": "contact",
           "label": "Liên hệ",
-          "href": "/vi/contact"
+          "href": "/contact"
         }
       ]
     },
@@ -128,22 +128,22 @@
         {
           "key": "categories",
           "label": "Lĩnh vực trưng bày",
-          "href": "/vi/sponsor/categories"
+          "href": "/sponsor/categories"
         },
         {
           "key": "register",
           "label": "Đăng ký triển lãm",
-          "href": "/vi/sponsor/register"
+          "href": "/sponsor/register"
         },
         {
           "key": "visitor-guide",
           "label": "Hướng dẫn tham quan",
-          "href": "/vi/about/visitor-guide"
+          "href": "/about/visitor-guide"
         },
         {
           "key": "faq",
           "label": "Câu hỏi thường gặp",
-          "href": "/vi/about/faq"
+          "href": "/about/faq"
         }
       ]
     },
@@ -165,6 +165,10 @@
         "label": "Điều khoản sử dụng",
         "href": "/terms"
       }
-    ]
+    ],
+    "legal_labels": {
+      "privacy_title": "Chính sách bảo mật",
+      "terms_title": "Điều khoản sử dụng"
+    }
   }
 }
