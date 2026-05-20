@@ -35,7 +35,7 @@ export function Footer() {
             <p className="text-sm leading-relaxed text-secondary-foreground/78">
               {t("brand.description")}
             </p>
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               <Link
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-foreground/10 transition-colors hover:bg-primary hover:text-primary-foreground"
@@ -57,7 +57,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">{t("social.linkedin")}</span>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
