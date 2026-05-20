@@ -28,7 +28,7 @@ export function AboutPreview() {
               </span>
             ))}
           </h2>
-          <p className="mx-auto max-w-4xl text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto max-w-3xl text-pretty text-lg leading-relaxed text-muted-foreground">
             {t("description")}
           </p>
         </div>

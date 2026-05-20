@@ -70,7 +70,7 @@ export function ExhibitorCategories() {
               <h2 className="homepage-section-title mb-4 max-w-4xl text-balance text-[#2c54ce] lg:max-w-none lg:whitespace-nowrap">
                 {t("title")}
               </h2>
-              <p className="max-w-3xl text-pretty text-muted-foreground">{t("description")}</p>
+              <p className="max-w-2xl text-pretty text-muted-foreground">{t("description")}</p>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -101,7 +101,7 @@ export function ExhibitorCategories() {
               <h2 className="homepage-section-title mb-4 max-w-4xl text-balance text-[#2c54ce] lg:max-w-none lg:whitespace-nowrap">
                 {t("title")}
               </h2>
-              <p className="max-w-3xl text-pretty text-muted-foreground">{t("description")}</p>
+              <p className="max-w-2xl text-pretty text-muted-foreground">{t("description")}</p>
             </div>
             <Button asChild variant="outline" className="shrink-0 border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
               <Link href={`/${locale}/sponsor/categories`}>
