@@ -1,7 +1,7 @@
 {
   "header": {
-    "logo": "VN Security",
-    "logo_year": "2026",
+    "logo": "VN-SECURITY' 2026",
+    "logo_year": "",
     "cta_register": "Đăng ký tham gia",
     "nav": [
       {
@@ -83,8 +83,8 @@
   },
   "footer": {
     "brand": {
-      "name": "VN Security",
-      "year": "2026",
+      "name": "VN-SECURITY' 2026",
+      "year": "",
       "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam"
     },
     "social": {
@@ -153,7 +153,7 @@
       "phone": "+84 28 1234 5678",
       "email": "info@vnsecurity2026.com"
     },
-    "copyright": "© 2026 VN Security. Bản quyền thuộc về Ban tổ chức.",
+    "copyright": "© VN-SECURITY' 2026. Bản quyền thuộc về Ban tổ chức.",
     "legal": [
       {
         "key": "privacy",

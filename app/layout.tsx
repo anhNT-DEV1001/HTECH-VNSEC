@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "VN-Security'2026",
+  title: "VN-SECURITY' 2026",
   generator: 'v0.app',
   icons: {
     icon: [

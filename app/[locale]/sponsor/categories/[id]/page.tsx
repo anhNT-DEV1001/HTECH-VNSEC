@@ -71,6 +71,12 @@ function RichContent({ content }: { content?: string | null }) {
   return <PlainTextContent content={content} />
 }
 
+function formatZoneLabel(label?: string | null) {
+  return (label || "")
+    .replace(/\bCyber Security\b/gi, "Cybersecurity")
+    .replace(/\s*,\s*/g, " / ")
+}
+
 export default function ExhibitionCategoryDetailPage() {
   const params = useParams<{ id: string }>()
   const locale = useLocale()
@@ -133,13 +139,6 @@ export default function ExhibitionCategoryDetailPage() {
       <section className="bg-secondary py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-            <Button asChild variant="ghost" className="mb-6 -ml-4 text-muted-foreground hover:text-foreground">
-              <Link href={`/${locale}/sponsor/categories`}>
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                {locale === "vi" ? "Quay lại danh mục" : "Back to categories"}
-              </Link>
-            </Button>
-
             {loading ? (
               <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_360px]">
                 <div className="space-y-4">
@@ -154,32 +153,45 @@ export default function ExhibitionCategoryDetailPage() {
                 <p className="text-sm text-destructive">{error}</p>
               </div>
             ) : category ? (
-              <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_360px] lg:items-start">
+              <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_360px] lg:items-start">
                 <div>
-                  <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">
-                      <LucideIconByName name={category.logo} className="h-4 w-4" />
+                  <div className="flex flex-col items-start gap-5">
+                    <Link
+                      href={`/${locale}/sponsor/categories`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-secondary-foreground/85 transition-colors hover:text-primary"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      {locale === "vi" ? "Quay lại danh mục" : "Back to categories"}
+                    </Link>
+
+                    <span className="inline-flex max-w-full items-center gap-3 rounded-full border border-primary/55 bg-primary/10 px-4 py-2.5 text-sm font-semibold leading-6 text-secondary-foreground shadow-[0_0_24px_rgba(234,88,12,0.16)] backdrop-blur sm:text-[15px]">
+                      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_22px_rgba(234,88,12,0.24)]">
+                        <LucideIconByName name={category.logo} className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0 whitespace-normal text-left">{formatZoneLabel(primaryLabel)}</span>
                     </span>
-                    {primaryLabel}
-                  </span>
-                  {zoneFields.length > 1 ? (
-                    <div className="mb-5 flex flex-wrap gap-2">
-                      {zoneFields.map((field) => (
-                        <span
-                          key={field}
-                          className="inline-flex rounded-full border border-primary/15 bg-white/70 px-3 py-1 text-xs font-semibold text-primary"
-                        >
-                          {field}
-                        </span>
-                      ))}
-                    </div>
-                  ) : null}
-                  <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
-                    {categoryName}
-                  </h1>
-                  <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-                    {categorySummary}
-                  </p>
+                    {zoneFields.length > 1 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {zoneFields.map((field) => (
+                          <span
+                            key={field}
+                            className="inline-flex rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-xs font-semibold text-secondary-foreground/85"
+                          >
+                            {formatZoneLabel(field)}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+
+                  <div className="mt-12 lg:mt-16">
+                    <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight text-secondary-foreground sm:text-6xl lg:text-7xl">
+                      {categoryName}
+                    </h1>
+                    <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary-foreground/78">
+                      {categorySummary}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="lg:sticky lg:top-28">

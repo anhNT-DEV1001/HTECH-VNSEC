@@ -10,7 +10,7 @@ export default function TermsPage() {
       </h1>
       <div className="prose prose-gray max-w-3xl text-muted-foreground">
         <p>
-          Điều khoản sử dụng của VN Security 2026 sẽ được cập nhật sớm nhất.
+          Điều khoản sử dụng của VN-SECURITY' 2026 sẽ được cập nhật sớm nhất.
         </p>
       </div>
     </div>

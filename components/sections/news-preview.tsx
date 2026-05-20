@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button"
 const newsItems = [
   {
     id: 1,
-    title: "VN Security 2026 chính thức khởi động chiến dịch đăng ký nhà triển lãm",
-    excerpt: "Ban tổ chức VN Security 2026 thông báo mở đăng ký gian hàng triển lãm với nhiều ưu đãi hấp dẫn cho đăng ký sớm.",
+    title: "VN-SECURITY' 2026 chính thức khởi động chiến dịch đăng ký nhà triển lãm",
+    excerpt: "Ban tổ chức VN-SECURITY' 2026 thông báo mở đăng ký gian hàng triển lãm với nhiều ưu đãi hấp dẫn cho đăng ký sớm.",
     date: "15/03/2026",
     category: "Thông báo",
   },
   {
     id: 2,
     title: "Hợp tác chiến lược với Hiệp hội An ninh Châu Á - Thái Bình Dương",
-    excerpt: "VN Security 2026 ký kết thỏa thuận hợp tác với APSA, mở ra cơ hội kết nối rộng lớn hơn cho các doanh nghiệp Việt Nam.",
+    excerpt: "VN-SECURITY' 2026 ký kết thỏa thuận hợp tác với APSA, mở ra cơ hội kết nối rộng lớn hơn cho các doanh nghiệp Việt Nam.",
     date: "10/03/2026",
     category: "Hợp tác",
   },
@@ -40,7 +40,7 @@ export function NewsPreview() {
               Tin Tức & Sự Kiện
             </h2>
             <p className="text-pretty text-muted-foreground">
-              Cập nhật thông tin mới nhất về VN Security 2026 và các hoạt động liên quan.
+              Cập nhật thông tin mới nhất về VN-SECURITY' 2026 và các hoạt động liên quan.
             </p>
           </div>
           <Button asChild variant="outline" className="shrink-0">

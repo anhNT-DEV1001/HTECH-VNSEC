@@ -62,6 +62,7 @@ export function Header() {
 
   const aboutItems = t.raw("subnav.about") as Array<{ key: string; label: string; href: string }>
   const sponsorItems = t.raw("subnav.sponsor") as Array<{ key: string; label: string; href: string }>
+  const logoYear = t("logo_year")
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-warm-card-strong backdrop-blur supports-[backdrop-filter]:bg-[rgba(255,250,245,0.78)]">
@@ -75,7 +76,7 @@ export function Header() {
             <span className="text-lg font-bold uppercase tracking-wider text-foreground">
               {t("logo")}
             </span>
-            <span className="text-xs text-muted-foreground">{t("logo_year")}</span>
+            {logoYear ? <span className="text-xs text-muted-foreground">{logoYear}</span> : null}
           </div>
         </Link>
 

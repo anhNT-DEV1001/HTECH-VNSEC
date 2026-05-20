@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "VN-Security'2026 - International Exhibition and Conference on Security Industry",
-    "description": "The First International Exhibition and Conference on Security Industry in Vietnam - VN SECURITY 2026. Bringing together 500+ exhibitors from 50+ countries."
+    "title": "VN-SECURITY' 2026 - International Exhibition and Conference on Security Industry",
+    "description": "The First International Exhibition and Conference on Security Industry in Vietnam - VN-SECURITY' 2026. Bringing together 500+ exhibitors from 50+ countries."
   },
   "home": {
     "hero": {
       "badge": "First Time in Vietnam",
-      "title": "VN-SECURITY'2026",
+      "title": "VN-SECURITY' 2026",
       "description": "The First International Exhibition and Conference on Security Industry in Vietnam.",
       "eventTime": {
         "label": "Date",
@@ -39,7 +39,7 @@
         "THE FIRST INTERNATIONAL EXHIBITION AND CONFERENCE",
         "ON SECURITY TECHNOLOGY IN VIETNAM"
       ],
-      "description": "VN-SECURITY’ 2026 is the first International Exhibition and Conference on the Security Industry in Vietnam, positioned as an annual forum for security technology and industry. The event focuses on a comprehensive security technology ecosystem, fostering connection, collaboration, and the development of a modern security industry in Vietnam.",
+      "description": "VN-SECURITY' 2026 is the first International Exhibition and Conference on the Security Industry in Vietnam, positioned as an annual forum for security technology and industry. The event focuses on a comprehensive security technology ecosystem, fostering connection, collaboration, and the development of a modern security industry in Vietnam.",
       "features": [
         {
           "title": "Security Technology",
@@ -63,7 +63,7 @@
     "categories": {
       "section_badge": "Technology",
       "title": "EXPLORE THE SECURITY TECHNOLOGY ECOSYSTEM",
-      "description": "VN-SECURITY’ 2026 presents eight key technology zones, bringing together advanced solutions in security, surveillance, AI, data, UAVs, cryptography, and specialized technologies.",
+      "description": "VN-SECURITY' 2026 presents eight key technology zones, bringing together advanced solutions in security, surveillance, AI, data, UAVs, cryptography, and specialized technologies.",
       "cta": "View All",
       "card": {
         "hover": "Explore"
@@ -76,7 +76,7 @@
     "agenda": {
       "section_badge": "Conference Agenda & Specialized Activities",
       "title": "Program Schedule",
-      "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY’ 2026.",
+      "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY' 2026.",
       "cta": "View Full Schedule",
       "dayLabelPrefix": "Day",
       "locationUpdating": "Updating",
@@ -141,13 +141,13 @@
   "about": {
     "general_info": {
       "page_badge": "About",
-      "page_title": "VN-Security'2026",
+      "page_title": "VN-SECURITY' 2026",
       "page_description": "The First International Exhibition and Conference on Security Industry in Vietnam - The largest event in Southeast Asia in the security field.",
       "section_about": {
-        "title": "About VN-Security'2026",
-        "p1": "VN-Security'2026 is the first international exhibition and conference on the security industry held in Vietnam, marking a significant step for Vietnam's security industry on the international map.",
+        "title": "About VN-SECURITY' 2026",
+        "p1": "VN-SECURITY' 2026 is the first international exhibition and conference on the security industry held in Vietnam, marking a significant step for Vietnam's security industry on the international map.",
         "p2": "The event brings together leading manufacturers, distributors, and experts in security technology from around the world, creating the largest trade and knowledge-sharing forum in the region.",
-        "p3": "With over 20,000m2 of exhibition space at the Saigon Exhibition and Convention Center (SECC), VN-Security'2026 promises to deliver a comprehensive experience of modern security technology to over 30,000 visitors."
+        "p3": "With over 20,000m2 of exhibition space at the Saigon Exhibition and Convention Center (SECC), VN-SECURITY' 2026 promises to deliver a comprehensive experience of modern security technology to over 30,000 visitors."
       },
       "section_objectives": {
         "title": "Event Objectives"
@@ -220,7 +220,7 @@
     "organizers": {
       "page_badge": "Organizers",
       "page_title": "Organizers & Partners",
-      "page_description": "VN-SECURITY 2026 is organized under the direction of state agencies, bringing together a network of partners, businesses, and technology units from domestic and international backgrounds, all participating in connecting, cooperating, and developing the modern security industry.",
+      "page_description": "VN-SECURITY' 2026 is organized under the direction of state agencies, bringing together a network of partners, businesses, and technology units from domestic and international backgrounds, all participating in connecting, cooperating, and developing the modern security industry.",
       "section": {
         "title": "Organizational Structure"
       },
@@ -310,7 +310,7 @@
     "visitor_guide": {
       "page_badge": "Guide",
       "page_title": "Visitor Guide",
-      "page_description": "Essential information for the best experience at VN Security 2026",
+      "page_description": "Essential information for the best experience at VN-SECURITY' 2026",
       "hours": {
         "title": "Opening Hours",
         "data": [
@@ -383,21 +383,21 @@
     "faq": {
       "page_badge": "FAQ",
       "page_title": "Frequently Asked Questions",
-      "page_description": "Answers to common questions about VN Security 2026",
+      "page_description": "Answers to common questions about VN-SECURITY' 2026",
       "categories": [
         {
           "title": "General Information",
           "questions": [
             {
-              "q": "What is VN Security 2026?",
-              "a": "VN Security 2026 is the First International Exhibition and Conference on Security Industry in Vietnam, bringing together over 500 exhibitors from 50+ countries, expected to attract 30,000+ industry visitors."
+              "q": "What is VN-SECURITY' 2026?",
+              "a": "VN-SECURITY' 2026 is the First International Exhibition and Conference on Security Industry in Vietnam, bringing together over 500 exhibitors from 50+ countries, expected to attract 30,000+ industry visitors."
             },
             {
               "q": "When and where is the event?",
-              "a": "VN Security 2026 will take place from October 15-18, 2026 at the Saigon Exhibition and Convention Center (SECC), 799 Nguyen Van Linh, District 7, Ho Chi Minh City."
+              "a": "VN-SECURITY' 2026 will take place from October 15-18, 2026 at the Saigon Exhibition and Convention Center (SECC), 799 Nguyen Van Linh, District 7, Ho Chi Minh City."
             },
             {
-              "q": "Who should attend VN Security 2026?",
+              "q": "Who should attend VN-SECURITY' 2026?",
               "a": "The event is suitable for security equipment manufacturers and distributors; industry professionals and engineers; government representatives; businesses needing security solutions; and students and researchers in related fields."
             }
           ]
@@ -468,7 +468,7 @@
     "exhibitor": {
       "page_badge": "Exhibitors",
       "page_title": "Exhibitor List",
-      "page_description": "Explore the list of exhibitors participating in VN-SECURITY 2026",
+      "page_description": "Explore the list of exhibitors participating in VN-SECURITY' 2026",
       "search_placeholder": "Search by name, rank, booth, website...",
       "category_all": "All",
       "showing_label": "Showing",
@@ -577,7 +577,7 @@
   "contact": {
     "page_badge": "Contact",
     "page_title": "Contact Us",
-    "page_description": "VN Security 2026 team is always ready to assist you",
+    "page_description": "VN-SECURITY' 2026 team is always ready to assist you",
     "info": {
       "title": "Contact Information",
       "address": {
@@ -625,7 +625,7 @@
   },
   "register": {
     "page_badge": "Register",
-    "page_title": "Register for VN Security 2026",
+    "page_title": "Register for VN-SECURITY' 2026",
     "page_description": "Choose the participation type that suits you",
     "type_section_title": "Choose Participation Type",
     "types": {
@@ -694,7 +694,7 @@
       ],
       "topic_label": "Topic you want to present",
       "topic_placeholder": "Briefly describe the topic you want to present...",
-      "terms_text": "I agree to the Terms of Service and Privacy Policy of VN Security 2026",
+      "terms_text": "I agree to the Terms of Service and Privacy Policy of VN-SECURITY' 2026",
       "submit_button": "Complete Registration",
       "submitting_button": "Sending...",
       "success_alert": "Registration successful! We will send a confirmation email shortly.",
@@ -704,7 +704,7 @@
   "media": {
     "page_badge": "Media",
     "page_title": "News & Events",
-    "page_description": "Get the latest updates about VN Security 2026",
+    "page_description": "Get the latest updates about VN-SECURITY' 2026",
     "categories": [
       "All",
       "Announcements",
@@ -716,12 +716,12 @@
     "read_more": "Read More",
     "news": [
       {
-        "title": "VN Security 2026 officially launches exhibitor registration campaign",
-        "excerpt": "VN Security 2026 organizers announce booth registration opening with attractive early bird offers. Businesses registering before March 31, 2026 will receive a 15% discount on booth rental."
+        "title": "VN-SECURITY' 2026 officially launches exhibitor registration campaign",
+        "excerpt": "VN-SECURITY' 2026 organizers announce booth registration opening with attractive early bird offers. Businesses registering before March 31, 2026 will receive a 15% discount on booth rental."
       },
       {
         "title": "Strategic partnership with Asia Pacific Security Association",
-        "excerpt": "VN Security 2026 signs partnership agreement with APSA, opening greater connection opportunities for Vietnamese businesses with the regional market."
+        "excerpt": "VN-SECURITY' 2026 signs partnership agreement with APSA, opening greater connection opportunities for Vietnamese businesses with the regional market."
       },
       {
         "title": "First 10 keynote speakers announced",
@@ -729,7 +729,7 @@
       },
       {
         "title": "Hikvision confirms participation with Diamond booth",
-        "excerpt": "Hikvision Group - the world's largest security camera manufacturer officially confirms participation in VN Security 2026 with a Diamond-scale booth."
+        "excerpt": "Hikvision Group - the world's largest security camera manufacturer officially confirms participation in VN-SECURITY' 2026 with a Diamond-scale booth."
       },
       {
         "title": "B2B Matching program officially opens registration",
