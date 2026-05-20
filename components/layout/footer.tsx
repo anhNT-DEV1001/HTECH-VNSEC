@@ -10,6 +10,7 @@ export function Footer() {
   const quickLinks = t.raw("quick_links.items") as Array<{ key: string; label: string; href: string }>
   const exhibitorLinks = t.raw("exhibitor_links.items") as Array<{ key: string; label: string; href: string }>
   const legalLinks = t.raw("legal") as Array<{ key: string; label: string; href: string }>
+  const brandYear = t("brand.year")
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
@@ -26,7 +27,9 @@ export function Footer() {
                 <span className="text-lg font-bold uppercase tracking-wider">
                   {t("brand.name")}
                 </span>
-                <span className="text-sm text-secondary-foreground/70">{t("brand.year")}</span>
+                {brandYear ? (
+                  <span className="text-sm text-secondary-foreground/70">{brandYear}</span>
+                ) : null}
               </div>
             </div>
             <p className="text-sm leading-relaxed text-secondary-foreground/78">

@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
-import { ArrowRight, Shield, Globe, Users, Award } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { AboutFeatureCard } from "@/components/sections/about-feature-card"
 import { Button } from "@/components/ui/button"
 
-const icons = [Shield, Globe, Users, Award]
+const featureIcons = ["shield", "globe", "users", "award"] as const
 
 export function AboutPreview() {
   const t = useTranslations("home.about")
@@ -33,29 +34,15 @@ export function AboutPreview() {
         </div>
 
         {/* Features Grid */}
-        <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => {
-            const Icon = icons[index]
-            return (
-              <div key={index} className="group relative">
-                <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/40 via-primary/20 to-accent/30 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-                <div
-                  className="relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/5"
-                >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mb-2 text-lg font-semibold text-card-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {feature.description}
-                  </p>
-                  <div className="absolute -bottom-1 -right-1 h-20 w-20 rounded-full bg-primary/5 opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
-              </div>
-            )
-          })}
+        <div className="mb-12 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature, index) => (
+            <AboutFeatureCard
+              key={index}
+              title={feature.title}
+              description={feature.description}
+              icon={featureIcons[index] ?? "shield"}
+            />
+          ))}
         </div>
 
         {/* CTA */}

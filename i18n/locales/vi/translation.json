@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "VN-Security'2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
-    "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN SECURITY 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia."
+    "title": "VN-SECURITY' 2026 - Triển lãm và Hội nghị Quốc tế về Công nghiệp An ninh",
+    "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - VN-SECURITY' 2026. Quy tụ 500+ nhà triển lãm từ 50+ quốc gia."
   },
   "home": {
     "hero": {
       "badge": "Lần đầu tiên tại Việt Nam",
-      "title": "VN-SECURITY'2026",
+      "title": "VN-SECURITY' 2026",
       "description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam.",
       "eventTime": {
         "label": "Thời gian",
@@ -39,7 +39,7 @@
         "TRIỂN LÃM VÀ HỘI NGHỊ QUỐC TẾ LẦN THỨ NHẤT",
         "VỀ CÔNG NGHỆ AN NINH TẠI VIỆT NAM"
       ],
-      "description": "VN-SECURITY’ 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, được định hướng trở thành diễn đàn thường niên dành cho lĩnh vực công nghệ và công nghiệp an ninh. Sự kiện tập trung vào hệ sinh thái công nghệ an ninh toàn diện, thúc đẩy kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại tại Việt Nam.",
+      "description": "VN-SECURITY' 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, được định hướng trở thành diễn đàn thường niên quy mô quốc gia dành cho lĩnh vực công nghệ và công nghiệp an ninh. Sự kiện tập trung vào hệ sinh thái công nghệ an ninh toàn diện, bao gồm chuyển đổi số, thiết bị an ninh tiên tiến, hạ tầng thông minh và các giải pháp công nghệ chiến lược. Với quy mô lớn và chuỗi hoạt động chuyên sâu, VN-SECURITY' 2026 hướng tới thúc đẩy hợp tác, đổi mới sáng tạo và phát triển ngành công nghiệp an ninh hiện đại tại Việt Nam.",
       "features": [
         {
           "title": "Công nghệ An ninh",
@@ -63,7 +63,7 @@
     "categories": {
       "section_badge": "Công nghệ",
       "title": "KHÁM PHÁ HỆ SINH THÁI CÔNG NGHỆ AN NINH",
-      "description": "VN-SECURITY’ 2026 giới thiệu 08 khu vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
+      "description": "VN-SECURITY' 2026 giới thiệu 08 khu vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
       "cta": "Xem tất cả",
       "card": {
         "hover": "Khám phá"
@@ -76,7 +76,7 @@
     "agenda": {
       "section_badge": "Chương trình nghị sự & hoạt động chuyên đề",
       "title": "Thời gian chương trình",
-      "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY’ 2026.",
+      "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY' 2026.",
       "cta": "Xem lịch trình đầy đủ",
       "dayLabelPrefix": "Ngày",
       "locationUpdating": "Đang cập nhật",
@@ -145,9 +145,9 @@
       "page_description": "Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam - Sự kiện quy mô lớn nhất khu vực Đông Nam Á trong lĩnh vực an ninh.",
       "section_about": {
         "title": "VỀ VN-SECURITY' 2026",
-        "p1": "VN-Security'2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, đánh dấu bước phát triển quan trọng của ngành an ninh Việt Nam trên bản đồ quốc tế.",
+        "p1": "VN-SECURITY' 2026 là triển lãm và hội nghị quốc tế đầu tiên về công nghiệp an ninh được tổ chức tại Việt Nam, đánh dấu bước phát triển quan trọng của ngành an ninh Việt Nam trên bản đồ quốc tế.",
         "p2": "Sự kiện quy tụ các nhà sản xuất, phân phối, và chuyên gia hàng đầu trong lĩnh vực công nghệ an ninh từ khắp nơi trên thế giới, tạo nên diễn đàn giao thương và chia sẻ kiến thức chuyên ngành lớn nhất khu vực.",
-        "p3": "Với diện tích trưng bày hơn 20,000m2 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), VN-Security'2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan."
+        "p3": "Với diện tích trưng bày hơn 20,000m2 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), VN-SECURITY' 2026 hứa hẹn mang đến trải nghiệm toàn diện về công nghệ an ninh hiện đại cho hơn 30,000 khách tham quan."
       },
       "section_objectives": {
         "title": "MỤC TIÊU SỰ KIỆN"
@@ -220,7 +220,7 @@
     "organizers": {
       "page_badge": "Ban tổ chức",
       "page_title": "Ban Tổ chức & Đối tác",
-      "page_description": "VN-SECURITY 2026 được tổ chức dưới sự chỉ đạo của các cơ quan nhà nước, quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại.",
+      "page_description": "VN-SECURITY' 2026 được tổ chức dưới sự chỉ đạo của các cơ quan nhà nước, quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại.",
       "section": {
         "title": "Cơ cấu tổ chức"
       },
@@ -310,7 +310,7 @@
     "visitor_guide": {
       "page_badge": "Hướng dẫn",
       "page_title": "Hướng dẫn Tham quan",
-      "page_description": "Thông tin cần thiết để có trải nghiệm tốt nhất tại VN Security 2026",
+      "page_description": "Thông tin cần thiết để có trải nghiệm tốt nhất tại VN-SECURITY' 2026",
       "hours": {
         "title": "Giờ mở cửa",
         "data": [
@@ -383,21 +383,21 @@
     "faq": {
       "page_badge": "FAQ",
       "page_title": "Câu hỏi Thường gặp",
-      "page_description": "Giải đáp các thắc mắc thường gặp về VN Security 2026",
+      "page_description": "Giải đáp các thắc mắc thường gặp về VN-SECURITY' 2026",
       "categories": [
         {
           "title": "Thông tin chung",
           "questions": [
             {
-              "q": "VN Security 2026 là gì?",
-              "a": "VN Security 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, quy tụ hơn 500 nhà triển lãm từ 50+ quốc gia, dự kiến thu hút 30,000+ khách tham quan chuyên ngành."
+              "q": "VN-SECURITY' 2026 là gì?",
+              "a": "VN-SECURITY' 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, quy tụ hơn 500 nhà triển lãm từ 50+ quốc gia, dự kiến thu hút 30,000+ khách tham quan chuyên ngành."
             },
             {
               "q": "Sự kiện diễn ra khi nào và ở đâu?",
-              "a": "VN Security 2026 sẽ diễn ra từ ngày 15-18 tháng 10 năm 2026 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh."
+              "a": "VN-SECURITY' 2026 sẽ diễn ra từ ngày 15-18 tháng 10 năm 2026 tại Trung tâm Hội chợ & Triển lãm Sài Gòn (SECC), 799 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh."
             },
             {
-              "q": "Ai nên tham gia VN Security 2026?",
+              "q": "Ai nên tham gia VN-SECURITY' 2026?",
               "a": "Sự kiện phù hợp với các nhà sản xuất, phân phối thiết bị an ninh; chuyên gia, kỹ sư trong ngành; đại diện cơ quan nhà nước; các doanh nghiệp cần giải pháp an ninh; và sinh viên, nghiên cứu sinh ngành liên quan."
             }
           ]
@@ -461,14 +461,14 @@
     "categories": {
       "page_badge": "Lĩnh vực trưng bày",
       "page_title": "Các Lĩnh vực Triển lãm",
-      "page_description": "VN-SECURITY’ 2026 giới thiệu 08 lĩnh vực vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
+      "page_description": "VN-SECURITY' 2026 giới thiệu 08 lĩnh vực vực công nghệ trọng điểm, quy tụ các giải pháp tiên tiến về an ninh, giám sát, AI, dữ liệu, UAV, mật mã và công nghệ đặc chủng.",
       "cta_question": "Quan tâm tham gia triển lãm trong các lĩnh vực trên?",
       "cta_button": "Đăng ký gian hàng"
     },
     "exhibitor": {
       "page_badge": "Nhà triển lãm",
       "page_title": "Danh sách Exhibitor",
-      "page_description": "Khám phá danh sách các nhà triển lãm tham gia VN-SECURITY 2026",
+      "page_description": "Khám phá danh sách các nhà triển lãm tham gia VN-SECURITY' 2026",
       "search_placeholder": "Tìm theo tên, rank, booth, web-site...",
       "category_all": "Tất cả",
       "showing_label": "Hiển thị",
@@ -578,7 +578,7 @@
   "contact": {
     "page_badge": "Liên hệ",
     "page_title": "Liên hệ với chúng tôi",
-    "page_description": "Đội ngũ VN Security 2026 luôn sẵn sàng hỗ trợ bạn",
+    "page_description": "Đội ngũ VN-SECURITY' 2026 luôn sẵn sàng hỗ trợ bạn",
     "info": {
       "title": "Thông tin liên hệ",
       "address": {
@@ -626,7 +626,7 @@
   },
   "register": {
     "page_badge": "Đăng ký",
-    "page_title": "Đăng ký Tham gia VN Security 2026",
+    "page_title": "Đăng ký Tham gia VN-SECURITY' 2026",
     "page_description": "Chọn hình thức tham gia phù hợp với bạn",
     "type_section_title": "Chọn hình thức tham gia",
     "types": {
@@ -695,7 +695,7 @@
       ],
       "topic_label": "Chủ đề bạn muốn trình bày",
       "topic_placeholder": "Mô tả ngắn gọn về chủ đề bạn muốn trình bày...",
-      "terms_text": "Tôi đồng ý với Điều khoản sử dụng và Chính sách bảo mật của VN Security 2026",
+      "terms_text": "Tôi đồng ý với Điều khoản sử dụng và Chính sách bảo mật của VN-SECURITY' 2026",
       "submit_button": "Hoàn tất đăng ký",
       "submitting_button": "Đang gửi...",
       "success_alert": "Đăng ký thành công! Chúng tôi sẽ gửi email xác nhận trong thời gian sớm nhất.",
@@ -705,7 +705,7 @@
   "media": {
     "page_badge": "Truyền thông",
     "page_title": "Tin tức & Sự kiện",
-    "page_description": "Cập nhật thông tin mới nhất về VN Security 2026",
+    "page_description": "Cập nhật thông tin mới nhất về VN-SECURITY' 2026",
     "categories": [
       "Tất cả",
       "Thông báo",
@@ -717,12 +717,12 @@
     "read_more": "Đọc tiếp",
     "news": [
       {
-        "title": "VN Security 2026 chính thức khởi động chiến dịch đăng ký nhà triển lãm",
-        "excerpt": "Ban tổ chức VN Security 2026 thông báo mở đăng ký gian hàng triển lãm với nhiều ưu đãi hấp dẫn cho đăng ký sớm. Các doanh nghiệp đăng ký trước ngày 31/03/2026 sẽ được giảm 15% chi phí thuê gian hàng."
+        "title": "VN-SECURITY' 2026 chính thức khởi động chiến dịch đăng ký nhà triển lãm",
+        "excerpt": "Ban tổ chức VN-SECURITY' 2026 thông báo mở đăng ký gian hàng triển lãm với nhiều ưu đãi hấp dẫn cho đăng ký sớm. Các doanh nghiệp đăng ký trước ngày 31/03/2026 sẽ được giảm 15% chi phí thuê gian hàng."
       },
       {
         "title": "Hợp tác chiến lược với Hiệp hội An ninh Châu Á - Thái Bình Dương",
-        "excerpt": "VN Security 2026 ký kết thỏa thuận hợp tác với APSA, mở ra cơ hội kết nối rộng lớn hơn cho các doanh nghiệp Việt Nam với thị trường khu vực."
+        "excerpt": "VN-SECURITY' 2026 ký kết thỏa thuận hợp tác với APSA, mở ra cơ hội kết nối rộng lớn hơn cho các doanh nghiệp Việt Nam với thị trường khu vực."
       },
       {
         "title": "Công bố danh sách 10 diễn giả keynote đầu tiên",
@@ -730,7 +730,7 @@
       },
       {
         "title": "Hikvision xác nhận tham gia với gian hàng Diamond",
-        "excerpt": "Tập đoàn Hikvision - nhà sản xuất camera an ninh lớn nhất thế giới chính thức xác nhận tham gia VN Security 2026 với quy mô gian hàng Diamond."
+        "excerpt": "Tập đoàn Hikvision - nhà sản xuất camera an ninh lớn nhất thế giới chính thức xác nhận tham gia VN-SECURITY' 2026 với quy mô gian hàng Diamond."
       },
       {
         "title": "Chương trình B2B Matching chính thức mở đăng ký",

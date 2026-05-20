@@ -115,10 +115,10 @@ export function ExhibitorCategories() {
             {displayZones.map((zone) => (
               <section key={zone.id} className="space-y-6">
                 <div>
-                  <h3 className="mt-2 mb-2 text-4xl font-bold leading-snug text-foreground">
+                  <h3 className="mt-2 mb-2 text-5xl font-extrabold leading-tight text-foreground">
                     {getZoneName(zone)}
                   </h3>
-                  <p className="text-medium font-semibold leading-relaxed text-primary/70">
+                  <p className="text-xl font-semibold leading-relaxed text-primary">
                     {getLocalizedZoneField(zone, locale)}
                   </p>
                 </div>
@@ -131,13 +131,17 @@ export function ExhibitorCategories() {
                       return (
                         <div
                           key={`${zone.id}-${category.id}`}
-                          onClick={() => {
-                            setSelectedCategory(category);
-                            setSelectedZoneField(getLocalizedZoneField(zone, locale));
-                          }}
-                          className="group flex h-full cursor-pointer flex-col"
+                          className="group flex h-full flex-col"
                         >
-                          <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_16px_32px_rgba(15,23,42,0.08)] transition-transform duration-300 group-hover:-translate-y-1">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedCategory(category);
+                              setSelectedZoneField(getLocalizedZoneField(zone, locale));
+                            }}
+                            className="relative w-full overflow-hidden rounded-2xl bg-white text-left shadow-[0_16px_32px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                            aria-label={`${locale === "vi" ? "Xem nhanh" : "Preview"} ${getCategoryName(category)}`}
+                          >
                             {imageUrl ? (
                               <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
                                 <Image
@@ -157,7 +161,7 @@ export function ExhibitorCategories() {
                             <div className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/92 text-primary shadow-lg backdrop-blur">
                               <Expand className="h-3.5 w-3.5" />
                             </div>
-                          </div>
+                          </button>
                           <div className="flex min-h-[88px] flex-1 flex-col pt-3">
                             <h3 className="text-lg font-semibold leading-snug text-foreground">
                               {getCategoryName(category)}
@@ -165,10 +169,13 @@ export function ExhibitorCategories() {
                             <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
                               {getCategorySummary(category)}
                             </p>
-                            <div className="mt-auto flex items-center pt-2 text-xs font-semibold leading-relaxed text-primary/80 transition-colors group-hover:text-primary">
+                            <Link
+                              href={`/${locale}/sponsor/categories/${category.id}`}
+                              className="mt-4 inline-flex w-fit items-center rounded-full border border-primary/35 px-4 py-2 text-sm font-semibold leading-none text-primary transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                            >
                               {t("card.hover")}
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </div>
+                              <ArrowRight className="ml-1.5 h-4 w-4" />
+                            </Link>
                           </div>
                         </div>
                       );

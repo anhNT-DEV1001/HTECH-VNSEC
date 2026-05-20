@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages()
 
   return {
-    title: (messages.metadata as Record<string, string>)?.title ?? "VN-Security'2026",
+    title: (messages.metadata as Record<string, string>)?.title ?? "VN-SECURITY' 2026",
     description: (messages.metadata as Record<string, string>)?.description ?? "",
   }
 }

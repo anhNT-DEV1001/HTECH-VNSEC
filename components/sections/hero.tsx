@@ -118,19 +118,19 @@ export function Hero() {
             </p>
 
             {/* Event Info */}
-            <div className="animate-fade-in mb-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "0.3s" }}>
-              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
-                <Calendar className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="text-xs text-muted-foreground">{t("hero.eventTime.label")}</p>
-                  <p className="font-semibold text-foreground">{t("hero.eventTime.value")}</p>
+            <div className="animate-fade-in mb-8 grid grid-cols-1 gap-4 sm:grid-cols-[max-content_max-content]" style={{ animationDelay: "0.3s" }}>
+              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
+                <Calendar className="h-5 w-5 shrink-0 text-primary" />
+                <div className="min-w-0">
+                  <p className="text-left text-xs text-muted-foreground">{t("hero.eventTime.label")}</p>
+                  <p className="text-left text-sm font-semibold text-foreground sm:whitespace-nowrap lg:text-base">{t("hero.eventTime.value")}</p>
                 </div>
               </div>
-              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
-                <MapPin className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="text-xs text-muted-foreground">{t("hero.eventLocation.label")}</p>
-                  <p className="font-semibold text-foreground">{t("hero.eventLocation.value")}</p>
+              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
+                <MapPin className="h-5 w-5 shrink-0 text-primary" />
+                <div className="min-w-0">
+                  <p className="text-left text-xs text-muted-foreground">{t("hero.eventLocation.label")}</p>
+                  <p className="text-left text-sm font-semibold text-foreground sm:whitespace-nowrap lg:text-base">{t("hero.eventLocation.value")}</p>
                 </div>
               </div>
             </div>

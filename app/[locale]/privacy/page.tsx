@@ -10,7 +10,7 @@ export default function PrivacyPage() {
       </h1>
       <div className="prose prose-gray max-w-3xl text-muted-foreground">
         <p>
-          Chính sách bảo mật của VN Security 2026 sẽ được cập nhật sớm nhất.
+          Chính sách bảo mật của VN-SECURITY' 2026 sẽ được cập nhật sớm nhất.
         </p>
       </div>
     </div>
