@@ -16,7 +16,7 @@
       },
       {
         "key": "sponsor",
-        "label": "Sponsor & Triển lãm",
+        "label": "Tài trợ & Triển lãm",
         "href": "/vi/sponsor/categories"
       },
       {
@@ -44,7 +44,7 @@
         },
         {
           "key": "agenda",
-          "label": "Agenda",
+          "label": "Thông tin chương trình",
           "href": "/vi/about/agenda"
         },
         {
@@ -66,7 +66,7 @@
         },
         {
           "key": "exhibitor",
-          "label": "Exhibitor",
+          "label": "Nhà triển lãm",
           "href": "/vi/sponsor/exhibitor"
         },
         {

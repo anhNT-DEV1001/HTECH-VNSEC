@@ -33,17 +33,17 @@ export default function OrganizersPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-bold text-foreground mb-16 text-center">
-              {t("page_description")}
+            {t("page_description")}
           </h2>
           {/* Title */}
-          <div className="mb-12 flex items-center justify-center gap-3">
+          {/* <div className="mb-12 flex items-center justify-center gap-3">
             <Building2 className="h-6 w-6 text-primary" />
             <h2 className="text-2xl font-bold text-foreground">{t("section.title")}</h2>
-          </div>
+          </div> */}
 
           {/* Tree Structure */}
           <div className="flex flex-col items-center gap-8">
-              {/* Level 1: Directing Authorities */}
+            {/* Level 1: Directing Authorities */}
             <div className="w-full max-w-xl text-center">
               <div className="mb-4 flex items-center justify-center gap-2">
                 <Shield className="h-5 w-5 text-primary" />

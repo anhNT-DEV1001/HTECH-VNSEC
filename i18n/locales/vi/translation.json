@@ -74,8 +74,8 @@
       }
     },
     "agenda": {
-      "section_badge": "Chương trình nghị sự & hoạt động chuyên đề",
-      "title": "Thời gian chương trình",
+      "section_badge": "THỜI GIAN CHƯƠNG TRÌNH & HOẠT ĐỘNG CHUYÊN ĐỀ",
+      "title": "AGENDA",
       "description": "Theo dõi chuỗi hội nghị, workshop, diễn đàn chuyên đề và hoạt động kết nối tại VN-SECURITY' 2026.",
       "cta": "Xem lịch trình đầy đủ",
       "dayLabelPrefix": "Ngày",
@@ -219,7 +219,7 @@
     },
     "organizers": {
       "page_badge": "Ban tổ chức",
-      "page_title": "Ban Tổ chức & Đối tác",
+      "page_title": "BAN TỔ CHỨC & ĐỐI TÁC",
       "page_description": "VN-SECURITY' 2026 được tổ chức dưới sự chỉ đạo của các cơ quan nhà nước, quy tụ mạng lưới đối tác, doanh nghiệp và đơn vị công nghệ trong nước - quốc tế cùng tham gia kết nối, hợp tác và phát triển ngành công nghiệp an ninh hiện đại.",
       "section": {
         "title": "Cơ cấu tổ chức"
@@ -302,7 +302,7 @@
         }
       ],
       "about_vec": {
-        "title": "Về VEC",
+        "title": "Trung tâm Hội chợ Triển lãm Quốc gia (VEC)",
         "p1": "Trung tâm Hội chợ Triển lãm Quốc gia (VEC) là trung tâm triển lãm quốc tế lớn nhất Việt Nam, tọa lạc tại xã Đông Hội và Xuân Canh, huyện Đông Anh, TP. Hà Nội.",
         "p2": "Với diện tích tổng thể hơn 100,000m2, VEC được trang bị đầy đủ các tiện nghi hiện đại, đáp ứng tiêu chuẩn quốc tế cho các sự kiện triển lãm và hội nghị quy mô lớn."
       }

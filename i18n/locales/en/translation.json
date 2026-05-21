@@ -74,8 +74,8 @@
       }
     },
     "agenda": {
-      "section_badge": "Conference Agenda & Specialized Activities",
-      "title": "Program Schedule",
+      "section_badge": "PROGRAM SCHEDULE & SPECIALIZED ACTIVITIES",
+      "title": "AGENDA",
       "description": "Follow the conference series, workshops, specialized forums, and networking activities at VN-SECURITY' 2026.",
       "cta": "View Full Schedule",
       "dayLabelPrefix": "Day",
@@ -219,7 +219,7 @@
     },
     "organizers": {
       "page_badge": "Organizers",
-      "page_title": "Organizers & Partners",
+      "page_title": "ORGANIZERS & PARTNERS",
       "page_description": "VN-SECURITY' 2026 is organized under the direction of state agencies, bringing together a network of partners, businesses, and technology units from domestic and international backgrounds, all participating in connecting, cooperating, and developing the modern security industry.",
       "section": {
         "title": "Organizational Structure"
@@ -302,7 +302,7 @@
         }
       ],
       "about_vec": {
-        "title": "About VEC",
+        "title": "Vietnam Exposition Center (VEC)",
         "p1": "Vietnam Exhibition Center (VEC) is the largest international exhibition center in Vietnam, located in Dong Hoi and Xuan Canh communes, Dong Anh district, Hanoi.",
         "p2": "With a total area of over 100,000m2, VEC is fully equipped with modern amenities, meeting international standards for large-scale exhibitions and conferences."
       }

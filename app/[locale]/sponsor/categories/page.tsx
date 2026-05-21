@@ -2,9 +2,8 @@
 
 import { useTranslations, useLocale } from "next-intl"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Expand } from "lucide-react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import {
   ExhibitionCategory,
@@ -37,6 +36,9 @@ export function ExhibitionCategories() {
   const getCategorySummary = (category: ExhibitionCategory) =>
     (locale === "vi" ? category.sumary_vn : category.sumary_en) || category.sumary_vn
 
+  const getCategoryImageUrl = (category: ExhibitionCategory) =>
+    resolveApiAssetUrl(category.img)
+
   const displayZones = zones.map((zone) => ({
     ...zone,
     exhibitions: zone.exhibitions?.filter(Boolean) || [],
@@ -46,6 +48,8 @@ export function ExhibitionCategories() {
     locale === "vi"
       ? "Đang cập nhật lĩnh vực trưng bày"
       : "Exhibition categories are being updated"
+
+  const exploreText = locale === "vi" ? "Xem chi tiết" : "Details"
 
   return (
     <>
@@ -67,66 +71,89 @@ export function ExhibitionCategories() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <h2 className="mx-auto mb-16 max-w-4xl text-pretty text-center text-lg leading-relaxed text-muted-foreground">
-              {t("page_description")}
+            {t("page_description")}
           </h2>
           {loading ? (
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="h-44 animate-pulse rounded-2xl bg-muted" />
+                <div key={i} className="overflow-hidden rounded-2xl bg-white/80">
+                  <div className="aspect-[4/3] animate-pulse bg-muted" />
+                  <div className="space-y-2 px-1 py-3">
+                    <div className="h-5 w-3/4 animate-pulse rounded bg-muted" />
+                    <div className="h-4 w-1/2 animate-pulse rounded bg-muted" />
+                  </div>
+                </div>
               ))}
             </div>
           ) : displayZones.length > 0 ? (
             <div className="space-y-14">
               {displayZones.map((zone) => (
                 <section key={zone.id} className="space-y-6">
-                  <div className="text-center">
-                    <p className="text-sm font-semibold leading-relaxed text-primary/70">
-                      {getLocalizedZoneField(zone, locale)}
-                    </p>
-                    <h3 className="mt-2 text-3xl font-semibold leading-snug text-foreground">
+                  <div>
+                    <h3 className="mt-2 mb-2 text-5xl font-extrabold leading-tight text-foreground">
                       {getZoneName(zone)}
                     </h3>
+                    <p className="text-xl font-semibold leading-relaxed text-primary">
+                      {getLocalizedZoneField(zone, locale)}
+                    </p>
                   </div>
 
                   {zone.exhibitions.length > 0 ? (
-                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                      {zone.exhibitions.map((category) => (
-                        <Link
-                          key={`${zone.id}-${category.id}`}
-                          href={`/${locale}/sponsor/categories/${category.id}`}
-                          className="group rounded-2xl border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-lg"
-                        >
-                          <div className="mb-3 flex items-start justify-between gap-3">
-                            {resolveApiAssetUrl(category.img) ? (
-                              <div className="flex h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-primary/10 bg-white">
-                                <Image
-                                  src={resolveApiAssetUrl(category.img)!}
-                                  alt={getCategoryName(category)}
-                                  width={48}
-                                  height={48}
-                                  className="h-full w-full object-cover"
-                                />
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      {zone.exhibitions.map((category) => {
+                        const imageUrl = getCategoryImageUrl(category)
+
+                        return (
+                          <div
+                            key={`${zone.id}-${category.id}`}
+                            className="group flex h-full flex-col"
+                          >
+                            <Link
+                              href={`/${locale}/sponsor/categories/${category.id}`}
+                              className="relative w-full overflow-hidden rounded-2xl bg-white text-left shadow-[0_16px_32px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                              aria-label={`${exploreText} ${getCategoryName(category)}`}
+                            >
+                              {imageUrl ? (
+                                <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
+                                  <Image
+                                    src={imageUrl}
+                                    alt={getCategoryName(category)}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                                </div>
+                              ) : (
+                                <div className="flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-primary/10 via-white to-primary/5 text-primary">
+                                  <LucideIconByName name={category.logo} className="h-10 w-10" />
+                                </div>
+                              )}
+                              <div className="absolute right-3 bottom-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/92 text-primary shadow-lg backdrop-blur">
+                                <Expand className="h-3.5 w-3.5" />
                               </div>
-                            ) : (
-                              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
-                                <LucideIconByName name={category.logo} className="h-6 w-6" />
-                              </div>
-                            )}
-                            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-sm font-semibold text-primary">
-                              +
-                            </span>
+                            </Link>
+                            <div className="flex min-h-[88px] flex-1 flex-col pt-3">
+                              <h3 className="text-lg font-semibold leading-snug text-foreground">
+                                {getCategoryName(category)}
+                              </h3>
+                              <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                                {getCategorySummary(category)}
+                              </p>
+                              <Link
+                                href={`/${locale}/sponsor/categories/${category.id}`}
+                                className="mt-4 inline-flex w-fit items-center rounded-full border border-primary/35 px-4 py-2 text-sm font-semibold leading-none text-primary transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                              >
+                                {exploreText}
+                                <ArrowRight className="ml-1.5 h-4 w-4" />
+                              </Link>
+                            </div>
                           </div>
-                          <h3 className="mb-2 text-lg font-semibold text-card-foreground">
-                            {getCategoryName(category)}
-                          </h3>
-                          <p className="line-clamp-2 text-sm text-muted-foreground">
-                            {getCategorySummary(category)}
-                          </p>
-                        </Link>
-                      ))}
+                        )
+                      })}
                     </div>
                   ) : (
-                    <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+                    <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-sm font-semibold text-muted-foreground">
                       {emptyZoneText}
                     </div>
                   )}
@@ -134,22 +161,22 @@ export function ExhibitionCategories() {
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+            <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-sm font-semibold text-muted-foreground">
               {emptyZoneText}
             </div>
           )}
 
           {/* CTA */}
-          <div className="mt-16 text-center">
-            <p className="mb-4 text-muted-foreground">
-              {t("cta_question")}
-            </p>
-            <Button asChild size="lg" className="group bg-primary hover:bg-primary/90">
-              <Link href={`/${locale}/sponsor/register`}>
-                {t("cta_button")}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <div className="mt-16 flex justify-end">
+            <p className="text-right text-base leading-relaxed text-muted-foreground">
+              {t("cta_question")}{" "}
+              <Link
+                href={`/${locale}/sponsor/register`}
+                className="font-semibold text-primary transition-colors hover:text-primary/80"
+              >
+                {locale === "vi" ? "Đăng ký gian hàng ngay" : "Register booth now"}
               </Link>
-            </Button>
+            </p>
           </div>
         </div>
       </section>
