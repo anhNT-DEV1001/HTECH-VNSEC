@@ -245,30 +245,30 @@
       "planned": "(dự kiến)",
       "planned_label": "dự kiến",
       "directive_list": [
-        "Bộ Công an",
-        "Bộ Khoa học và Công nghệ"
+        { "name": "Bộ Công an", "logo": "/bo_cong_an.png" },
+        { "name": "Bộ Khoa học và Công nghệ", "logo": "/bo_kh_cn.png" }
       ],
       "implementation_list": [
-        "Cục Công nghiệp An ninh (H08)",
-        "Học viện Kỹ thuật và Công nghệ an ninh"
+        { "name": "Cục Công nghiệp An ninh (H08)", "logo": "/cuc_cong_nghiep_an_ninh.png" },
+        { "name": "Học viện Kỹ thuật và Công nghệ an ninh", "logo": "/hoc_vien_ky_thuat_cong_nghe_an_ninh.png" }
       ],
-      "organizer_main": "HTECH",
+      "organizer_main": { "name": "HTECH", "logo": "/htech.png" },
       "co_organizer_list": [
-        "EverPartner",
-        "Trung tâm PSST",
-        "Công ty TNHH MTV Bạch Đằng"
+        { "name": "EverPartner", "logo": null },
+        { "name": "Trung tâm PSST", "logo": null },
+        { "name": "Công ty TNHH MTV Bạch Đằng", "logo": null }
       ],
       "accompanying_left_list": [
-        "Hiệp hội An ninh chuyên nghiệp Châu Á tại Việt Nam (APSA)",
-        "Hiệp hội UAV Thế giới tại Việt Nam",
-        "Hiệp hội Internet Việt Nam",
-        "Hiệp hội Doanh nghiệp trẻ Việt Nam tại Châu Âu"
+        { "name": "Hiệp hội An ninh chuyên nghiệp Châu Á tại Việt Nam (APSA)", "logo": "/apsa_vietnam.jpg" },
+        { "name": "Hiệp hội UAV Thế giới tại Việt Nam", "logo": "/uav.png" },
+        { "name": "Hiệp hội Internet Việt Nam", "logo": "/via.png" },
+        { "name": "Hiệp hội Doanh nghiệp trẻ Việt Nam tại Châu Âu", "logo": "/hiep_hoi_doanh_nghiep_tre_vn.png" }
       ],
       "accompanying_right_list": [
-        "Báo Công an Nhân dân",
-        "Truyền hình Công an Nhân dân",
-        "Báo đầu tư",
-        "SUNNY VIỆT NAM"
+        { "name": "Báo Công an Nhân dân", "logo": "/bo_cong_an.png" },
+        { "name": "Truyền hình Công an Nhân dân", "logo": "/truyen_hinh_antv.png" },
+        { "name": "Báo đầu tư", "logo": "/bao_dau_tu.svg" },
+        { "name": "SUNNY VIỆT NAM", "logo": "/sunny_vn.png" }
       ]
     },
     "venue": {

@@ -245,30 +245,30 @@
       "planned": "(planned)",
       "planned_label": "planned",
       "directive_list": [
-        "Ministry of Public Security",
-        "Ministry of Science and Technology"
+        { "name": "Ministry of Public Security", "logo": "/bo_cong_an.png" },
+        { "name": "Ministry of Science and Technology", "logo": "/bo_kh_cn.png" }
       ],
       "implementation_list": [
-        "Police Industry Department (H08)",
-        "Academy of Security Engineering and Technology"
+        { "name": "Police Industry Department (H08)", "logo": "/cuc_cong_nghiep_an_ninh.png" },
+        { "name": "Academy of Security Engineering and Technology", "logo": "/hoc_vien_ky_thuat_cong_nghe_an_ninh.png" }
       ],
-      "organizer_main": "HTECH",
+      "organizer_main": { "name": "HTECH", "logo": "/htech.png" },
       "co_organizer_list": [
-        "EverPartner",
-        "PSST Center",
-        "Bach Dang Co., Ltd."
+        { "name": "EverPartner", "logo": null },
+        { "name": "PSST Center", "logo": null },
+        { "name": "Bach Dang Co., Ltd.", "logo": null }
       ],
       "accompanying_left_list": [
-        "Asia Pacific Professional Security Association in Vietnam (APSA)",
-        "UAV World Association in Vietnam",
-        "Vietnam Internet Association",
-        "Vietnam Young Entrepreneurs Association in Europe"
+        { "name": "Asia Pacific Professional Security Association in Vietnam (APSA)", "logo": "/apsa_vietnam.jpg" },
+        { "name": "UAV World Association in Vietnam", "logo": "/uav.png" },
+        { "name": "Vietnam Internet Association", "logo": "/via.png" },
+        { "name": "Vietnam Young Entrepreneurs Association in Europe", "logo": "/hiep_hoi_doanh_nghiep_tre_vn.png" }
       ],
       "accompanying_right_list": [
-        "People's Public Security Newspaper",
-        "People's Public Security Television",
-        "Investment Newspaper",
-        "SUNNY VIETNAM"
+        { "name": "People's Public Security Newspaper", "logo": "/bo_cong_an.png" },
+        { "name": "People's Public Security Television", "logo": "/truyen_hinh_antv.png" },
+        { "name": "Investment Newspaper", "logo": "/bao_dau_tu.svg" },
+        { "name": "SUNNY VIETNAM", "logo": "/sunny_vn.png" }
       ]
     },
     "venue": {
