@@ -61,7 +61,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="ml-[25px]">
             <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
               {t("quick_links.title")}
             </h3>
@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm leading-relaxed text-secondary-foreground/78">
+                <span className="text-sm leading-relaxed text-secondary-foreground/78 text-nowrap">
                   {t("contact.address")}
                 </span>
               </li>
@@ -138,6 +138,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }

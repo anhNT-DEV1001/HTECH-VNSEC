@@ -132,7 +132,7 @@ export default function SponsorRegistrationPage() {
           <h2 className="mb-4 text-2xl font-bold text-secondary-foreground">
             {t("cta.title")}
           </h2>
-          <p className="mb-6 text-muted-foreground">
+          <p className="mb-6 text-white text-center">
             {t("cta.description")}
           </p>
           <Button asChild size="lg" className="group bg-primary hover:bg-primary/90">

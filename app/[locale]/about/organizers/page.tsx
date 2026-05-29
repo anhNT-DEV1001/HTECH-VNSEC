@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { Building2, Shield, Users, Globe } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type OrganizerItem = {
   name: string
@@ -12,6 +13,11 @@ type OrganizerItem = {
 type OrganizerMain = {
   name: string
   logo: string | null
+}
+
+const compactLogoClasses: Record<string, string> = {
+  "/truyen_hinh_antv.png": "max-h-10 max-w-[70%] md:max-h-11 lg:max-h-12",
+  "/bao_dau_tu.svg": "max-h-10 max-w-[74%] md:max-h-11 lg:max-h-12",
 }
 
 function OrganizerCard({ item }: { item: OrganizerItem }) {
@@ -25,7 +31,10 @@ function OrganizerCard({ item }: { item: OrganizerItem }) {
             alt={item.name}
             width={140}
             height={60}
-            className="max-h-16 w-auto object-contain"
+            className={cn(
+              "max-h-16 w-auto object-contain",
+              compactLogoClasses[item.logo]
+            )}
           />
         ) : (
           <span className="text-center text-sm font-semibold text-foreground leading-tight">
