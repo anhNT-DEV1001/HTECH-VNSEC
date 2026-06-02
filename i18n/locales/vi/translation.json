@@ -42,20 +42,20 @@
       "description": "VN-SECURITY' 2026 là Triển lãm và Hội nghị Quốc tế lần thứ nhất về Công nghiệp An ninh tại Việt Nam, được định hướng trở thành diễn đàn thường niên quy mô quốc gia dành cho lĩnh vực công nghệ và công nghiệp an ninh. Sự kiện tập trung vào hệ sinh thái công nghệ an ninh toàn diện, bao gồm chuyển đổi số, thiết bị an ninh tiên tiến, hạ tầng thông minh và các giải pháp công nghệ chiến lược. Với quy mô lớn và chuỗi hoạt động chuyên sâu, VN-SECURITY' 2026 hướng tới thúc đẩy hợp tác, đổi mới sáng tạo và phát triển ngành công nghiệp an ninh hiện đại tại Việt Nam.",
       "features": [
         {
-          "title": "Công nghệ An ninh",
+          "title": "Công nghiệp An ninh",
           "description": "Trưng bày các giải pháp an ninh tiên tiến nhất từ các nhà sản xuất hàng đầu thế giới."
         },
         {
-          "title": "Quy mô Quốc tế",
-          "description": "Kết nối doanh nghiệp Việt Nam với đối tác từ hơn 50 quốc gia trên toàn cầu."
-        },
-        {
-          "title": "Hội nghị Chuyên đề",
+          "title": "Hội thảo Chuyên đề",
           "description": "Các buổi hội thảo chuyên sâu với sự tham gia của chuyên gia hàng đầu."
         },
         {
           "title": "Cơ hội Kinh doanh",
           "description": "Tạo cầu nối giữa nhà cung cấp và khách hàng trong ngành an ninh."
+        },
+        {
+          "title": "Quy mô Quốc tế",
+          "description": "Kết nối doanh nghiệp Việt Nam với đối tác từ hơn 50 quốc gia trên toàn cầu."
         }
       ],
       "cta": "Xem chi tiết về sự kiện"

@@ -1,12 +1,8 @@
 // proxy.ts
 import createMiddleware from 'next-intl/middleware';
-import {locales, defaultLocale} from './i18n/settings';
+import { routing } from './i18n/routing';
 
-export default createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: 'always',
-});
+export default createMiddleware(routing);
 
 export const config = {
   matcher: ['/', '/(vi|en)/:path*'],

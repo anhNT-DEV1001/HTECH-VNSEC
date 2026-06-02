@@ -42,20 +42,20 @@
       "description": "VN-SECURITY' 2026 is the first International Exhibition and Conference on the Security Industry in Vietnam, positioned as an annual forum for security technology and industry. The event focuses on a comprehensive security technology ecosystem, fostering connection, collaboration, and the development of a modern security industry in Vietnam.",
       "features": [
         {
-          "title": "Security Technology",
+          "title": "Security Industry",
           "description": "Showcasing the most advanced security solutions from world-leading manufacturers."
         },
         {
-          "title": "International Scale",
-          "description": "Connecting Vietnamese businesses with partners from over 50 countries worldwide."
-        },
-        {
-          "title": "Specialized Conferences",
+          "title": "Expert Seminars",
           "description": "In-depth seminars featuring participation from leading experts."
         },
         {
           "title": "Business Opportunities",
           "description": "Creating connections between suppliers and customers in the security industry."
+        },
+        {
+          "title": "International Scale",
+          "description": "Connecting Vietnamese businesses with partners from over 50 countries worldwide."
         }
       ],
       "cta": "View event details"

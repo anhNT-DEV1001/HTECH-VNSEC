@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { AboutFeatureCard } from "@/components/sections/about-feature-card"
 import { Button } from "@/components/ui/button"
 
-const featureIcons = ["shield", "globe", "users", "award"] as const
+const featureIcons = ["shield", "users", "award", "globe"] as const
 
 export function AboutPreview() {
   const t = useTranslations("home.about")
