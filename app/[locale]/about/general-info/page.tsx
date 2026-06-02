@@ -49,14 +49,14 @@ export default function AboutPage() {
               <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">
                 {t("section_objectives.title")}
               </h2>
-              <div className="space-y-4">
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {objectives.map((objective, index) => (
-                  <div key={index} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
-                    <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-semibold text-card-foreground">{objective.title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{objective.description}</p>
+                  <div key={index} className="flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center">
+                    <div className="flex min-h-[80px] flex-col items-center justify-start">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                      <h3 className="mt-3 font-semibold text-card-foreground">{objective.title}</h3>
                     </div>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{objective.description}</p>
                   </div>
                 ))}
               </div>
@@ -95,25 +95,25 @@ export default function AboutPage() {
               <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">
                 {t("section_notes.title")}
               </h2>
-              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+              <div className="space-y-4">
                 {notes.map((note, index) => {
                   const NoteIcon = noteIcons[index]
                   return (
                     <div
                       key={index}
-                      className="flex h-full flex-col rounded-xl border border-border bg-card p-6"
+                      className="flex items-center gap-4 rounded-xl border border-border bg-card p-5"
                     >
-                      <div className="mb-3 flex flex-col items-center gap-3 text-center">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                          <NoteIcon className="h-5 w-5" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-card-foreground">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <NoteIcon className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="mb-1 text-base font-semibold text-card-foreground">
                           {note.title}
                         </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          {note.content}
+                        </p>
                       </div>
-                      <p className="text-muted-foreground">
-                        {note.content}
-                      </p>
                     </div>
                   )
                 })}
