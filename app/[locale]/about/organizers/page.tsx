@@ -1,5 +1,6 @@
 "use client"
 
+import type { CSSProperties, PointerEvent } from "react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { Building2, Shield, Users, Globe } from "lucide-react"
@@ -16,26 +17,45 @@ type OrganizerMain = {
 }
 
 const compactLogoClasses: Record<string, string> = {
-  "/truyen_hinh_antv.png": "max-h-10 max-w-[70%] md:max-h-11 lg:max-h-12",
-  "/bao_dau_tu.svg": "max-h-10 max-w-[74%] md:max-h-11 lg:max-h-12",
+  "/truyen_hinh_antv.png": "max-h-14 max-w-[70%] md:max-h-16 lg:max-h-18",
+  "/bao_dau_tu.svg": "max-h-14 max-w-[74%] md:max-h-16 lg:max-h-18",
+}
+
+const glowStyle: CSSProperties = {
+  background:
+    "radial-gradient(260px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(239, 89, 65, 0.25), transparent 72%)",
 }
 
 function OrganizerCard({ item }: { item: OrganizerItem }) {
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect()
+    event.currentTarget.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`)
+    event.currentTarget.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`)
+  }
+
   return (
-    <div className="group relative h-24 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.10)] md:h-28 lg:h-32">
+    <div className="group relative h-32 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.15)] md:h-40 lg:h-44" onPointerMove={handlePointerMove}>
+      {/* Glow effect on hover */}
+      <div className="pointer-events-none absolute -inset-0.5 rounded-xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
       {/* Logo Layer */}
       <div className="flex h-full w-full items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-30">
         {item.logo ? (
-          <Image
-            src={item.logo}
-            alt={item.name}
-            width={140}
-            height={60}
-            className={cn(
-              "max-h-16 w-auto object-contain",
-              compactLogoClasses[item.logo]
-            )}
-          />
+          <div className="relative flex h-full w-full items-center justify-center">
+            {/* Shadow/Blur background effect */}
+            <div className="absolute inset-0 scale-110 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(239,89,65,0.25)]" />
+            {/* Glow following cursor */}
+            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={glowStyle} />
+            <Image
+              src={item.logo}
+              alt={item.name}
+              width={140}
+              height={80}
+              className={cn(
+                "relative z-10 max-h-22 w-auto object-contain drop-shadow-lg",
+                compactLogoClasses[item.logo]
+              )}
+            />
+          </div>
         ) : (
           <span className="text-center text-sm font-semibold text-foreground leading-tight">
             {item.name}
@@ -54,18 +74,32 @@ function OrganizerCard({ item }: { item: OrganizerItem }) {
 }
 
 function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect()
+    event.currentTarget.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`)
+    event.currentTarget.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`)
+  }
+
   return (
-    <div className="group relative mx-auto h-24 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.10)] md:h-28 lg:h-32 w-full max-w-xs">
+    <div className="group relative mx-auto h-32 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.15)] md:h-40 lg:h-44 w-full max-w-xs" onPointerMove={handlePointerMove}>
+      {/* Glow effect on hover */}
+      <div className="pointer-events-none absolute -inset-0.5 rounded-xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
       {/* Logo Layer */}
-      <div className="flex h-full w-full items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-50">
+      <div className="flex h-full w-full items-center justify-center p-4">
         {item.logo ? (
-          <Image
-            src={item.logo}
-            alt={item.name}
-            width={160}
-            height={70}
-            className="max-h-20 w-auto object-contain"
-          />
+          <div className="relative flex h-full w-full items-center justify-center">
+            {/* Shadow/Blur background effect */}
+            <div className="absolute inset-0 scale-110 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(239,89,65,0.25)]" />
+            {/* Glow following cursor */}
+            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={glowStyle} />
+            <Image
+              src={item.logo}
+              alt={item.name}
+              width={160}
+              height={70}
+              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-60"
+            />
+          </div>
         ) : (
           <span className="text-center text-xl font-bold text-foreground">
             {item.name}
@@ -74,8 +108,8 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
       </div>
 
       {/* Text Layer - appears on hover */}
-      <div className="absolute inset-0 flex items-center justify-center bg-white/95 p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-300">
-        <span className="text-center text-sm font-semibold text-foreground leading-tight">
+      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-300">
+        <span className="text-center text-sm font-semibold text-foreground leading-tight bg-white/90 px-2 py-1 rounded-md">
           {item.name}
         </span>
       </div>
