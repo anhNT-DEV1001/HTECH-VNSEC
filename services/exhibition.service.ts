@@ -11,6 +11,7 @@ export interface ExhibitionCategory {
   content_vn?: string | null;
   content_en?: string | null;
   img?: string | null;
+  document_pdf?: string | null;
   logo?: string | null;
   display_order: number;
   web_id?: number;
@@ -59,6 +60,24 @@ export interface PublicExhibitor {
   updated_at?: string;
 }
 
+export interface PublicConference {
+  id: number;
+  name: string;
+  img?: string | null;
+  sumary_vn: string;
+  sumary_en?: string | null;
+  content_vn?: string | null;
+  content_en?: string | null;
+  display_order: number;
+  web_id?: number;
+  web?: {
+    id: number;
+    name: string;
+  } | null;
+  exhibitions?: PublicExhibitionRef[];
+  updated_at?: string;
+}
+
 interface ZoneApiResponse {
   status: string;
   message: string;
@@ -69,6 +88,12 @@ interface ExhibitorApiResponse {
   status: string;
   message: string;
   data: PublicExhibitor[];
+}
+
+interface ConferenceApiResponse {
+  status: string;
+  message: string;
+  data: PublicConference[];
 }
 
 const DEFAULT_EXHIBITION_WEB_ID = 2;
@@ -151,6 +176,20 @@ export const exhibitionService = {
   getExhibitors: async (): Promise<PublicExhibitor[]> => {
     const res: ExhibitorApiResponse = await axiosInstance.get(
       "/exhibition/public/exhibitors"
+    );
+    return res.data;
+  },
+
+  getExhibitorsByCategoryId: async (id: number): Promise<PublicExhibitor[]> => {
+    const res: ExhibitorApiResponse = await axiosInstance.get(
+      `/exhibition/public/exhibitions/${id}/exhibitors`
+    );
+    return res.data;
+  },
+
+  getConferencesByCategoryId: async (id: number): Promise<PublicConference[]> => {
+    const res: ConferenceApiResponse = await axiosInstance.get(
+      `/exhibition/public/exhibitions/${id}/conferences`
     );
     return res.data;
   },

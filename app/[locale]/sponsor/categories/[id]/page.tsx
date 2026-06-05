@@ -5,8 +5,7 @@ import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
 import { useParams } from "next/navigation"
 import { useLocale } from "next-intl"
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft, Building2, CalendarDays, Download, MapPin, Sparkles } from "lucide-react"
 import { LucideIconByName } from "@/components/ui/lucide-icon"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 import {
@@ -14,62 +13,9 @@ import {
   getLocalizedZoneField,
   type ExhibitionCategory,
   type ExhibitionZone,
+  type PublicConference,
+  type PublicExhibitor,
 } from "@/services/exhibition.service"
-
-const hasHtmlMarkup = (value?: string | null) => /<\/?[a-z][\s\S]*>/i.test(value || "")
-
-function PlainTextContent({ content }: { content: string }) {
-  const blocks = content
-    .split(/\n\s*\n/)
-    .map((block) => block.trim())
-    .filter(Boolean)
-
-  return (
-    <div className="space-y-6">
-      {blocks.map((block, index) => {
-        const lines = block.split("\n").map((line) => line.trim()).filter(Boolean)
-        const listItems = lines.filter((line) => /^[\-*•]\s+/.test(line))
-
-        if (listItems.length === lines.length) {
-          return (
-            <ul key={index} className="space-y-3 pl-6 text-[15px] leading-8 text-muted-foreground marker:text-primary">
-              {listItems.map((item, itemIndex) => (
-                <li key={itemIndex}>{item.replace(/^[\-*•]\s+/, "")}</li>
-              ))}
-            </ul>
-          )
-        }
-
-        return (
-          <p key={index} className="text-[15px] leading-8 text-muted-foreground">
-            {block}
-          </p>
-        )
-      })}
-    </div>
-  )
-}
-
-function RichContent({ content }: { content?: string | null }) {
-  if (!content) {
-    return (
-      <p className="text-[15px] leading-8 text-muted-foreground">
-        Nội dung đang được cập nhật.
-      </p>
-    )
-  }
-
-  if (hasHtmlMarkup(content)) {
-    return (
-      <div
-        className="text-[15px] leading-8 text-muted-foreground [&_a]:font-semibold [&_a]:text-primary [&_a]:underline-offset-4 hover:[&_a]:underline [&_h1]:mb-5 [&_h1]:mt-10 [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-foreground [&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:uppercase [&_h2]:tracking-tight [&_h2]:text-foreground [&_h3]:mb-4 [&_h3]:mt-8 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_img]:my-8 [&_img]:w-full [&_img]:rounded-[1.75rem] [&_img]:object-cover [&_ol]:my-5 [&_ol]:space-y-3 [&_ol]:pl-6 [&_p]:my-5 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-5 [&_ul]:space-y-3 [&_ul]:pl-6 [&_li]:pl-1"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    )
-  }
-
-  return <PlainTextContent content={content} />
-}
 
 function formatZoneLabel(label?: string | null) {
   return (label || "")
@@ -77,11 +23,186 @@ function formatZoneLabel(label?: string | null) {
     .replace(/\s*,\s*/g, " / ")
 }
 
+type RelatedCardVariant = "exhibitor" | "conference"
+
+function ShowcaseCard({
+  title,
+  description,
+  image,
+  badge,
+  meta,
+  variant,
+}: {
+  title: string
+  description?: string | null
+  image?: string | null
+  badge: string
+  meta?: string | null
+  variant: RelatedCardVariant
+}) {
+  const imageUrl = resolveApiAssetUrl(image)
+  const Icon = variant === "exhibitor" ? Building2 : CalendarDays
+
+  return (
+    <div className="group relative overflow-hidden rounded-xl border border-primary/10 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_28px_65px_rgba(15,23,42,0.12)]">
+      <div className="absolute inset-x-0 top-0 h-1 bg-primary" />
+      <div className="p-5">
+        <div className="mb-5 flex items-start justify-between gap-4">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-primary/10 bg-primary/5">
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={title}
+                width={96}
+                height={96}
+                className="h-full w-full object-contain p-2"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-primary">
+                <Icon className="h-9 w-9" />
+              </div>
+            )}
+          </div>
+
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            {badge}
+          </span>
+        </div>
+
+        <h3 className="text-xl font-extrabold leading-tight text-foreground transition-colors group-hover:text-primary">
+          {title}
+        </h3>
+
+        {description ? (
+          <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground">
+            {description}
+          </p>
+        ) : null}
+
+        {meta ? (
+          <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3 py-2 text-xs font-semibold text-muted-foreground">
+            {variant === "exhibitor" ? <MapPin className="h-3.5 w-3.5 text-primary" /> : <CalendarDays className="h-3.5 w-3.5 text-primary" />}
+            <span className="truncate">{meta}</span>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  )
+}
+
+function ShowcaseSection<T extends { id: number; name: string; img?: string | null }>({
+  title,
+  eyebrow,
+  description,
+  items,
+  variant,
+  emptyText,
+  renderDescription,
+  renderMeta,
+}: {
+  title: string
+  eyebrow: string
+  description: string
+  items: T[]
+  variant: RelatedCardVariant
+  emptyText: string
+  renderDescription: (item: T) => string | null | undefined
+  renderMeta?: (item: T) => string | null | undefined
+}) {
+  return (
+    <section className="space-y-7">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          {/* <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary">{eyebrow}</p> */}
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+            {title}
+          </h2>
+          {/* <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
+            {description}
+          </p> */}
+        </div>
+        <span className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-bold text-primary">
+          {items.length}
+        </span>
+      </div>
+
+      {items.length ? (
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {items.map((item) => (
+            <ShowcaseCard
+              key={item.id}
+              title={item.name}
+              description={renderDescription(item)}
+              image={item.img}
+              badge={eyebrow}
+              meta={renderMeta?.(item)}
+              variant={variant}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="rounded-xl border border-dashed border-primary/25 bg-warm-card p-8 text-center">
+          <p className="text-sm leading-7 text-muted-foreground">{emptyText}</p>
+        </div>
+      )}
+    </section>
+  )
+}
+
+function DetailCardsSkeleton() {
+  return (
+    <section className="bg-background py-16 lg:py-20">
+      <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-6xl space-y-14">
+          {[0, 1].map((sectionIndex) => (
+            <div key={sectionIndex} className="space-y-7">
+              <div className="space-y-3">
+                <div className="h-4 w-32 animate-pulse rounded bg-muted" />
+                <div className="h-9 w-64 animate-pulse rounded bg-muted" />
+                <div className="h-5 w-full max-w-2xl animate-pulse rounded bg-muted" />
+              </div>
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {[0, 1, 2].map((itemIndex) => (
+                  <div
+                    key={itemIndex}
+                    className="rounded-xl border border-primary/10 bg-white p-5 shadow-[0_18px_45px_rgba(15,23,42,0.06)]"
+                  >
+                    <div className="mb-5 h-20 w-20 animate-pulse rounded-xl bg-muted" />
+                    <div className="h-6 w-4/5 animate-pulse rounded bg-muted" />
+                    <div className="mt-3 h-4 w-full animate-pulse rounded bg-muted" />
+                    <div className="mt-2 h-4 w-10/12 animate-pulse rounded bg-muted" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function getExhibitorMeta(exhibitor: PublicExhibitor, locale: string) {
+  const rank = locale === "vi" ? exhibitor.rank?.name_vn : exhibitor.rank?.name_en || exhibitor.rank?.name_vn
+  const booth = exhibitor.booth?.name
+  return [rank, booth].filter(Boolean).join(" / ")
+}
+
+function getLocalizedSummary(
+  item: Pick<PublicExhibitor | PublicConference, "sumary_vn" | "sumary_en">,
+  locale: string
+) {
+  return locale === "vi" ? item.sumary_vn : item.sumary_en || item.sumary_vn
+}
+
 export default function ExhibitionCategoryDetailPage() {
   const params = useParams<{ id: string }>()
   const locale = useLocale()
   const [category, setCategory] = useState<ExhibitionCategory | null>(null)
   const [categoryZones, setCategoryZones] = useState<ExhibitionZone[]>([])
+  const [exhibitors, setExhibitors] = useState<PublicExhibitor[]>([])
+  const [conferences, setConferences] = useState<PublicConference[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
@@ -92,22 +213,40 @@ export default function ExhibitionCategoryDetailPage() {
       setError(locale === "vi" ? "Lĩnh vực triển lãm không hợp lệ." : "Invalid exhibition category.")
       setCategory(null)
       setCategoryZones([])
+      setExhibitors([])
+      setConferences([])
       setLoading(false)
       return
     }
 
-    exhibitionService
-      .getCategoryWithZonesById(categoryId)
-      .then((data) => {
+    setLoading(true)
+    setError("")
+
+    Promise.all([
+      exhibitionService.getCategoryWithZonesById(categoryId),
+      exhibitionService.getExhibitorsByCategoryId(categoryId).catch((err: unknown) => {
+        console.error(err)
+        return []
+      }),
+      exhibitionService.getConferencesByCategoryId(categoryId).catch((err: unknown) => {
+        console.error(err)
+        return []
+      }),
+    ])
+      .then(([data, exhibitorData, conferenceData]) => {
         if (!data) {
           setError(locale === "vi" ? "Không tìm thấy lĩnh vực triển lãm." : "Exhibition category not found.")
           setCategory(null)
           setCategoryZones([])
+          setExhibitors([])
+          setConferences([])
           return
         }
 
         setCategory(data.category)
         setCategoryZones(data.zones)
+        setExhibitors(exhibitorData)
+        setConferences(conferenceData)
         setError("")
       })
       .catch((err: unknown) => {
@@ -119,15 +258,17 @@ export default function ExhibitionCategoryDetailPage() {
         )
         setCategory(null)
         setCategoryZones([])
+        setExhibitors([])
+        setConferences([])
       })
       .finally(() => setLoading(false))
   }, [locale, params?.id])
 
   const imageUrl = useMemo(() => resolveApiAssetUrl(category?.img), [category?.img])
+  const documentPdfUrl = useMemo(() => resolveApiAssetUrl(category?.document_pdf), [category?.document_pdf])
   const categoryName = locale === "vi" ? category?.name_vn : category?.name_en || category?.name_vn
   const categorySummary = locale === "vi" ? category?.sumary_vn : category?.sumary_en || category?.sumary_vn
   const categoryTitle = locale === "vi" ? category?.title_vn : category?.title_en || category?.title_vn
-  const categoryContent = locale === "vi" ? category?.content_vn : category?.content_en || category?.content_vn
   const zoneFields = useMemo(
     () => Array.from(new Set(categoryZones.map((zone) => getLocalizedZoneField(zone, locale)).filter(Boolean))),
     [categoryZones, locale]
@@ -191,6 +332,17 @@ export default function ExhibitionCategoryDetailPage() {
                     <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary-foreground/78">
                       {categorySummary}
                     </p>
+                    {documentPdfUrl ? (
+                      <a
+                        href={documentPdfUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-white px-5 py-3 text-sm font-bold text-primary shadow-[0_14px_34px_rgba(15,23,42,0.10)] transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        <Download className="h-4 w-4" />
+                        {locale === "vi" ? "Tải PDF" : "Download PDF"}
+                      </a>
+                    ) : null}
                   </div>
                 </div>
 
@@ -219,41 +371,49 @@ export default function ExhibitionCategoryDetailPage() {
         </div>
       </section>
 
+      {loading ? <DetailCardsSkeleton /> : null}
+
       {category && !loading && !error ? (
         <section className="bg-background py-16 lg:py-20">
           <div className="container mx-auto px-4">
-            <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1.3fr)_360px]">
-              <article className="min-w-0">
-                <RichContent content={categoryContent} />
+            <div className="mx-auto max-w-6xl space-y-16">
+              <ShowcaseSection
+                title={locale === "vi" ? "Đơn vị triển lãm" : "Exhibitors"}
+                eyebrow={locale === "vi" ? "Exhibitors" : "Exhibitors"}
+                description={
+                  locale === "vi"
+                    ? "Các đơn vị đang trưng bày giải pháp, sản phẩm và công nghệ trong lĩnh vực này."
+                    : "Organizations showcasing solutions, products, and technologies in this exhibition category."
+                }
+                items={exhibitors}
+                variant="exhibitor"
+                emptyText={
+                  locale === "vi"
+                    ? "Danh sách đơn vị triển lãm đang được cập nhật."
+                    : "The exhibitor list is being updated."
+                }
+                renderDescription={(item) => getLocalizedSummary(item, locale)}
+                renderMeta={(item) => getExhibitorMeta(item, locale)}
+              />
 
-                <div className="mt-12 flex flex-col gap-3 border-t border-border pt-8 sm:flex-row">
-                  <Button asChild className="bg-primary hover:bg-primary/90">
-                    <Link href={`/${locale}/sponsor/register`}>
-                      {locale === "vi" ? "Đăng ký gian hàng" : "Register Booth"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="border-primary/25 hover:border-primary hover:bg-primary hover:text-primary-foreground">
-                    <Link href={`/${locale}/sponsor/exhibitor`}>
-                      {locale === "vi" ? "Xem danh sách exhibitor" : "View exhibitors"}
-                    </Link>
-                  </Button>
-                </div>
-              </article>
-
-              <aside className="space-y-4 lg:sticky lg:top-28 lg:self-start">
-                <div className="rounded-[1.75rem] border border-primary/10 bg-warm-card p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                    {locale === "vi" ? "Thông tin nhanh" : "Quick Info"}
-                  </p>
-                  <h2 className="mt-3 text-xl font-bold text-foreground">
-                    {categoryName}
-                  </h2>
-                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                    {categorySummary}
-                  </p>
-                </div>
-              </aside>
+              <ShowcaseSection
+                title={locale === "vi" ? "Hội thảo chuyên đề" : "Conferences"}
+                eyebrow={locale === "vi" ? "Hội thảo" : "Conferences"}
+                description={
+                  locale === "vi"
+                    ? "Các phiên hội thảo, tọa đàm và hoạt động chuyên môn liên quan trực tiếp đến lĩnh vực này."
+                    : "Conference sessions, discussions, and focused activities connected to this category."
+                }
+                items={conferences}
+                variant="conference"
+                emptyText={
+                  locale === "vi"
+                    ? "Danh sách hội thảo đang được cập nhật."
+                    : "The conference list is being updated."
+                }
+                renderDescription={(item) => getLocalizedSummary(item, locale)}
+                renderMeta={(item) => item.web?.name}
+              />
             </div>
           </div>
         </section>
