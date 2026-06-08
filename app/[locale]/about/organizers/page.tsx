@@ -136,7 +136,7 @@ export default function OrganizersPage() {
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               {t("page_badge")}
             </span>
-            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold uppercase tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
             <p className="mt-6 text-center text-sm leading-8 text-secondary-foreground/78">

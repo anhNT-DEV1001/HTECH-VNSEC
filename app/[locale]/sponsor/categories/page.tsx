@@ -60,9 +60,12 @@ export function ExhibitionCategories() {
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               {t("page_badge")}
             </span>
-            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold uppercase tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
+            <p className="mt-6 text-center text-sm leading-8 text-secondary-foreground/78">
+              {t("page_description")}
+            </p>
           </div>
         </div>
       </section>
@@ -70,9 +73,6 @@ export function ExhibitionCategories() {
       {/* Categories Grid */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="mx-auto mb-16 max-w-4xl text-pretty text-center text-lg leading-relaxed text-muted-foreground">
-            {t("page_description")}
-          </h2>
           {loading ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {Array.from({ length: 6 }).map((_, i) => (

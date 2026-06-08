@@ -382,6 +382,7 @@
       },
       "badge": {
         "title": "Nhận thẻ tham quan",
+        "note": "Note: Nhận thẻ, túi đeo chéo và sơ đồ VN-SECURITY' 2026 tại triển lãm",
         "steps": [
           {
             "title": "Đăng ký trực tuyến",
@@ -390,10 +391,6 @@
           {
             "title": "Check-in tại sự kiện",
             "description": "Xuất trình mã QR hoặc CMND/CCCD tại quầy đăng ký"
-          },
-          {
-            "title": "Nhận thẻ & tài liệu",
-            "description": "Nhận thẻ đeo, túi tài liệu và sơ đồ triển lãm"
           }
         ]
       },

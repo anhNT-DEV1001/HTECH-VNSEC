@@ -334,6 +334,7 @@
       },
       "badge": {
         "title": "Get Your Visitor Badge",
+        "note": "Note: Receive your badge, crossbody bag, and VN-SECURITY' 2026 map at the exhibition",
         "steps": [
           {
             "title": "Register Online",
@@ -342,10 +343,6 @@
           {
             "title": "Check-in at Event",
             "description": "Present QR code or ID card at the registration desk"
-          },
-          {
-            "title": "Receive Badge & Materials",
-            "description": "Get your badge, document bag, and exhibition map"
           }
         ]
       },

@@ -99,9 +99,12 @@ export default function ExhibitorsPage() {
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               {t("page_badge")}
             </span>
-            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold uppercase tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
+            <p className="mt-6 text-center text-sm leading-8 text-secondary-foreground/78">
+              {t("page_description")}
+            </p>
           </div>
         </div>
       </section>
@@ -109,9 +112,6 @@ export default function ExhibitorsPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-          <h2 className="text-pretty mb-16 text-2xl text-center leading-relaxed text-muted-foreground">
-              {t("page_description")}
-          </h2>
             <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />

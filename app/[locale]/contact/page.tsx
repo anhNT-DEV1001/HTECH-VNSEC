@@ -75,9 +75,12 @@ export default function ContactPage() {
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               {t("page_badge")}
             </span>
-            <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-secondary-foreground sm:text-5xl">
+            <h1 className="mb-6 text-balance text-4xl font-bold uppercase tracking-tight text-secondary-foreground sm:text-5xl">
               {t("page_title")}
             </h1>
+            <p className="mt-6 text-center text-sm leading-8 text-secondary-foreground/78">
+              {t("page_description")}
+            </p>
           </div>
         </div>
       </section>
@@ -86,9 +89,6 @@ export default function ContactPage() {
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-pretty mb-16 text-2xl text-center leading-relaxed text-muted-foreground">
-              {t("page_description")}
-            </h2>
             <div className="grid gap-12 lg:grid-cols-5">
               {/* Contact Info */}
               <div className="lg:col-span-2">
