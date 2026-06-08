@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslations, useLocale } from "next-intl"
+import { useTranslations } from "next-intl"
 import { useState, useEffect, useCallback } from "react"
 import { CheckCircle, Plane, FileText, Globe, ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -56,29 +56,41 @@ export default function AboutPage() {
             </div>
 
             {/* Objectives Slideshow */}
-            <div className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">
-                {t("section_objectives.title")}
-              </h2>
+            <div className="mb-10">
+              <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                  {t("section_objectives.title")}
+                </h2>
+
+                <div className="flex items-center gap-3">
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {activeSlide + 1} / {objectives.length}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      aria-label="Previous objective"
+                      onClick={prevSlide}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-all hover:border-primary/40 hover:text-primary hover:shadow-md"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Next objective"
+                      onClick={nextSlide}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-all hover:border-primary/40 hover:text-primary hover:shadow-md"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
 
               {/* Slideshow Container */}
               <div className="relative">
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-4 rounded-full bg-background p-2 shadow-lg ring-1 ring-border transition-all hover:scale-110 hover:shadow-xl lg:-translate-x-12"
-                >
-                  <ChevronLeft className="h-5 w-5 text-foreground" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-4 rounded-full bg-background p-2 shadow-lg ring-1 ring-border transition-all hover:scale-110 hover:shadow-xl lg:translate-x-12"
-                >
-                  <ChevronRight className="h-5 w-5 text-foreground" />
-                </button>
-
                 {/* Slides */}
-                <div className="relative overflow-hidden rounded-2xl">
+                <div className="relative overflow-hidden rounded-xl">
                   <div
                     className="flex transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -86,28 +98,27 @@ export default function AboutPage() {
                     {objectives.map((objective, index) => (
                       <div
                         key={index}
-                        className="group relative flex w-full flex-shrink-0 flex-col items-center justify-center rounded-2xl border border-border/50 bg-gradient-to-br from-card via-card to-primary/5 px-8 py-12 text-center transition-shadow duration-500 hover:shadow-2xl"
+                        className="group relative flex w-full flex-shrink-0 overflow-hidden rounded-xl border border-border/60 bg-card px-5 py-6 shadow-sm transition-shadow duration-500 hover:shadow-lg sm:min-h-[220px] sm:px-7 sm:py-7"
                       >
-                        {/* Enhanced decorative blur circles */}
-                        <div className="absolute -left-32 -top-32 h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-                        <div className="absolute -bottom-32 -right-32 h-64 w-64 rounded-full bg-gradient-to-tl from-primary/10 to-transparent blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+                        <div className="absolute -right-20 -top-24 h-52 w-52 rounded-full bg-primary/10 blur-3xl transition-opacity duration-500 group-hover:opacity-80" />
                         {/* Subtle border glow */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                        <div className="relative z-10 flex flex-col items-center">
-                          {/* Enhanced icon with multiple shadow layers */}
-                          <div className="mb-6 relative">
-                            <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl" />
-                            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5 shadow-xl ring-4 ring-primary/10 backdrop-blur-sm">
-                              <CheckCircle className="h-10 w-10 text-primary drop-shadow-lg" />
+                        <div className="relative z-10 flex w-full flex-col gap-5 text-left sm:flex-row sm:items-center">
+                          <div className="relative shrink-0">
+                            <div className="absolute inset-0 rounded-full bg-primary/15 blur-lg" />
+                            <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/15 sm:h-16 sm:w-16">
+                              <CheckCircle className="h-7 w-7 sm:h-8 sm:w-8" />
                             </div>
                           </div>
-                          <h3 className="mb-4 text-xl font-bold text-card-foreground sm:text-2xl">
-                            {objective.title}
-                          </h3>
-                          <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground">
-                            {objective.description}
-                          </p>
+                          <div className="min-w-0">
+                            <h3 className="mb-3 text-lg font-bold leading-snug text-card-foreground sm:text-xl">
+                              {objective.title}
+                            </h3>
+                            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
+                              {objective.description}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -115,32 +126,28 @@ export default function AboutPage() {
                 </div>
 
                 {/* Dots Navigation */}
-                <div className="mt-6 flex justify-center gap-2">
+                <div className="mt-4 flex items-center justify-center gap-2">
                   {objectives.map((_, index) => (
                     <button
                       key={index}
+                      type="button"
                       onClick={() => setActiveSlide(index)}
                       className={cn(
-                        "h-2 rounded-full transition-all duration-300",
+                        "h-1.5 rounded-full transition-all duration-300",
                         activeSlide === index
-                          ? "w-8 bg-primary"
-                          : "w-2 bg-primary/30 hover:bg-primary/50"
+                          ? "w-7 bg-primary"
+                          : "w-1.5 bg-primary/25 hover:bg-primary/50"
                       )}
                     />
                   ))}
                 </div>
 
                 {/* Progress Bar */}
-                <div className="mt-4 h-1 overflow-hidden rounded-full bg-muted">
+                <div className="mt-3 h-1 overflow-hidden rounded-full bg-muted">
                   <div
                     className="h-full bg-primary transition-all duration-500"
                     style={{ width: `${((activeSlide + 1) / objectives.length) * 100}%` }}
                   />
-                </div>
-
-                {/* Slide Counter */}
-                <div className="mt-3 text-center text-sm text-muted-foreground">
-                  {activeSlide + 1} / {objectives.length}
                 </div>
               </div>
             </div>
