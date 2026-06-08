@@ -85,11 +85,9 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
       {/* Glow effect on hover */}
       <div className="pointer-events-none absolute -inset-0.5 rounded-xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
       {/* Logo Layer */}
-      <div className="flex h-full w-full items-center justify-center p-4">
+      <div className="flex h-full w-full items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-30">
         {item.logo ? (
           <div className="relative flex h-full w-full items-center justify-center">
-            {/* Shadow/Blur background effect */}
-            <div className="absolute inset-0 scale-110 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(239,89,65,0.25)]" />
             {/* Glow following cursor */}
             <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={glowStyle} />
             <Image
@@ -97,7 +95,7 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
               alt={item.name}
               width={160}
               height={70}
-              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-60"
+              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-30"
             />
           </div>
         ) : (
@@ -108,8 +106,8 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
       </div>
 
       {/* Text Layer - appears on hover */}
-      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-300">
-        <span className="text-center text-sm font-semibold text-foreground leading-tight bg-white/90 px-2 py-1 rounded-md">
+      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-100">
+        <span className="text-center text-sm font-semibold text-foreground leading-tight">
           {item.name}
         </span>
       </div>

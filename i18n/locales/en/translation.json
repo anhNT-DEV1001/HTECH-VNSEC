@@ -253,11 +253,11 @@
         { "name": "Police Industry Department (H08)", "logo": "/cuc_cong_nghiep_an_ninh.png" },
         { "name": "Academy of Security Engineering and Technology", "logo": "/hoc_vien_ky_thuat_cong_nghe_an_ninh.png" }
       ],
-      "organizer_main": { "name": "HTECH", "logo": "/htech.png" },
+      "organizer_main": { "name": "HTECH Technology and Events Joint Stock Company", "logo": "/htech.png" },
       "co_organizer_list": [
-        { "name": "EverPartner", "logo": null },
-        { "name": "PSST Center", "logo": null },
-        { "name": "Bach Dang Co., Ltd.", "logo": null }
+        { "name": "EverPartner Joint Stock Company", "logo": null },
+        { "name": "PSST Center", "logo": "/psst.JPG" },
+        { "name": "Bach Dang Co., Ltd.", "logo": "/bach_dang.JPG" }
       ],
       "accompanying_left_list": [
         { "name": "Asia Pacific Professional Security Association in Vietnam (APSA)", "logo": "/apsa_vietnam.jpg" },
