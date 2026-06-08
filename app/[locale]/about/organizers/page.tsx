@@ -95,7 +95,7 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
               alt={item.name}
               width={160}
               height={70}
-              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-60"
+              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-30"
             />
           </div>
         ) : (
@@ -106,7 +106,7 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
       </div>
 
       {/* Text Layer - appears on hover */}
-      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-300">
+      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-100">
         <span className="text-center text-sm font-semibold text-foreground leading-tight">
           {item.name}
         </span>
