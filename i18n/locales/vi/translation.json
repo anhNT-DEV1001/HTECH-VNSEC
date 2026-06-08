@@ -266,21 +266,21 @@
         }
       ],
       "organizer_main": {
-        "name": "HTECH",
+        "name": "Công ty Cổ phần Công nghệ và Sự kiện HTECH",
         "logo": "/htech.png"
       },
       "co_organizer_list": [
         {
-          "name": "EverPartner",
+          "name": "Công ty cổ phần EverPartner",
           "logo": null
         },
         {
           "name": "Trung tâm PSST",
-          "logo": null
+          "logo": "/psst.JPG"
         },
         {
           "name": "Công ty TNHH MTV Bạch Đằng",
-          "logo": null
+          "logo": "/bach_dang.JPG"
         }
       ],
       "accompanying_left_list": [
