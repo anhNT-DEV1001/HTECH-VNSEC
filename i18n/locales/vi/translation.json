@@ -430,6 +430,9 @@
       "page_badge": "FAQ",
       "page_title": "Câu hỏi Thường gặp",
       "page_description": "Giải đáp các thắc mắc thường gặp về VN-SECURITY' 2026",
+      "loading": "Đang tải câu hỏi thường gặp...",
+      "updating": "Nội dung FAQ đang được cập nhật.",
+      "error": "Không thể tải danh sách câu hỏi thường gặp.",
       "categories": [
         {
           "title": "Thông tin chung",

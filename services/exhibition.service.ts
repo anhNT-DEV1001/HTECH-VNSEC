@@ -23,6 +23,8 @@ export interface ExhibitionZone {
   name_en?: string | null;
   field_vn?: string | null;
   field_en?: string | null;
+  description_vn?: string | null;
+  description_en?: string | null;
   web_id: number;
   exhibitions?: ExhibitionCategory[];
 }
@@ -124,6 +126,12 @@ export const getLocalizedZoneField = (zone: ExhibitionZone, locale: string) => {
   const field = locale === "vi" ? zone.field_vn : zone.field_en || zone.field_vn;
   const fallbackName = locale === "vi" ? zone.name_vn : zone.name_en || zone.name_vn;
   return field?.trim() || fallbackName;
+};
+
+export const getLocalizedZoneDescription = (zone: ExhibitionZone, locale: string) => {
+  const description =
+    locale === "vi" ? zone.description_vn : zone.description_en || zone.description_vn;
+  return description?.trim() || "";
 };
 
 export interface ExhibitionCategoryWithZones {

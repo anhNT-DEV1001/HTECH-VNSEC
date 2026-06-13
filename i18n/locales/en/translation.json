@@ -382,6 +382,9 @@
       "page_badge": "FAQ",
       "page_title": "Frequently Asked Questions",
       "page_description": "Answers to common questions about VN-SECURITY' 2026",
+      "loading": "Loading frequently asked questions...",
+      "updating": "FAQ content is being updated.",
+      "error": "Unable to load the FAQ list.",
       "categories": [
         {
           "title": "General Information",

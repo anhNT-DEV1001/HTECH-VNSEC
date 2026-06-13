@@ -53,7 +53,6 @@ export function ExhibitionCategories() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
@@ -70,7 +69,6 @@ export function ExhibitionCategories() {
         </div>
       </section>
 
-      {/* Categories Grid */}
       <section className="bg-background py-16 lg:py-24">
         <div className="container mx-auto px-4">
           {loading ? (
@@ -166,7 +164,6 @@ export function ExhibitionCategories() {
             </div>
           )}
 
-          {/* CTA */}
           <div className="mt-16 flex justify-end">
             <p className="text-right text-base leading-relaxed text-muted-foreground">
               {t("cta_question")}{" "}
