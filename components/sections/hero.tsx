@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
 import { useCountUp, formatNumber } from "@/hooks/useCountUp"
 
 const EVENT_START = new Date("2026-10-06T00:00:00+07:00")
@@ -101,42 +102,115 @@ export function Hero() {
       <div className="container relative mx-auto px-4 py-20 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           {/* Content */}
-          <div className="flex flex-col justify-center">
-            <div className="animate-fade-in mb-6">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+              },
+            }}
+            className="flex flex-col justify-center"
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 24, filter: "blur(10px)" },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="mb-6"
+            >
               <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <span className="mr-2 h-2 w-2 animate-pulse rounded-full bg-primary" />
                 {t("hero.badge")}
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="animate-fade-in mb-6 text-balance text-4xl font-extrabold tracking-tight text-[#2c54ce] sm:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 28, filter: "blur(12px)" },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="mb-6 text-balance text-4xl font-extrabold tracking-tight text-[#2c54ce] sm:text-5xl lg:text-6xl"
+            >
               <span className="text-red-500">VN-</span><span className="text-[#2c54ce]">SECURITY</span>' <span className="text-[#2c54ce]">2026</span>
-            </h1>
+            </motion.h1>
 
-            <p className="animate-fade-in mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: "0.2s" }}>
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="mb-8 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground"
+            >
               {t("hero.description")}
-            </p>
+            </motion.p>
 
             {/* Event Info */}
-            <div className="animate-fade-in mb-8 grid grid-cols-1 gap-4 sm:grid-cols-[max-content_max-content]" style={{ animationDelay: "0.3s" }}>
-              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
+            <motion.div
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.1 },
+                },
+              }}
+              className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-[max-content_max-content]"
+            >
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -18 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.55 } },
+                }}
+                className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm"
+              >
                 <Calendar className="h-5 w-5 shrink-0 text-primary" />
                 <div className="min-w-0">
                   <p className="text-left text-xs text-muted-foreground">{t("hero.eventTime.label")}</p>
                   <p className="text-left text-sm font-semibold text-foreground sm:whitespace-nowrap lg:text-base">{t("hero.eventTime.value")}</p>
                 </div>
-              </div>
-              <div className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm">
+              </motion.div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -18 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.55 } },
+                }}
+                className="bg-warm-card flex items-center gap-3 rounded-lg border border-primary/10 px-3.5 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.04)] backdrop-blur-sm"
+              >
                 <MapPin className="h-5 w-5 shrink-0 text-primary" />
                 <div className="min-w-0">
                   <p className="text-left text-xs text-muted-foreground">{t("hero.eventLocation.label")}</p>
                   <p className="text-left text-sm font-semibold text-foreground sm:whitespace-nowrap lg:text-base">{t("hero.eventLocation.value")}</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* CTA Buttons */}
-            <div className="animate-fade-in flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "0.4s" }}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 22 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+              className="flex flex-col gap-4 sm:flex-row"
+            >
               <Button asChild size="lg" className="group animate-pulse-glow bg-primary hover:bg-primary/90">
                 <Link href={`/${locale}/register`}>
                   {t("hero.cta.register")}
@@ -146,11 +220,16 @@ export function Hero() {
               <Button asChild variant="outline" size="lg" className="border-primary/25 bg-white/50 text-foreground hover:border-primary hover:bg-primary hover:text-primary-foreground">
                 <Link href={`/${locale}/about/general-info`}>{t("hero.cta.learn")}</Link>
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Visual Element */}
-          <div className="relative hidden items-center justify-center lg:flex">
+          <motion.div
+            initial={{ opacity: 0, x: 36, scale: 0.96 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            className="relative hidden items-center justify-center lg:flex"
+          >
             <div className="relative">
               <div className="relative h-[500px] w-[500px]">
                 <div className="absolute inset-0 animate-spin rounded-full border border-primary/18" style={{ animationDuration: "30s" }} />
@@ -172,19 +251,24 @@ export function Hero() {
                 <div className="absolute bottom-1/3 right-0 h-3 w-3 rounded-full bg-accent/60 animate-pulse" style={{ animationDelay: "1.5s" }} />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Stats Bar */}
       <div className="absolute bottom-0 left-0 right-0 border-t border-primary/10 bg-[rgba(255,250,245,0.8)] backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.45 }}
+            className="grid grid-cols-2 gap-4 md:grid-cols-4"
+          >
             <StatItem target={200} label={stats.organizers} />
             <StatItem target={50} label={stats.countries} />
             <StatItem target={15000} label={stats.visitors} />
             <StatItem target={300} label={stats.booths} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

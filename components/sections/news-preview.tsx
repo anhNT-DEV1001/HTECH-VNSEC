@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, Calendar } from "lucide-react"
+import { Reveal, StaggerReveal } from "@/components/animations/reveal"
 import { Button } from "@/components/ui/button"
 
 const newsItems = [
@@ -31,7 +32,7 @@ export function NewsPreview() {
     <section className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
+        <Reveal className="mb-12 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
               Tin tức
@@ -49,50 +50,49 @@ export function NewsPreview() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </Reveal>
 
         {/* News Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerReveal className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {newsItems.map((item) => (
-            <article
-              key={item.id}
-              className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-lg"
-            >
-              {/* Thumbnail Placeholder */}
-              <div className="relative aspect-video overflow-hidden bg-muted">
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-                  <span className="text-4xl font-bold text-primary/30">VN</span>
+            <Reveal key={item.id} direction="scale" inherit>
+              <article className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-2 hover:border-primary/30 hover:shadow-lg">
+                {/* Thumbnail Placeholder */}
+                <div className="relative aspect-video overflow-hidden bg-muted">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 transition-transform duration-500 group-hover:scale-105">
+                    <span className="text-4xl font-bold text-primary/30">VN</span>
+                  </div>
+                  <div className="absolute left-4 top-4">
+                    <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                      {item.category}
+                    </span>
+                  </div>
                 </div>
-                <div className="absolute left-4 top-4">
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                    {item.category}
-                  </span>
-                </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
-                  {item.date}
+                {/* Content */}
+                <div className="p-6">
+                  <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    {item.date}
+                  </div>
+                  <h3 className="mb-3 line-clamp-2 text-lg font-semibold text-card-foreground transition-colors group-hover:text-primary">
+                    <Link href={`/media/${item.id}`}>{item.title}</Link>
+                  </h3>
+                  <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
+                    {item.excerpt}
+                  </p>
+                  <Link
+                    href={`/media/${item.id}`}
+                    className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+                  >
+                    Đọc thêm
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
                 </div>
-                <h3 className="mb-3 line-clamp-2 text-lg font-semibold text-card-foreground transition-colors group-hover:text-primary">
-                  <Link href={`/media/${item.id}`}>{item.title}</Link>
-                </h3>
-                <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
-                  {item.excerpt}
-                </p>
-                <Link
-                  href={`/media/${item.id}`}
-                  className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-                >
-                  Đọc thêm
-                  <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </article>
+              </article>
+            </Reveal>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

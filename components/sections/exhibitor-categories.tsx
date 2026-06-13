@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, Orbit } from "lucide-react";
+import { Reveal, StaggerReveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { LucideIconByName } from "@/components/ui/lucide-icon";
@@ -63,7 +64,7 @@ export function ExhibitorCategories() {
     return (
       <section className="bg-warm-surface py-20 lg:py-28">
         <div className="container mx-auto px-4">
-          <div className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
+          <Reveal className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-5xl lg:max-w-none">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.14em] text-[#ee3d23]">
                 {t("section_badge")}
@@ -75,16 +76,15 @@ export function ExhibitorCategories() {
                 {t("description")}
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <StaggerReveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {Array.from({ length: 8 }).map((_, index) => (
-              <div
-                key={index}
-                className="h-56 rounded-[1.6rem] border border-[#f6c9bf] bg-white/80 shadow-[0_18px_45px_rgba(239,82,34,0.08)]"
-              />
+              <Reveal key={index} direction="scale" inherit className="w-full">
+                <div className="h-56 w-full rounded-[1.6rem] border border-[#f6c9bf] bg-white/80 shadow-[0_18px_45px_rgba(239,82,34,0.08)]" />
+              </Reveal>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
     );
@@ -94,7 +94,7 @@ export function ExhibitorCategories() {
     <>
       <section className="overflow-hidden bg-warm-surface py-20 lg:py-28">
         <div className="container mx-auto px-4">
-          <div className="mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
+          <Reveal className="mb-16 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
             <div className="max-w-5xl lg:max-w-none">
               <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-[0.14em] text-[#ee3d23]">
                 {t("section_badge")}
@@ -116,45 +116,46 @@ export function ExhibitorCategories() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </Reveal>
 
           {displayZones.length > 0 ? (
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <StaggerReveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {displayZones.map((zone) => (
-                <button
-                  key={zone.id}
-                  type="button"
-                  onClick={() => setSelectedZone(zone)}
-                  className="group flex min-h-[205px] flex-col rounded-[1.6rem] border border-[#f6c9bf] bg-white/95 p-5 text-left shadow-[0_18px_40px_rgba(239,82,34,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[#ee3d23]/40 hover:shadow-[0_26px_55px_rgba(239,82,34,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ee3d23] focus-visible:ring-offset-2"
-                >
-                  <div className="mb-4 flex items-start justify-between gap-3">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0ea] text-[#ee3d23] transition-colors group-hover:bg-[#ee3d23] group-hover:text-white">
-                      <Orbit className="h-5 w-5" />
-                    </span>
-                    <span className="inline-flex rounded-full bg-[#fff5f1] px-3 py-1 text-xs font-bold text-[#ee3d23]">
-                      {zone.exhibitions.length}
-                    </span>
-                  </div>
+                <Reveal key={zone.id} direction="scale" inherit className="w-full">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedZone(zone)}
+                    className="group flex min-h-[205px] w-full flex-col rounded-[1.6rem] border border-[#f6c9bf] bg-white/95 p-5 text-left shadow-[0_18px_40px_rgba(239,82,34,0.08)] transition duration-300 hover:-translate-y-2 hover:border-[#ee3d23]/40 hover:shadow-[0_26px_55px_rgba(239,82,34,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ee3d23] focus-visible:ring-offset-2"
+                  >
+                    <div className="mb-4 flex items-start justify-between gap-3">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0ea] text-[#ee3d23] transition-colors group-hover:bg-[#ee3d23] group-hover:text-white">
+                        <Orbit className="h-5 w-5" />
+                      </span>
+                      <span className="inline-flex rounded-full bg-[#fff5f1] px-3 py-1 text-xs font-bold text-[#ee3d23]">
+                        {zone.exhibitions.length}
+                      </span>
+                    </div>
 
-                  <h3 className="text-xl font-black leading-tight text-foreground">
-                    {getZoneName(zone)}
-                  </h3>
-                  <p className="mt-3 line-clamp-2 text-sm font-semibold leading-6 text-[#ee3d23]">
-                    {getLocalizedZoneField(zone, locale)}
-                  </p>
-                  <div className="pt-5">
-                    <span className="inline-flex items-center text-sm font-bold text-[#ee3d23]">
-                      {locale === "vi" ? "Xem danh sách" : "View categories"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </span>
-                  </div>
-                </button>
+                    <h3 className="text-xl font-black leading-tight text-foreground">
+                      {getZoneName(zone)}
+                    </h3>
+                    <p className="mt-3 line-clamp-2 text-sm font-semibold leading-6 text-[#ee3d23]">
+                      {getLocalizedZoneField(zone, locale)}
+                    </p>
+                    <div className="pt-5">
+                      <span className="inline-flex items-center text-sm font-bold text-[#ee3d23]">
+                        {locale === "vi" ? "Xem danh sách" : "View categories"}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </span>
+                    </div>
+                  </button>
+                </Reveal>
               ))}
-            </div>
+            </StaggerReveal>
           ) : (
-            <div className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-medium font-semibold text-muted-foreground">
+            <Reveal className="rounded-[1.75rem] border border-primary/10 bg-white/70 p-8 text-center text-medium font-semibold text-muted-foreground">
               {emptyZoneText}
-            </div>
+            </Reveal>
           )}
         </div>
       </section>

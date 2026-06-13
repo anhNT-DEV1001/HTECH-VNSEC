@@ -5,6 +5,7 @@ import { AgendaPreview } from "@/components/sections/agenda-preview"
 import { Sponsors } from "@/components/sections/sponsors"
 import { NewsPreview } from "@/components/sections/news-preview"
 import { CTASection } from "@/components/sections/cta-section"
+import { HomeScrollTop } from "@/components/sections/home-scroll-top"
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Sponsors />
       {/* <NewsPreview /> */}
       <CTASection />
+      <HomeScrollTop />
     </>
   )
 }

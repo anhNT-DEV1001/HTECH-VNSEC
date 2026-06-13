@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Building2 } from "lucide-react"
 import { useTranslations, useLocale } from "next-intl"
 import { useEffect, useState } from "react"
+import { Reveal, StaggerReveal } from "@/components/animations/reveal"
 import { resolveApiAssetUrl } from "@/lib/api-asset"
 import { cn } from "@/lib/utils"
 import { Exhibitor } from "@/types/sponsor"
@@ -28,7 +29,7 @@ export function Sponsors() {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-16 max-w-5xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-5xl text-center">
           <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">
             {t("sponsors.section_badge")}
           </span>
@@ -38,23 +39,21 @@ export function Sponsors() {
           <p className="mx-auto max-w-3xl text-pretty text-lg text-muted-foreground">
             {t("sponsors.description")}
           </p>
-        </div>
+        </Reveal>
 
         {tiers.map((tier) => (
-          <div key={tier.key} className="mb-12 last:mb-0">
+          <Reveal key={tier.key} className="mb-12 last:mb-0">
             <h3 className="mb-6 text-center text-lg font-semibold uppercase tracking-wider text-muted-foreground">
               {tier.label}
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <StaggerReveal className="flex flex-wrap justify-center gap-4">
               {tier.sponsors.map((exhibitor) => (
-                <SponsorCard
-                  key={exhibitor.id}
-                  exhibitor={exhibitor}
-                  tier={tier.key}
-                />
+                <Reveal key={exhibitor.id} direction="scale" inherit>
+                  <SponsorCard exhibitor={exhibitor} tier={tier.key} />
+                </Reveal>
               ))}
-            </div>
-          </div>
+            </StaggerReveal>
+          </Reveal>
         ))}
       </div>
     </section>
