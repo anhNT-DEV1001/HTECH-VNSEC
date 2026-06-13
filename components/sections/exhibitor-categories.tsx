@@ -214,7 +214,7 @@ export function ExhibitorCategories() {
 
               <div className="max-h-[58vh] overflow-y-auto bg-[#fff7f3] px-6 py-6 sm:px-8 sm:py-8">
                 {selectedZone.exhibitions && selectedZone.exhibitions.length > 0 ? (
-                  <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                  <div className="grid gap-5 md:grid-cols-2">
                     {selectedZone.exhibitions.map((category) => {
                       const imageUrl = getCategoryImageUrl(category);
 
@@ -230,7 +230,7 @@ export function ExhibitorCategories() {
                                   src={imageUrl}
                                   alt={getCategoryName(category) as any}
                                   fill
-                                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                  sizes="(max-width: 768px) 100vw, 50vw"
                                   className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
