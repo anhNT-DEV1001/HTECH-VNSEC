@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useCallback } from "react"
 import { CheckCircle, Plane, FileText, Globe, ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -35,11 +35,6 @@ export default function AboutPage() {
   const prevSlide = useCallback(() => {
     setActiveSlide((prev) => (prev - 1 + objectives.length) % objectives.length)
   }, [objectives.length])
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000)
-    return () => clearInterval(interval)
-  }, [nextSlide])
 
   return (
     <>
@@ -107,7 +102,7 @@ export default function AboutPage() {
               {/* Slideshow Container */}
               <div className="relative">
                 {/* Slides */}
-                <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[999px]">
+                <div className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
                   <div
                     className="flex transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -115,11 +110,11 @@ export default function AboutPage() {
                     {objectives.map((objective, index) => (
                       <div
                         key={index}
-                        className="group relative flex w-full flex-shrink-0 overflow-hidden rounded-[2rem] border border-border/60 bg-card px-5 py-6 shadow-sm transition-shadow duration-500 hover:shadow-lg sm:min-h-[210px] sm:rounded-[999px] sm:px-8 sm:py-7 lg:px-10"
+                        className="group relative flex w-full flex-shrink-0 overflow-hidden rounded-[1.75rem] border border-border/60 bg-card px-5 py-6 shadow-sm transition-shadow duration-500 hover:shadow-lg sm:min-h-[210px] sm:rounded-[2rem] sm:px-8 sm:py-7 lg:px-10"
                       >
                         <div className="absolute -right-20 -top-24 h-52 w-52 rounded-full bg-primary/10 blur-3xl transition-opacity duration-500 group-hover:opacity-80" />
                         {/* Subtle border glow */}
-                        <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 sm:rounded-[999px]" />
+                        <div className="absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 sm:rounded-[2rem]" />
 
                         <div className="relative z-10 flex w-full flex-col gap-4 text-left sm:flex-row sm:items-center sm:gap-6 lg:gap-7">
                           <div className="relative shrink-0">

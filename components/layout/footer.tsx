@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="bg-secondary text-secondary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -99,14 +99,14 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="lg:col-span-3 xl:col-span-1">
             <h3 className="mb-5 text-base font-bold uppercase tracking-wider text-secondary-foreground">
               {t("contact.title")}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-2.5 xl:gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm leading-relaxed text-secondary-foreground/78 text-nowrap">
+                <span className="whitespace-nowrap text-[13px] leading-relaxed tracking-[-0.01em] text-secondary-foreground/78 xl:text-sm">
                   {t("contact.address")}
                 </span>
               </li>

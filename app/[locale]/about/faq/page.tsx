@@ -69,7 +69,7 @@ export default function FAQPage() {
               <h3 className="mb-2 text-xl font-bold text-foreground">
                 {t("cta.title")}
               </h3>
-              <p className="mb-6 text-muted-foreground">
+              <p className="mb-6 text-muted-foreground text-center">
                 {t("cta.description")}
               </p>
               <Button asChild className="bg-primary hover:bg-primary/90">

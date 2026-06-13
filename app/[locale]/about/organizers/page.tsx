@@ -1,6 +1,5 @@
 "use client"
 
-import type { CSSProperties, PointerEvent } from "react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { Building2, Shield, Users, Globe } from "lucide-react"
@@ -17,86 +16,101 @@ type OrganizerMain = {
 }
 
 const compactLogoClasses: Record<string, string> = {
-  "/truyen_hinh_antv.png": "max-h-14 max-w-[70%] md:max-h-16 lg:max-h-18",
-  "/bao_dau_tu.svg": "max-h-14 max-w-[74%] md:max-h-16 lg:max-h-18",
-}
-
-const glowStyle: CSSProperties = {
-  background:
-    "radial-gradient(260px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(239, 89, 65, 0.25), transparent 72%)",
+  "/truyen_hinh_antv.png": "max-w-[78%]",
+  "/bao_dau_tu.svg": "max-w-[80%]",
+  "/bo_cong_an.png": "max-w-[72%]",
+  "/bo_kh_cn.png": "max-w-[72%]",
+  "/cuc_cong_nghiep_an_ninh.png": "max-w-[76%]",
+  "/hoc_vien_ky_thuat_cong_nghe_an_ninh.png": "max-w-[78%]",
+  "/htech.png": "max-w-[72%]",
+  "/psst.JPG": "max-w-[72%]",
+  "/bach_dang.JPG": "max-w-[72%]",
+  "/apsa_vietnam.jpg": "max-w-[74%]",
+  "/uav.png": "max-w-[72%]",
+  "/via.png": "max-w-[68%]",
+  "/hiep_hoi_doanh_nghiep_tre_vn.png": "max-w-[78%]",
+  "/sunny_vn.png": "max-w-[72%]",
 }
 
 function OrganizerCard({ item }: { item: OrganizerItem }) {
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    const rect = event.currentTarget.getBoundingClientRect()
-    event.currentTarget.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`)
-    event.currentTarget.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`)
-  }
+  const hasLogo = Boolean(item.logo)
 
   return (
-    <div className="group relative h-32 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.15)] md:h-40 lg:h-44" onPointerMove={handlePointerMove}>
-      {/* Glow effect on hover */}
-      <div className="pointer-events-none absolute -inset-0.5 rounded-xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
-      {/* Logo Layer */}
-      <div className="flex h-full w-full items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-30">
-        {item.logo ? (
-          <div className="relative flex h-full w-full items-center justify-center">
-            {/* Shadow/Blur background effect */}
-            <div className="absolute inset-0 scale-110 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(239,89,65,0.25)]" />
-            {/* Glow following cursor */}
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={glowStyle} />
-            <Image
-              src={item.logo}
-              alt={item.name}
-              width={140}
-              height={80}
-              className={cn(
-                "relative z-10 max-h-22 w-auto object-contain drop-shadow-lg",
-                compactLogoClasses[item.logo]
-              )}
-            />
+    <div className="group relative h-32 overflow-hidden rounded-xl border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_14px_32px_rgba(15,23,42,0.08)] md:h-40 lg:h-44">
+      <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div
+        className={cn(
+          "flex h-full w-full items-center justify-center p-4 transition-all duration-300",
+          hasLogo && "group-hover:opacity-20"
+        )}
+      >
+        {hasLogo && item.logo ? (
+          <div className="flex h-full w-full items-center justify-center">
+            <div className="flex h-16 w-full items-center justify-center md:h-20 lg:h-24">
+              <div
+                className={cn(
+                  "relative h-full w-full max-w-[180px]",
+                  compactLogoClasses[item.logo]
+                )}
+              >
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  fill
+                  sizes="180px"
+                  className="object-contain"
+                />
+              </div>
+            </div>
           </div>
         ) : (
-          <span className="text-center text-sm font-semibold text-foreground leading-tight">
+          <span className="text-center text-sm font-semibold leading-tight text-foreground">
             {item.name}
           </span>
         )}
       </div>
 
-      {/* Text Layer - appears on hover */}
-      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-100">
-        <span className="text-center text-xs font-semibold text-foreground leading-tight">
-          {item.name}
-        </span>
-      </div>
+      {hasLogo && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/92 p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+          <span className="text-center text-xs font-semibold leading-tight text-foreground">
+            {item.name}
+          </span>
+        </div>
+      )}
     </div>
   )
 }
 
 function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
-  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    const rect = event.currentTarget.getBoundingClientRect()
-    event.currentTarget.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`)
-    event.currentTarget.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`)
-  }
+  const hasLogo = Boolean(item.logo)
 
   return (
-    <div className="group relative mx-auto h-32 overflow-hidden rounded-xl border border-[#EF5941]/15 bg-white shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(239,89,65,0.15)] md:h-40 lg:h-44 w-full max-w-xs" onPointerMove={handlePointerMove}>
-      {/* Glow effect on hover */}
-      <div className="pointer-events-none absolute -inset-0.5 rounded-xl bg-gradient-to-br from-primary/30 via-primary/10 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
-      {/* Logo Layer */}
-      <div className="flex h-full w-full items-center justify-center p-4 transition-opacity duration-300 group-hover:opacity-30">
-        {item.logo ? (
-          <div className="relative flex h-full w-full items-center justify-center">
-            {/* Glow following cursor */}
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={glowStyle} />
-            <Image
-              src={item.logo}
-              alt={item.name}
-              width={160}
-              height={70}
-              className="relative z-10 max-h-28 w-auto object-contain drop-shadow-lg transition-opacity duration-300 group-hover:opacity-30"
-            />
+    <div className="group relative mx-auto h-32 w-full max-w-xs overflow-hidden rounded-xl border border-primary/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_14px_32px_rgba(15,23,42,0.08)] md:h-40 lg:h-44">
+      <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div
+        className={cn(
+          "flex h-full w-full items-center justify-center p-4 transition-all duration-300",
+          hasLogo && "group-hover:opacity-20"
+        )}
+      >
+        {hasLogo && item.logo ? (
+          <div className="flex h-full w-full items-center justify-center">
+            <div className="flex h-[4.5rem] w-full items-center justify-center md:h-[5.5rem] lg:h-24">
+              <div
+                className={cn(
+                  "relative h-full w-full max-w-[190px]",
+                  compactLogoClasses[item.logo]
+                )}
+              >
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  fill
+                  sizes="190px"
+                  className="object-contain"
+                />
+              </div>
+            </div>
           </div>
         ) : (
           <span className="text-center text-xl font-bold text-foreground">
@@ -105,12 +119,13 @@ function OrganizerCardSingle({ item }: { item: OrganizerMain }) {
         )}
       </div>
 
-      {/* Text Layer - appears on hover */}
-      <div className="absolute inset-0 flex items-center justify-center p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 delay-100">
-        <span className="text-center text-sm font-semibold text-foreground leading-tight">
-          {item.name}
-        </span>
-      </div>
+      {hasLogo && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/92 p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+          <span className="text-center text-sm font-semibold leading-tight text-foreground">
+            {item.name}
+          </span>
+        </div>
+      )}
     </div>
   )
 }
